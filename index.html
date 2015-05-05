@@ -1,0 +1,1577 @@
+
+<!doctype html>
+<title>Salary Lookup</title>
+<link rel="stylesheet" href='https://s3-us-west-2.amazonaws.com/lensnola/city+salaries/css/style.css' media="screen" charset="utf-8">
+<link rel="stylesheet" href='https://s3-us-west-2.amazonaws.com/lensnola/city+salaries/css/chosen.css' media="screen" charset="utf-8">
+<link rel="stylesheet" href='https://s3-us-west-2.amazonaws.com/lensnola/city+salaries/css/chosen.css' media="screen" charset="utf-8">
+<link rel="stylesheet" href='https://s3-us-west-2.amazonaws.com/lensnola/city+salaries/css/foundation.css' media="screen" charset="utf-8">
+<link rel="stylesheet" href='https://s3-us-west-2.amazonaws.com/lensnola/city+salaries/css/lens.css' media="screen" charset="utf-8">
+
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <input id='namebox' type="text" placeholder="Name" class="lensinput"/>
+      </div>
+    </div>
+
+   
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+<select type="text" id="department" data-placeholder="Department (Example: Municipal Court)" multiple class="chosen-select" class="lensinput">
+
+    <option value="">311 CALL CENTER OPERATIONS</option>
+
+    <option value="">ABANDONED CAR UNIT</option>
+
+    <option value="">ACCOUNTING ADMINISTRATION</option>
+
+    <option value="">ADJUDICATION</option>
+
+    <option value="">ADMINISTRATION</option>
+
+    <option value="">ADMINISTRATIVE SERVICES</option>
+
+    <option value="">AD VALOREM TAXES</option>
+
+    <option value="">ARMSTRONG PARK</option>
+
+    <option value="">BOOKER T. WASHINGTON GF</option>
+
+    <option value="">BRAC COMMUNITY BASE REUSE PLAN</option>
+
+    <option value="">BRAKE TAG/SANITATION</option>
+
+    <option value="">BUDGET AND PLANNING</option>
+
+    <option value="">BUILDING</option>
+
+    <option value="">BUILDING MAINTENANCE</option>
+
+    <option value="">CANAL ST. DEVELOPMENT CORP.</option>
+
+    <option value="">CAO-CAPITAL PROJECTS</option>
+
+    <option value="">CAO EMPLOYEE RELATIONS</option>
+
+    <option value="">CAO-HOSP-INSURANCE</option>
+
+    <option value="">CAO-PERSONNEL/OFFICE MGMT</option>
+
+    <option value="">CASHIERS</option>
+
+    <option value="">CD HOME 10% ADMIN</option>
+
+    <option value="">CEASE FIRE</option>
+
+    <option value="">CEMETERIES</option>
+
+    <option value="">CHEF HIGHWAY PROJECT</option>
+
+    <option value="">CIVIL LITIGATION</option>
+
+    <option value="">CLERK ADMINISTRATION</option>
+
+    <option value="">CLERK IN-COURT</option>
+
+    <option value="">CLERK MICROFILM</option>
+
+    <option value="">CLERK OF COUNCIL</option>
+
+    <option value="">CLERK POLLING SITES</option>
+
+    <option value="">CLERK PRE-COURT</option>
+
+    <option value="">CLERK RECORDS ROOM</option>
+
+    <option value="">CLERK&#39;S SERVICES</option>
+
+    <option value="">CODE ENFORCE REVOLVING FUND</option>
+
+    <option value="">COLLECTIONS</option>
+
+    <option value="">COMMISSIONER OF CRIM JUSTICE</option>
+
+    <option value="">COMMUNICATIONS</option>
+
+    <option value="">COMPREHENSIVE PLANNING</option>
+
+    <option value="">CONSRTUCTION FRAUD DIVISION</option>
+
+    <option value="">CONTROL</option>
+
+    <option value="">FIRE: ALL</option>
+
+    <option value="">POLICE: ALL</option>
+
+    <option value="">CORONER ADMINISTRATION</option>
+
+    <option value="">CORONER INVESTIGATIONS</option>
+
+    <option value="">COUNCIL FISCAL OFFICE</option>
+
+    <option value="">COUNCILMEMBER-AT-LARGE (A)</option>
+
+    <option value="">COUNCILMEMBER-AT-LARGE (B)</option>
+
+    <option value="">COUNCILMEMBER DISTRICT A</option>
+
+    <option value="">COUNCILMEMBER DISTRICT B</option>
+
+    <option value="">COUNCILMEMBER DISTRICT C</option>
+
+    <option value="">COUNCILMEMBER DISTRICT D</option>
+
+    <option value="">COUNCILMEMBER DISTRICT E</option>
+
+    <option value="">COUNCILMEMBERS&#39; OFFICE</option>
+
+    <option value="">COUNCIL RESEARCH</option>
+
+    <option value="">CPC ENHANCEMENT</option>
+
+    <option value="">CUSTODIANS</option>
+
+    <option value="">DCDBG ADMIN./PROGRAM DELIVERY</option>
+
+    <option value="">DEDICATED MILLAGE</option>
+
+    <option value="">DIRECTOR&#39;S OFFICE</option>
+
+    <option value="">ECONOMIC DEVELOPMENT FUND</option>
+
+    <option value="">EMD-GENERAL MAINTENANCE</option>
+
+    <option value="">EMERGENCY MED SERV OPERATIONS</option>
+
+    <option value="">EMPLOYEE RETIREMENT SYSTEM</option>
+
+    <option value="">ENERGY CONSERVATION GRANT</option>
+
+    <option value="">ENGINEERING &amp; PLANNING</option>
+
+    <option value="">ENVIRONMENTAL AFFAIRS</option>
+
+    <option value="">ESSE PUB HEAL ADMINISTRATION</option>
+
+    <option value="">ESSE PUB HEAL SERVICES</option>
+
+    <option value="">ETHICS REVIEW BOARD-OIG</option>
+
+    <option value="">EXECUTIVE OFFICE</option>
+
+    <option value="">FEDERAL HOMELAND SECURITY</option>
+
+    <option value="">FIELD OPERATIONS STAFF</option>
+
+    <option value="">FINANCIAL &amp; FISCAL AFFAIR</option>
+
+    <option value="">FIRE: AIRPORT SUPPRESSION</option>
+
+    <option value="">FIRE: CITY SUPPRESSION</option>
+
+    <option value="">FIRE: FIRE ACADEMY TRAINING</option>
+
+    <option value="">FIRE: FIRE ADMINISTRATION</option>
+
+    <option value="">FIRE: FIRE COMMUNICATIONS</option>
+
+    <option value="">FIRE: GF-PREVENTION INSP &amp; EDUC</option>
+
+    <option value="">FIRE: HAZARDOUS MATERIALS</option>
+
+    <option value="">FIRE: NASA SUPPRESSION</option>
+
+    <option value="">FIRE: SAFER GRANT</option>
+
+    <option value="">FIRE: SUPPLY SHOP</option>
+
+    <option value="">FISCAL MONITORING</option>
+
+    <option value="">FISCAL RECORDS</option>
+
+    <option value="">FMC ADMINISTRATION</option>
+
+    <option value="">FMC MARKETS</option>
+
+    <option value="">FMC SHOPPING CENTER</option>
+
+    <option value="">GALLIER HALL</option>
+
+    <option value="">GENERAL FUND</option>
+
+    <option value="">GOLF COURSE BRECHTEL PARK</option>
+
+    <option value="">GOLF COURSES</option>
+
+    <option value="">GRASS CUTTING MILLAGE</option>
+
+    <option value="">GROUNDS MAINTENANCE</option>
+
+    <option value="">HEALTHCARE/HOMELESS</option>
+
+    <option value="">HEALTHY START GRANT INITIATIVE</option>
+
+    <option value="">HEAVY EQUIPMENT</option>
+
+    <option value="">HISTORIC DIST. LANDMARKS COMM.</option>
+
+    <option value="">HOPWA GRANT</option>
+
+    <option value="">HOUSING CODE ENFORCEMENT</option>
+
+    <option value="">HOUSING CONSTRUCTION FINANCING</option>
+
+    <option value="">HOUSING REHAB ADMIN</option>
+
+    <option value="">INSPECTORS SECTION</option>
+
+    <option value="">INTERGOV RELATIONS</option>
+
+    <option value="">JOE BARTHOLOMEW GOLF COURSE</option>
+
+    <option value="">JUDGES&#39; PERSONNEL</option>
+
+    <option value="">JUDICIAL E P REV FUND</option>
+
+    <option value="">LAND USE REGULATION</option>
+
+    <option value="">LAW ADMINISTRATION</option>
+
+    <option value="">LAW CONTRACTS</option>
+
+    <option value="">LAW FELLOWSHIP</option>
+
+    <option value="">LAW IN-HOUSE</option>
+
+    <option value="">LIBRARY ADMINISTRATION</option>
+
+    <option value="">LIVABLE CLAIBORNE COMM PLAN</option>
+
+    <option value="">MAIL ROOM</option>
+
+    <option value="">MAINTENANCE</option>
+
+    <option value="">MANAGEMENT INFORMATION SYSTEMS</option>
+
+    <option value="">MANAGEMENT SERVICES</option>
+
+    <option value="">MANUAL CLEANING</option>
+
+    <option value="">MAYORAL FELLOWS</option>
+
+    <option value="">MECHANICAL ENGINE ROOM</option>
+
+    <option value="">MEDICAL</option>
+
+    <option value="">MISCELLANEOUS RISK MANAGEMENT</option>
+
+    <option value="">MISC. OFFICE OF ADMINISTRATION</option>
+
+    <option value="">MOSQUITO CONTROL UNIT</option>
+
+    <option value="">MULTI-PURPOSE CENTERS</option>
+
+    <option value="">MUNC. TRAINING ACADEMY</option>
+
+    <option value="">MUNICIPAL AND TRAFFIC</option>
+
+    <option value="">MUNICIPAL COURT</option>
+
+    <option value="">MUNICIPAL YACHT HARBOR CORP.</option>
+
+    <option value="">NEIGHBORHOOD PLANNING</option>
+
+    <option value="">NHIF CODE ENFORCEMENT / DEMO</option>
+
+    <option value="">NHIF GENERAL ADMINISTRATION</option>
+
+    <option value="">N.O. AVIATION BOARD</option>
+
+    <option value="">NORC AQUATIC PROGRAMS</option>
+
+    <option value="">NORC ATHLETICS PROGRAMS</option>
+
+    <option value="">NORC CENTERS</option>
+
+    <option value="">NORC DIRECTOR &amp; MANAGEMENT</option>
+
+    <option value="">NORC MAINTENANCE</option>
+
+    <option value="">NORC SPECIAL PROGRAM &amp; CULTURE</option>
+
+    <option value="">N.O. STRONG START INITIATIVE</option>
+
+    <option value="">NURSERY &amp; GREENHOUSE</option>
+
+    <option value="">NURSERY &amp; PARK SECURITY</option>
+
+    <option value="">OFFICE OF CULTURAL ECONOMY</option>
+
+    <option value="">OFFICE OF HOMELAND SECURITY</option>
+
+    <option value="">OFFICE OF INSPECTOR GENERAL AD</option>
+
+    <option value="">OFFICE OF NEIGHBORHOOD ENGAGE</option>
+
+    <option value="">OFFICE OF PERFORM. &amp; ACCOUNTAB</option>
+
+    <option value="">OFFICE OF SERVICE &amp; INNOVATION</option>
+
+    <option value="">OFFICE OF THE MAYOR</option>
+
+    <option value="">ONE STOP SHOP PERMITS</option>
+
+    <option value="">OPERATIONS &amp; ADMIN</option>
+
+    <option value="">OPERATIONS ADMINISTRATION</option>
+
+    <option value="">PARKING ADJUDICATION</option>
+
+    <option value="">PAYROLL/PAYROLL DEDUCTIONS</option>
+
+    <option value="">PLANNING &amp; DESIGN</option>
+
+    <option value="">POLICE: EIGHTH DISTRICT</option>
+
+    <option value="">POLICE: FIELD OPERATIONS</option>
+
+    <option value="">POLICE: FIFTH  DISTRICT</option>
+
+    <option value="">POLICE: FIRST DISTRICT</option>
+
+    <option value="">POLICE: FISCAL MANAGEMENT</option>
+
+    <option value="">POLICE: FOURTH DISTRICT</option>
+
+    <option value="">POLICE: INVESTIGATIONS &amp; SUPPORTT BURE</option>
+
+    <option value="">POLICE LITIGATION</option>
+
+    <option value="">POLICE: MANAGEMNT SERVICES BUREAU</option>
+
+    <option value="">POLICE: MID CITY</option>
+
+    <option value="">POLICE: NARCOTICS</option>
+
+    <option value="">POLICE: OFF OF THE SUPERINTENDENT</option>
+
+    <option value="">POLICE: POLICE RECRUITS</option>
+
+    <option value="">POLICE: PUBLIC AFFAIRS</option>
+
+    <option value="">POLICE: PUBLIC INTEGRITY</option>
+
+    <option value="">POLICE SECONDARY OFFICE T</option>
+
+    <option value="">POLICE: SECOND DISTRICT</option>
+
+    <option value="">POLICE: SEVENTH DISTRICT</option>
+
+    <option value="">POLICE: SIXTH  DISTRICT</option>
+
+    <option value="">POLICE: SPECIAL OPERATIONS</option>
+
+    <option value="">POLICE: THIRD  DISTRICT</option>
+
+    <option value="">POLICE: TRAFFIC</option>
+
+    <option value="">POLICE: TRANSIT SECURITY</option>
+
+    <option value="">POLICY FORMULATION &amp; ADMIN</option>
+
+    <option value="">PROG MGMT &amp; MONITOR</option>
+
+    <option value="">PROGRAM DELIVERY/ADMINISTRATIO</option>
+
+    <option value="">PROGRAM DELIVERY UNIT</option>
+
+    <option value="">PUBLIC BUILDINGS MAINTENANCE</option>
+
+    <option value="">PUBLIC WORKS PDU</option>
+
+    <option value="">PURCHASING ADMINISTRATION</option>
+
+    <option value="">REALTY RECORDS</option>
+
+    <option value="">RECEIPTS &amp; DISBURSEMENTS</option>
+
+    <option value="">RELOCATION ADMINISTRATION</option>
+
+    <option value="">REVENUE ADMINISTRATION</option>
+
+    <option value="">REVENUE APPLICATIONS</option>
+
+    <option value="">RIGHT-OF-WAY MANAGEMENT</option>
+
+    <option value="">RYAN WHITE ADMINISTRATIVE</option>
+
+    <option value="">RYAN WHITE PROGRAM SUPPORT</option>
+
+    <option value="">RYAN WHITE QUALITY MGMT</option>
+
+    <option value="">SANITATION DIRECTOR OFF</option>
+
+    <option value="">SECURITY</option>
+
+    <option value="">SIGNAL SHOP</option>
+
+    <option value="">S&amp;P BUILDING INSPECTION</option>
+
+    <option value="">S&amp;P DIRECTORS OFFICE</option>
+
+    <option value="">S&amp;P, ELECTRICAL INSPECT</option>
+
+    <option value="">S&amp;P, MECHANICAL INSPECT</option>
+
+    <option value="">S&amp;P, MOTOR VEHICLE INSPCT</option>
+
+    <option value="">S&amp;P, PLAN PROCESSING</option>
+
+    <option value="">STATE AND FEDERAL PROGRAMS</option>
+
+    <option value="">SUPERINTENDENT&#39;S OFFICE</option>
+
+    <option value="">SUPPLIER &amp; DIVERSITY</option>
+
+    <option value="">TA  RESEARCH</option>
+
+    <option value="">TAXI CAB BUREAU</option>
+
+    <option value="">TFC COURT REV FUND</option>
+
+    <option value="">TICKET WRITING SECTION</option>
+
+    <option value="">TOWING &amp; IMPOUNDMENT</option>
+
+    <option value="">TRAFFIC COURT</option>
+
+    <option value="">TRAFFIC MANAGEMENT</option>
+
+    <option value="">TRAFFIC SIGN SHOP</option>
+
+    <option value="">TREASURY ADMINISTRATION</option>
+
+    <option value="">TREE MAINTENANCE</option>
+
+    <option value="">URBAN DEVELOPMENT</option>
+
+    <option value="">UTILITY REGULATORY/ENERGY</option>
+
+    <option value="">VIEUX CARRE COMMISSION</option>
+
+    <option value="">VIOLENCE AGAINST WOMEN ACT</option>
+
+    <option value="">WIA ADULT</option>
+
+    <option value="">WIA YOUTH</option>
+
+    <option value="">WIC FOOD PROGRAM</option>
+
+    <option value="">YSC ADMINISTRATION</option>
+
+    <option value="">YSC DIETARY SVCS</option>
+
+    <option value="">YSC RESIDENTIAL LIFE</option>
+
+    <option value="">ZONING BUREAU</option>
+
+</select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 medium-12 small-12 columns">
+<select type="text" id="position" data-placeholder="Position (Example: Police Officer 1)" multiple class="chosen-select" class="lensinput">
+
+    <option value="">ACCOUNTANT</option>
+
+    <option value="">ACCOUNTANT I</option>
+
+    <option value="">ACCOUNTANT II</option>
+
+    <option value="">ACCOUNTANT III</option>
+
+    <option value="">ACCOUNTS PAYABLE SUPERVISOR</option>
+
+    <option value="">ADMIN, ENVIROMENTAL PLANNING</option>
+
+    <option value="">ADMINISTRATIVE ASSISTANT</option>
+
+    <option value="">ADMINISTRATIVE SUPPORT SPEC</option>
+
+    <option value="">ADMIN SUPPORT MANAGER I</option>
+
+    <option value="">ADMIN SUPPORT SPECIALIST I</option>
+
+    <option value="">ADMIN SUPPORT SPECIALIST II</option>
+
+    <option value="">ADMIN SUPPORT SPECIALIST III</option>
+
+    <option value="">ADM &amp; PROGRAM (CDBG/FEMA)</option>
+
+    <option value="">ADOLESCENT HOME SUPERINTENDENT</option>
+
+    <option value="">ADOLESCENT HOME SUPT, ASST</option>
+
+    <option value="">AIRPORT ADMINISTRATIVE INTERN</option>
+
+    <option value="">AIRPORT ADMIN SEPCIALIST III</option>
+
+    <option value="">AIRPORT ADMIN SPECIALIST I</option>
+
+    <option value="">AIRPORT ADMIN SPECIALIST II</option>
+
+    <option value="">AIRPORT ADMIN SPECIALIST IV</option>
+
+    <option value="">AIRPORT ASSISTANT SERV MANAGER</option>
+
+    <option value="">AIRPORT COMMUNICATION SPCL</option>
+
+    <option value="">AIRPORT COMMUNICATION SUPV</option>
+
+    <option value="">AIRPORT ELECTRICAL SERV MANAGE</option>
+
+    <option value="">AIRPORT OPERATIONS ANALYST</option>
+
+    <option value="">AIRPORT PRINCIPAL SERV AGENT</option>
+
+    <option value="">AIRPORT SENIOR SERVICES AGANT</option>
+
+    <option value="">AIRPORT SENIOR WORKER</option>
+
+    <option value="">AIRPORT SERVICES AGENT</option>
+
+    <option value="">AIRPORT SERVICES MANAGER</option>
+
+    <option value="">AIRPORT SKILLED MAINT SUPV</option>
+
+    <option value="">AIRPORT SR TRANSPORTATION OFF</option>
+
+    <option value="">AIRPORT SYSTEMS SPECIALIST</option>
+
+    <option value="">AIRPORT SYSTEMS SUPERVISOR</option>
+
+    <option value="">AIRPORT TECHNICIAN I</option>
+
+    <option value="">AIRPORT TECHNICIAN II</option>
+
+    <option value="">AIRPORT TECHNICIAN III</option>
+
+    <option value="">AIRPORT TECHNICIAN SPECIALIST</option>
+
+    <option value="">AIRPORT TRANSPORTATION SUPV</option>
+
+    <option value="">AIRPORT WORKER</option>
+
+    <option value="">AIRPORT WORKER TRAINEE</option>
+
+    <option value="">ANALYST (FEMA/CDBG)</option>
+
+    <option value="">ARCHITECTURAL HISTORIAN</option>
+
+    <option value="">ASSISTANT DIRECTOR PLANNING</option>
+
+    <option value="">ASSISTANT FISCAL OFFICER</option>
+
+    <option value="">ASSISTANT PAYROLL SUPERVISOR</option>
+
+    <option value="">ASSISTANT SUPT OF FIRE</option>
+
+    <option value="">ASSISTANT SUPT OF POLICE</option>
+
+    <option value="">ASST CHIEF ADMINISTER OFFICER</option>
+
+    <option value="">ASST COUNCIL RESEARCH OFFICER</option>
+
+    <option value="">ASST JUDICIAL ADMINISTATOR</option>
+
+    <option value="">ASST LIBRARIAN</option>
+
+    <option value="">ASST MGR, FISCAL ADMINISTRATIO</option>
+
+    <option value="">ASST POLICE COMMUNICATIONS SUP</option>
+
+    <option value="">ATTORNEY I</option>
+
+    <option value="">ATTORNEY II</option>
+
+    <option value="">ATTORNEY III</option>
+
+    <option value="">ATTORNEY IV</option>
+
+    <option value="">AUDITOR</option>
+
+    <option value="">AUDITOR ASST</option>
+
+    <option value="">AUTO FACILITY SPECIALIST</option>
+
+    <option value="">AUTO FACILITY SUPV</option>
+
+    <option value="">AUTOMOTIVE MAINT TECHNICIAN</option>
+
+    <option value="">AUTOMOTIVE MECHANIC II</option>
+
+    <option value="">AUTOMOTIVE MECHANIC III</option>
+
+    <option value="">AUTOMOTIVE SERVICES SUPERVISOR</option>
+
+    <option value="">BUDGET ADMINISTRATOR</option>
+
+    <option value="">BUDGET COORDINATOR</option>
+
+    <option value="">BUILDING INSPECTOR</option>
+
+    <option value="">BUILDING INSPECTOR II</option>
+
+    <option value="">BUILDING INSPECTOR III</option>
+
+    <option value="">BUILDING OFFICIAL</option>
+
+    <option value="">BUILDING PLAN EXAMINER</option>
+
+    <option value="">BUILDING PLAN EXAMINER CHIEF</option>
+
+    <option value="">BUILDING SERVICES SUPV ASSIST</option>
+
+    <option value="">BUILDING SERVICES WORKER</option>
+
+    <option value="">BUILDINGS MAINTENANCE MANAGER</option>
+
+    <option value="">BUILDINGS REPAIR SUPERVISOR</option>
+
+    <option value="">BUYER III</option>
+
+    <option value="">CARPENTER</option>
+
+    <option value="">CASE MANAGER</option>
+
+    <option value="">CHIEF ACCOUNTANT</option>
+
+    <option value="">CHIEF ADMINSTRATIVE OFFICER</option>
+
+    <option value="">CHIEF CRIM INVESTIGATIONS IG</option>
+
+    <option value="">CHIEF DEP CITY ATTORNEY</option>
+
+    <option value="">CHIEF DEP CLK CRM DIST CT</option>
+
+    <option value="">CHIEF OF AUDIT AND REVIEW IG</option>
+
+    <option value="">CHIEF OF FIRE PREVENTION</option>
+
+    <option value="">CHIEF OF STAFF</option>
+
+    <option value="">CHIEF OPERATIONS MANAGER</option>
+
+    <option value="">CHIEF OPERATIONS MANAGER, ASST</option>
+
+    <option value="">CITY ATTORNEY</option>
+
+    <option value="">CITY ECONOMIST</option>
+
+    <option value="">CITY LIBRARIAN</option>
+
+    <option value="">CITY PLANNER</option>
+
+    <option value="">CLAIMS ADJUSTER</option>
+
+    <option value="">CLERK I</option>
+
+    <option value="">CLERK OF COUNCIL</option>
+
+    <option value="">CLERK OF COUNCIL ASSISTANT</option>
+
+    <option value="">CLERK OF COURT</option>
+
+    <option value="">CLERK OF COURT ASSISTANT</option>
+
+    <option value="">CLK OF CT CLK CRM DIST CT</option>
+
+    <option value="">CODE ENF CASE SPECIALIST I</option>
+
+    <option value="">CODE ENF CASE SPECIALIST III</option>
+
+    <option value="">CODE ENF DISTRICT SUPV</option>
+
+    <option value="">CODE ENF INSPECTOR I</option>
+
+    <option value="">CODE ENFORCE CASE SUPERVISOR</option>
+
+    <option value="">CODE ENFORCEMENT ASSISTANT I</option>
+
+    <option value="">CODE ENFORCEMENT INSPECTOR II</option>
+
+    <option value="">CODE ENF SPECIALIST II</option>
+
+    <option value="">COMPTROLLER</option>
+
+    <option value="">COMPTROLLER ASST</option>
+
+    <option value="">COMPUTER OPERATOR</option>
+
+    <option value="">CORONER</option>
+
+    <option value="">COUNCILMANIC FISCAL OFFICER</option>
+
+    <option value="">COUNCILMANIC SECRETARY II</option>
+
+    <option value="">COUNCIL MEMBER</option>
+
+    <option value="">COUNCIL RESEARCH OFFICER</option>
+
+    <option value="">COUNCIL UTILITIES REG OFFICER</option>
+
+    <option value="">COURK CLERK SUPERVISOR</option>
+
+    <option value="">COURT CLERK I</option>
+
+    <option value="">COURT CLERK II</option>
+
+    <option value="">COURT CRIER (MUNICIPAL COURT)</option>
+
+    <option value="">COURT CRIER (TRAFFIC COURT)</option>
+
+    <option value="">COURT PROBATION OFFICER</option>
+
+    <option value="">COURT REPORTER</option>
+
+    <option value="">CRIME LABORATORY DIRECTOR</option>
+
+    <option value="">CRIMINAL INVESTIGATOR III IG</option>
+
+    <option value="">CRIMINAL INVESTIGATOR IV IG</option>
+
+    <option value="">CRIMINALIST II</option>
+
+    <option value="">CRIMINALIST III</option>
+
+    <option value="">CT REPORTER (JUV CT)</option>
+
+    <option value="">CT REPORTER (TRAFFIC CT)</option>
+
+    <option value="">CUSTODIAN II</option>
+
+    <option value="">DCDBG FISCAL ANALYST</option>
+
+    <option value="">DENTAL ASSISTANT II</option>
+
+    <option value="">DENTIST</option>
+
+    <option value="">DEP CITY ATTORNEY</option>
+
+    <option value="">DEP DIRECTOR AVIATION</option>
+
+    <option value="">DEP DIRECTOR FINANCE</option>
+
+    <option value="">DEP DIRECTOR PROP MGT</option>
+
+    <option value="">DEP DIRECTOR RECREATION</option>
+
+    <option value="">DEP DIRECTOR SAFETY &amp; PERMITS</option>
+
+    <option value="">DEP DIRECTOR UTILITIES</option>
+
+    <option value="">DEP DIR FRENCH MARKET CORP</option>
+
+    <option value="">DEPUTY CHIEF INFO OFFICER</option>
+
+    <option value="">DEPUTY DIRECTOR OF AVIATION</option>
+
+    <option value="">DEPUTY DIRECTOR OF RECOVERY</option>
+
+    <option value="">DEPUTY EXECUTIVE ASST HOUSING</option>
+
+    <option value="">DEPUTY FIRE CHIEF</option>
+
+    <option value="">DEPUTY POLICE MONITOR</option>
+
+    <option value="">DIRECTOR ADMINISTRATIVE SUPPRT</option>
+
+    <option value="">DIRECTOR FRENCH MARKET CORP</option>
+
+    <option value="">DIRECTOR OF AVIATION</option>
+
+    <option value="">DIRECTOR OF CAPITAL PROJECTS</option>
+
+    <option value="">DIRECTOR OF CODE ENFORCEMENT</option>
+
+    <option value="">DIRECTOR OF FINANCE</option>
+
+    <option value="">DIRECTOR OF HEALTH</option>
+
+    <option value="">DIRECTOR OF MANPOWER</option>
+
+    <option value="">DIRECTOR OF PARKS &amp; PARKWAYS</option>
+
+    <option value="">DIRECTOR OF PLANNING</option>
+
+    <option value="">DIRECTOR OF PROPERTY MGT</option>
+
+    <option value="">DIRECTOR OF PUBLIC WORKS</option>
+
+    <option value="">DIRECTOR OF RECREATION</option>
+
+    <option value="">DIRECTOR OF SAFETY &amp; PERMITS</option>
+
+    <option value="">DIRECTOR OF SANITATION</option>
+
+    <option value="">DIR OF RIVERGATE DEVELOPMENT C</option>
+
+    <option value="">DIR VIEUX CARRE COMMISSION</option>
+
+    <option value="">DOCUMENTATION MANAGER</option>
+
+    <option value="">DOCUMENTATION SUPPORT SPEC I</option>
+
+    <option value="">DOCUMENTATION SUPPORT SPEC II</option>
+
+    <option value="">DOCUMENTATION SUPPORT SPEC III</option>
+
+    <option value="">DPTY DIR RIVERGATE DEVELOPMENT</option>
+
+    <option value="">DPW COMMUNITY OUTREACH SPEC</option>
+
+    <option value="">DPW CONSTRUCTION PROJ ADM</option>
+
+    <option value="">DPW CONSTRUCTION PROJ MGR</option>
+
+    <option value="">DPW GEOGRAPHIC INFO SYS</option>
+
+    <option value="">DPW PROJECT CONTROL MANAGER</option>
+
+    <option value="">DWI CLERK, TRAFFIC COURT</option>
+
+    <option value="">ELECTRICAL INSPECTOR</option>
+
+    <option value="">ELECTRICAL INSPECTOR II</option>
+
+    <option value="">ELECTRICAL INSPECTOR III</option>
+
+    <option value="">ELECTRICIAN</option>
+
+    <option value="">ELECTRONICS TECHNICIAN SUPV</option>
+
+    <option value="">EMERGENCY MANAGEMENT COORD</option>
+
+    <option value="">EMERGENCY MED CORD</option>
+
+    <option value="">EMERGENCY MED CORD ASST</option>
+
+    <option value="">EMERGENCY MEDICAL SERVICES,DIR</option>
+
+    <option value="">EMERGENCY MED TECH BASIC</option>
+
+    <option value="">EMERGENCY MED TECH PARAMEDIC</option>
+
+    <option value="">EMERGENCY MGT SERVICES COORDIN</option>
+
+    <option value="">EMS, DEPUTY DIRECTOR</option>
+
+    <option value="">ENGINEERING DIVISION MANAGER</option>
+
+    <option value="">ENGINEER IN TRAINING I</option>
+
+    <option value="">ENGINEER IN TRAINING II</option>
+
+    <option value="">ENTOMOLOGIST I</option>
+
+    <option value="">EQUIPMENT OPERATOR I</option>
+
+    <option value="">EQUIPMENT OPERATOR II</option>
+
+    <option value="">EQUIPMENT OPERATOR III</option>
+
+    <option value="">EX DIR COMM REL POL MONITOR</option>
+
+    <option value="">EX DIRECTOR OF ETHICS RV BD</option>
+
+    <option value="">EXECUTIVE ASSISTANT</option>
+
+    <option value="">EXECUTIVE ASSISTANT TO MAYOR</option>
+
+    <option value="">EXECUTIVE ASST TO THE MAYOR</option>
+
+    <option value="">EXECUTIVE COUNSEL TO THE MAYOR</option>
+
+    <option value="">EXECUTIVE DIR MU YAHCT HARBOR</option>
+
+    <option value="">FACILITIES ENGINEERING SPCL</option>
+
+    <option value="">F ASST IG SCHOL CONTRUCTION</option>
+
+    <option value="">FINANCE OPERATIONS MANAGER</option>
+
+    <option value="">FINANCIAL ANALYST (FEMA/CDBG)</option>
+
+    <option value="">FINANCIAL SERVICES AGENT</option>
+
+    <option value="">FINANCICAL SYSTEMS ADMIN</option>
+
+    <option value="">FIRE ALARM DISPATCHER</option>
+
+    <option value="">FIRE ALARM DISPATCHER RECRUIT</option>
+
+    <option value="">FIRE ALARM SR DISPATCHER</option>
+
+    <option value="">FIRE ALARM SUPERVISOR</option>
+
+    <option value="">FIRE APPARATUS OPERATOR</option>
+
+    <option value="">FIRE CAPTAIN</option>
+
+    <option value="">FIRE DISTRICT CHIEF</option>
+
+    <option value="">FIRE EDUCATION OFFICER</option>
+
+    <option value="">FIREFIGHTER I</option>
+
+    <option value="">FIRE PREVENTION INSPECTOR</option>
+
+    <option value="">FIRE PREVENTION PLAN EXAMINER</option>
+
+    <option value="">FIRE SUPPLY SUPERVISOR</option>
+
+    <option value="">FIRE SUPPLY TECHNICIAN III</option>
+
+    <option value="">FIRST ASST IG FOR I&amp;E</option>
+
+    <option value="">FIRST IG FOR AUDIT AND REVIEW</option>
+
+    <option value="">FIRST IG FOR CRIMINAL INVESTIG</option>
+
+    <option value="">FIRST IG FOR LEGAL AFFAIRS</option>
+
+    <option value="">FLEET MANAGER</option>
+
+    <option value="">FLOODPLAIN PROGRAM MANANGER</option>
+
+    <option value="">FOOD SERVICES WORKER</option>
+
+    <option value="">FORENSIC AUDITOR II (IG)</option>
+
+    <option value="">FORENSIC AUDITOR III (IG)</option>
+
+    <option value="">GARDENER II</option>
+
+    <option value="">GROUNDSKEEPER II</option>
+
+    <option value="">GROUNDSKEEPER III</option>
+
+    <option value="">GROUNDS PATROL OFFICER</option>
+
+    <option value="">HAZARD MITIGATION ADMINISTRATO</option>
+
+    <option value="">HEALTH MANAGER</option>
+
+    <option value="">HEALTH PROJ&amp;PLAN ADMINISTRATOR</option>
+
+    <option value="">HEALTH PROJ&amp;PLAN ANALYST</option>
+
+    <option value="">HEALTH PROJ &amp; PLANNING SR WKR</option>
+
+    <option value="">HEALTH PROJ &amp; PLANNING WORKER</option>
+
+    <option value="">HEALTH PROJ&amp;PLAN SPECIALIST</option>
+
+    <option value="">HEALTH PROJ&amp;PLAN SR ANALYST</option>
+
+    <option value="">HOUSING INSPECTION FIELD SUPV</option>
+
+    <option value="">HVAC MECHANIC</option>
+
+    <option value="">IIIII TELECOMM OPERATOR MANAGER</option>
+
+    <option value="">IIIII TELECOMM OPERATOR SUPERVIS</option>
+
+    <option value="">IIIII TELECOMMUNICATIONS OPERATO</option>
+
+    <option value="">IIIII TELECOM OPERATOR SENIOR</option>
+
+    <option value="">INDEPENDENT POLICE MONITOR</option>
+
+    <option value="">INFO PROCESSING SYSTEM CORD</option>
+
+    <option value="">INFORMATION TECH MANAGER</option>
+
+    <option value="">INFORMATION TECH SPEC I</option>
+
+    <option value="">INFORMATION TECH SPEC II</option>
+
+    <option value="">INFORMATION TECH SPEC III</option>
+
+    <option value="">INFORMATION TECH SUPV</option>
+
+    <option value="">INSPECTOR GENERAL</option>
+
+    <option value="">INSP &amp; EVAL ASSOC (IG)</option>
+
+    <option value="">INSP &amp; EVAL III (IG)</option>
+
+    <option value="">INSTITUTIONAL COUNSELOR II</option>
+
+    <option value="">INSTITUTIONAL COUNSELOR III</option>
+
+    <option value="">INSTITUTIONAL RECREATION SPCL</option>
+
+    <option value="">JUDGE</option>
+
+    <option value="">JUDGE AD HOC</option>
+
+    <option value="">JUDICIAL ADMINISTRATOR</option>
+
+    <option value="">JUDICIAL ADMIN JUVENILE CT</option>
+
+    <option value="">JUNIOR ACCOUNTANT</option>
+
+    <option value="">JUVENILE PROTECTION OFFC I</option>
+
+    <option value="">LABORATORY TECHNICIAN II</option>
+
+    <option value="">LABORER</option>
+
+    <option value="">LABORER WASTE COLLECTOR</option>
+
+    <option value="">LANDSCAPE ARCHITECT</option>
+
+    <option value="">LANDSCAPE ARCHITECT INTERN</option>
+
+    <option value="">LEAD PROGRAMMER ANALYST</option>
+
+    <option value="">LEGAL ADMINISTRATIVE ASSISTANT</option>
+
+    <option value="">LEGAL SECRETARY</option>
+
+    <option value="">LEGISLATIVE AIDE</option>
+
+    <option value="">LEGISLATIVE SERV SPECIALIST</option>
+
+    <option value="">LIBRARIAN I</option>
+
+    <option value="">LIBRARIAN II</option>
+
+    <option value="">LIBRARIAN III</option>
+
+    <option value="">LIBRARY ASSOCIATE I</option>
+
+    <option value="">LIBRARY ASSOCIATE II</option>
+
+    <option value="">LIBRARY ASSOCIATE III</option>
+
+    <option value="">LIBRARY ASSOCIATE IV</option>
+
+    <option value="">LIBRARY BRANCH MANAGER I</option>
+
+    <option value="">LIBRARY BRANCH MANAGER II</option>
+
+    <option value="">LIBRARY BUREAU CHIEF</option>
+
+    <option value="">LIBRARY PAGE</option>
+
+    <option value="">LICENSED PRACTICAL NURSE II</option>
+
+    <option value="">LICENSED PRACTICAL NURSE III</option>
+
+    <option value="">MAINTENANCE ELECTRICIAN</option>
+
+    <option value="">MAINTENANCE ENGINEER</option>
+
+    <option value="">MAINTENANCE WELDER</option>
+
+    <option value="">MAINT WORKER</option>
+
+    <option value="">MANAGEMENT CONSULTANT (FEMA CD</option>
+
+    <option value="">MANAGEMENT DEV ANALYST I</option>
+
+    <option value="">MANAGEMENT DEV ANALYST II</option>
+
+    <option value="">MANAGEMENT DEVELOPMENT ADMIN</option>
+
+    <option value="">MANAGEMENT DEVELOPMENT ASST</option>
+
+    <option value="">MANAGEMENT DEV SPECIALIST I</option>
+
+    <option value="">MANAGEMENT DEV SPECIALIST II</option>
+
+    <option value="">MANAGEMENT DEV SUPERVISOR I</option>
+
+    <option value="">MANAGEMENT DEV SUPERVISOR II</option>
+
+    <option value="">MANAGEMENT SERVICES ADMIN</option>
+
+    <option value="">MANAGEMENT SERVICES SPECIALIST</option>
+
+    <option value="">MANAGMENT SERVICES SUPERVISOR</option>
+
+    <option value="">MARKETING DEVELOPMENT COORD</option>
+
+    <option value="">MAYOR</option>
+
+    <option value="">MAYORAL FELLOW</option>
+
+    <option value="">MECHANICAL EQUIPMENT INSPECTOR</option>
+
+    <option value="">MECH EQUIPMENT INSPECTOR II</option>
+
+    <option value="">MECH EQUIPMENT INSPECTOR III</option>
+
+    <option value="">MEDICAL ATTENDANT</option>
+
+    <option value="">MEDICAL &amp; SOCIAL SERVICES SPCL</option>
+
+    <option value="">MGR RETIREMENT SYSTEM</option>
+
+    <option value="">MINUTE CLERK</option>
+
+    <option value="">MINUTE CLERK MUNICIPAL CT</option>
+
+    <option value="">MOSQUITO CONTROL DIRECTOR</option>
+
+    <option value="">MOSQUITO CTL AVIATION SUPV</option>
+
+    <option value="">MOTOR VEHICLE EXAMINER I</option>
+
+    <option value="">MOTOR VEHICLE EXAMINER II</option>
+
+    <option value="">MUSEUM DIVISION CHIEF</option>
+
+    <option value="">MUSEUM PREPARATOR</option>
+
+    <option value="">OFFICE ASSISTANT</option>
+
+    <option value="">OFFICE ASSISTANT I</option>
+
+    <option value="">OFFICE ASSISTANT II</option>
+
+    <option value="">OFFICE ASSISTANT III</option>
+
+    <option value="">OFFICE ASSISTANT IV</option>
+
+    <option value="">OFFICE ASSISTANT TRAINEE</option>
+
+    <option value="">OFFICE SUPPORT SPECIALIST</option>
+
+    <option value="">PAINTER</option>
+
+    <option value="">PAINTING SUPERVISOR</option>
+
+    <option value="">PARALEGAL</option>
+
+    <option value="">PARKING ADMIN</option>
+
+    <option value="">PARKING CONTROL OFFICER</option>
+
+    <option value="">PARKING CONTROL SUPERVISOR I</option>
+
+    <option value="">PARKING CONTROL SUPERVISOR II</option>
+
+    <option value="">PARKING SECTION MANAGER</option>
+
+    <option value="">PARKWAYS MAINTENANCE SUPV I</option>
+
+    <option value="">PARKWAYS MAINTENANCE SUPV II</option>
+
+    <option value="">PARKWAYS MAINTENANCE SUPV III</option>
+
+    <option value="">PARKWAYS MAINTENANCE SUPV IV</option>
+
+    <option value="">PAYROLL SUPERVISOR</option>
+
+    <option value="">PERSONNEL ADMINISTRATOR</option>
+
+    <option value="">PERSONNEL ADMINISTRATOR, ASST.</option>
+
+    <option value="">PERSONNEL DIRECTOR</option>
+
+    <option value="">PERSONNEL DIVISION CHIEF</option>
+
+    <option value="">PEST CONTRL INSPECTOR II</option>
+
+    <option value="">PEST CONTROL INSPECTOR I</option>
+
+    <option value="">PEST CONTROL INSPECTOR III</option>
+
+    <option value="">PEST CONTROL INSPECTOR IV</option>
+
+    <option value="">PEST CONTROL SPECIALIST I</option>
+
+    <option value="">PEST CONTROL SPECIALIST II</option>
+
+    <option value="">PEST CONTROL SPECIALIST III</option>
+
+    <option value="">PGRM OFF SCHOOL CONSTRUCTION</option>
+
+    <option value="">PHYSICIAN (CORONOR&#39;S PATHO)</option>
+
+    <option value="">PHYSICIAN CP</option>
+
+    <option value="">PLANNER &amp; ESTIMATOR I</option>
+
+    <option value="">PLANNING ADMINISTRATOR</option>
+
+    <option value="">PLANT ATTENDANT</option>
+
+    <option value="">PLANT ENGINEER</option>
+
+    <option value="">PLUMBER</option>
+
+    <option value="">POLICE CAPTAIN</option>
+
+    <option value="">POLICE COMMUNICATIONS SUPV</option>
+
+    <option value="">POLICE COMPLAINT OPERATOR</option>
+
+    <option value="">POLICE DISPATCHER</option>
+
+    <option value="">POLICE DISPATCHER, RECRUIT</option>
+
+    <option value="">POLICE LIEUTENANT</option>
+
+    <option value="">POLICE MAJOR</option>
+
+    <option value="">POLICE OFFICER I</option>
+
+    <option value="">POLICE OFFICER II</option>
+
+    <option value="">POLICE OFFICER III</option>
+
+    <option value="">POLICE OFFICER IV</option>
+
+    <option value="">POLICE RECRUIT ACADEMY</option>
+
+    <option value="">POLICE RECRUIT FIELD</option>
+
+    <option value="">POLICE SERGEANT</option>
+
+    <option value="">POLICE TECHNICAL SPECIALIST</option>
+
+    <option value="">POLICE TECHNICAL SPECIALIST II</option>
+
+    <option value="">POLICE TECHNICIAN I</option>
+
+    <option value="">POLICE TECHNICIAN II</option>
+
+    <option value="">POLICE TECHNICIAN III</option>
+
+    <option value="">POLICE TECHNICIAN, TRAINEE</option>
+
+    <option value="">POLICE TECH SPECIALIST TRAINEE</option>
+
+    <option value="">POL SEC EMPL ADMIN</option>
+
+    <option value="">POL SEC EMPL COORD ANALYST II</option>
+
+    <option value="">POL SEC EMPL MGT SUPERVISOR</option>
+
+    <option value="">PRINCIPAL ACCOUNTANT</option>
+
+    <option value="">PRINCIPAL CITY PLANNER</option>
+
+    <option value="">PRINCIPAL CIVIL ENGINEER</option>
+
+    <option value="">PRINCIPAL CURATOR</option>
+
+    <option value="">PRKWYS MAINTENANCE SECT MGR</option>
+
+    <option value="">PROGRAM COORD RESTITUTION</option>
+
+    <option value="">PROGRAMMER ANALYST</option>
+
+    <option value="">PROGRAM SPECIALIST</option>
+
+    <option value="">PROJECT MANAGER I FEMA/CDBG</option>
+
+    <option value="">PROJECT MANAGER II FEMA/CDBG</option>
+
+    <option value="">PUB HEALTH EDUCATOR</option>
+
+    <option value="">PUB HEALTH NURSING CLINIC SUPV</option>
+
+    <option value="">PUBLIC BUILDINGS ADMIN</option>
+
+    <option value="">PUBLIC HEALTH NURSE II</option>
+
+    <option value="">PUBLIC HEALTH NURSE IV</option>
+
+    <option value="">PUBLIC HEALTH NUTRITIONIST II</option>
+
+    <option value="">PUBLIC INFORMATION OFFICER II</option>
+
+    <option value="">PUBLIC WORKS MNTC SPECIALIST</option>
+
+    <option value="">PUBLIC WORKS MNTC SUP</option>
+
+    <option value="">PUBLIC WORKS MNTC WORKER I</option>
+
+    <option value="">PUBLIC WORKS MNTC WORKER II</option>
+
+    <option value="">PUBLIC WORKS SUPERVISOR I</option>
+
+    <option value="">PUBLIC WORKS SUPERVISOR II</option>
+
+    <option value="">PUBLIC WORKS SUPERVISOR III</option>
+
+    <option value="">PURCHASING ADMINISTRATOR,ASST</option>
+
+    <option value="">PURCHASING AGENT ASST</option>
+
+    <option value="">REAL ESTATE ADMINISTRATOR</option>
+
+    <option value="">REAL ESTATE MANAGER</option>
+
+    <option value="">RECREATION CENTER MANAGER I</option>
+
+    <option value="">RECREATION CENTER MANAGER III</option>
+
+    <option value="">RECREATION COORDINATOR I</option>
+
+    <option value="">RECREATION COORDINATOR II</option>
+
+    <option value="">RECREATION LEADER ASST</option>
+
+    <option value="">RECREATION SUPERVISOR</option>
+
+    <option value="">RESEARCH ENTOMOLOGIST</option>
+
+    <option value="">REVENUE COLLECTION SUPERVISOR</option>
+
+    <option value="">REVENUE COLLECTOR</option>
+
+    <option value="">REVENUE COLLECTOR ASST</option>
+
+    <option value="">SECRETARY</option>
+
+    <option value="">SECRETARY FINANCE</option>
+
+    <option value="">SECRETARY FIRE</option>
+
+    <option value="">SECRETARY I</option>
+
+    <option value="">SECRETARY (MUNICIPAL COURT)</option>
+
+    <option value="">SECRETARY SAFETY &amp; PERMITS</option>
+
+    <option value="">SECRETARY (TRAFFIC COURT)</option>
+
+    <option value="">SECURITY MANANGER</option>
+
+    <option value="">SECURITY SUPERVISOR</option>
+
+    <option value="">SENIOR AUDITOR</option>
+
+    <option value="">SENIOR BUILDING INSPECTOR</option>
+
+    <option value="">SENIOR BUILDING PLAN EXAMINER</option>
+
+    <option value="">SENIOR ELECTRICAL INSPECTOR</option>
+
+    <option value="">SENIOR ELECTRONICS TECHNICIAN</option>
+
+    <option value="">SENIOR EQIUP &amp; SERV DISPATCHER</option>
+
+    <option value="">SENIOR LIFEGUARD</option>
+
+    <option value="">SENIOR MAINTENANCE WELDER</option>
+
+    <option value="">SENIOR PARKING CONTROL OFFICER</option>
+
+    <option value="">SENIOR POLICE DISPATCHER</option>
+
+    <option value="">SENIOR PROGRAMMER ANALYST</option>
+
+    <option value="">SENIOR REAL ESTATE MANAGER</option>
+
+    <option value="">SENIOR SYTEMS APPLIC OPERATOR</option>
+
+    <option value="">SENIOR WELDER</option>
+
+    <option value="">SHEET METAL WORKER</option>
+
+    <option value="">SIGN PAINTER</option>
+
+    <option value="">SOCIAL SERVICES COORDINATOR</option>
+
+    <option value="">SOCIAL SERVICES SPECIALIST</option>
+
+    <option value="">SOCIAL WORKER III</option>
+
+    <option value="">SPECIAL INVESTIGATOR</option>
+
+    <option value="">SR AIRPORT COMMUNICATION SPCL</option>
+
+    <option value="">SR ARCHITECT</option>
+
+    <option value="">SR ARCHITECTURAL HISTORIAN</option>
+
+    <option value="">SR AUTO FACILITY SPECIALIST</option>
+
+    <option value="">SR CHIEF DEP CITY ATTORNEY</option>
+
+    <option value="">SR CITY PLANNER</option>
+
+    <option value="">SR COURT PROBATION OFFICER</option>
+
+    <option value="">SR FIRE PREVENTION INSPECTOR</option>
+
+    <option value="">SR FOOD SERVICES WORKER</option>
+
+    <option value="">SR MAINT WORKER</option>
+
+    <option value="">SR MECH EQUIPMENT INSPECTOR</option>
+
+    <option value="">SR MUSEUM PROTECTION OFFICER</option>
+
+    <option value="">SR OFFICE ASSISTANT</option>
+
+    <option value="">SR OFFICE SUPPORT SPECIALIST</option>
+
+    <option value="">SR REVENUE FIELD AGENT</option>
+
+    <option value="">SR TAXICAB INVESTIGATOR</option>
+
+    <option value="">SR URBAN REHABILITATION SPCL</option>
+
+    <option value="">STABLE ATTENDANT</option>
+
+    <option value="">SUPERINTENDENT OF FIRE</option>
+
+    <option value="">SUPERINTENDENT OF POLICE</option>
+
+    <option value="">TAX COLLECTION SPECIALIST I</option>
+
+    <option value="">TAX COLLECTION SPECIALIST II</option>
+
+    <option value="">TAX COLLECTION SUPERVISOR</option>
+
+    <option value="">TAXICAB INVESTIGATOR</option>
+
+    <option value="">TECHNICAL SERVICES SUPERVISOR</option>
+
+    <option value="">TECHNICAL SPECIALIST</option>
+
+    <option value="">TITLE ABSTRACTOR I</option>
+
+    <option value="">TRAFFIC COURT CASHIER SUPERVIS</option>
+
+    <option value="">TRAFFIC/MUNICIPAL ATTORNEY</option>
+
+    <option value="">TRAFFIC SIGNAL SPECIALIST</option>
+
+    <option value="">TRAFFIC SIGNAL TECHNICIAN I</option>
+
+    <option value="">TRAFFIC SIGN SUPV</option>
+
+    <option value="">TRAFFIC SIGN TECH</option>
+
+    <option value="">TREASURY BUREAU CHIEF</option>
+
+    <option value="">TREASURY BUREAU CHIEF ASST</option>
+
+    <option value="">URBAN POLICY SPECIALIST ASST</option>
+
+    <option value="">URBAN POLICY SPECIALIST I</option>
+
+    <option value="">URBAN POLICY SPECIALIST II</option>
+
+    <option value="">URBAN POLICY SPECIALIST III</option>
+
+    <option value="">URBAN POLICY SPECIALIST IV</option>
+
+    <option value="">URBAN POLICY SPECIALIST V</option>
+
+    <option value="">URBAN REHABILITATION SPCL</option>
+
+    <option value="">URBAN REHABILITATION SUPV</option>
+
+    <option value="">WORKSHOP SUPERVISOR</option>
+
+    <option value="">ZONING ADMINISTRATOR</option>
+
+    <option value="">ZONING ADMINISTRATOR ASSISTANT</option>
+
+</select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <div id="ui_components">
+        <a href="#" class="small button" id="searchButton">Search</a>
+        <div id="results_status"></div>
+        </div>
+      </div>
+    </div>
+
+        <div class="row">
+          <div class="large-12 medium-12 small-12 columns">
+            
+<table id="myTable" class="tablesorter">
+  <thead id="thead">
+    <tr>
+      <th width="20%">First</th>
+      <th width="20%">Last</th>
+      <th width="20%">Department</th>
+      <th width="20%">Position</th>
+      <th width="20%">Salary</th>
+    </tr>
+  </thead>
+  <div id="tbody_div">
+  <tbody id="tbody">
+    
+  </tbody>
+  </div>
+</table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+        <div class="row">
+          <div class="large-12 columns">
+<div class="panel">
+<div class="footnote">
+Source: Orleans Parish Personnel Department. Information current as of May 3, 2014.
+</div>
+
+<div class="footnote">
+Footnotes and caveats: An employee's annual salary does not include additional money that the employee may earn for overtime work. However, it might include longevity pay, temporary pay or special rates of pay.
+</div>
+
+<div class="footnote">
+The data only includes full-time employees in the city's payroll system.
+</div>
+
+<div class="footnote">
+The app cites position names as listed in city payroll records. In some cases (for instance, in the case of some mayoral appointees) employees may have different job titles than those listed in the app. <a href='http://thelensnola.org/2014/07/22/with-new-tool-the-lens-makes-it-easy-to-find-out-how-much-city-employees-are-paid/'>Learn more about how these figures were calculated</a>.
+</div>
+
+</div>
+      </div>
+    </div>
+
+
+<script type="text/javascript" src='https://s3-us-west-2.amazonaws.com/lensnola/city+salaries/js/jquery-1.11.0.min.js'></script>
+<script type="text/javascript" src='https://s3-us-west-2.amazonaws.com/lensnola/city+salaries/js/jquery.tablesorter.js'></script>
+<script type="text/javascript" src='https://s3-us-west-2.amazonaws.com/lensnola/city+salaries/js/chosen.jquery.min.js'></script>
+<script type="text/javascript" src='https://s3-us-west-2.amazonaws.com/lensnola/city+salaries/js/foundation.min.js'></script>
+
+<script type="text/javascript" src='js/city_salaries.js'></script>
+<script type="text/javascript" src="jquery.csv-0.71.min.js"></script>
+
+<script>
+
+    function process(data){
+        window.salaries = $.csv.toObjects(data);
+    }
+
+      $(document).foundation();
+      $(document).ready(function() {
+      $.ajax({
+        type: "GET",
+        url: "https://s3-us-west-2.amazonaws.com/lensnola/city+salaries/data/sals.csv",
+        dataType: "text",
+        success: function(data) {process(data)}
+        });
+      });
+</script>
