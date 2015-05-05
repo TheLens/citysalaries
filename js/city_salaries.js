@@ -35,9 +35,31 @@ function process_request(request){
 }
 
 
+//to do: template engine
+function get_row(item){
+  return '<tr data-total="16" data-page="0">\
+    <td class="first">' + item['first'].toUpperCase() + '</td>\
+    <td class="last">' + item['last'].toUpperCase() + '</td>\
+    <td class="department">' + item['department'].toUpperCase() + '</td>\
+    <td class="title">'+ item['department'].toUpperCase() +'</td>\
+    <td id="1" class="salary">'+ item['salary'].toUpperCase() +'</td>\
+  </tr>'
+}
+
+
 function reformat(id) {
     var newval = "$" + (Number($(id).html()).formatMoney(2, '.', ','));
     $(id).html(newval);
+}
+
+
+function get_rows(results){
+    output = "";
+    for (var i = 0; i < results.length; i++) {
+        var row = get_row(results[i]);
+        output += row
+    }
+    return output;
 }
 
 function loadTable() {
@@ -51,34 +73,14 @@ function loadTable() {
     $("#tbody").html("");
     var html = $("#myTable").html();
     $("#results_status").html("Searching...");
-    results = process_request(data);
-    if (results.length == 0){
-        $("#results_status").html(s);
-    }
-/**    $.post("citysalaries/search", request, function(s) {
-//        if (s == "No results found") {
-//           $("#results_status").html(s);
-//        } else {
-            $("#myTable").tablesorter();
-            $("#tbody").html(s);
-            // let the plugin know that we made a update 
-            $("#myTable").trigger("update");
-            var found;
-            if ($(window).width() > 500) {
-                found = $("#tbody tr").first().attr("data-total");
-            } else {
-                found = $("#tbody .tablerow").length;
-            }
-
-            $("#results_status").html(found + " results found");
+    var results = process_request(data);
+    var new_rows = get_rows(results);
+    $("#tbody").html(new_rows);
+    $("#myTable").trigger("update");
+    $("#results_status").html(results.length + " results found");
             $.each($(".salary"), function(index, val) {
                 reformat("#" + (index + 1));
-            });
-            var tblwidth = $("#myTable").width();
-            var rowidth = $($(".row")[0]).width();
-        }
     });
-**/
 }
 
 function adjustWidth() {
