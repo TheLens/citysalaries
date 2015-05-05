@@ -16,15 +16,22 @@ function process_request(request){
     var result = {}, key;
 
     var output = window.salaries; //start assuming any can be returned
-
-    for (key in request) {
     
-        if (request.hasOwnProperty(key) && !predicate(request[key])) {
-            result[key] = obj[key];
-        }
+    if (request['department']!=""){
+        output = _.filter(output, function(item){ return item['department'] == request['department']; });
     }
 
-    return result;
+    if (request['position']!=""){
+        output = _.filter(output, function(item){ return item['position'] == request['position']; });
+    }
+
+    if (request['name']!=""){
+        output = _.filter(output, function(item){ return item['first'].toUpperCase().indexOf(request['name'].toUpperCase()) != -1 || 
+                                                         item['last'].toUpperCase().indexOf(request['name'].toUpperCase()) != -1 });
+    }
+
+    return output;
+
 }
 
 
@@ -44,7 +51,10 @@ function loadTable() {
     $("#tbody").html("");
     var html = $("#myTable").html();
     $("#results_status").html("Searching...");
-    process_request(data);
+    results = process_request(data);
+    if (results.length == 0){
+        $("#results_status").html(s);
+    }
 /**    $.post("citysalaries/search", request, function(s) {
 //        if (s == "No results found") {
 //           $("#results_status").html(s);
