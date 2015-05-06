@@ -11,17 +11,45 @@ Number.prototype.formatMoney = function(c, d, t) {
 };
 
 
+function add_departments(data){
+   var departments = data.split("\n");
+   $( "#departments" ).autocomplete({
+      source: departments
+    });
+}
+
+function add_positions(data){
+   var positions = data.split("\n");
+   $( "#positions" ).autocomplete({
+      source: positions
+    });
+}
+
+$.get('txt/departments.txt', function(data) {
+   add_departments(data)
+}, 'text');
+
+$.get('txt/positions.txt', function(data) {
+   add_positions(data)
+}, 'text');
+
+
+var PAGE_LENGTH = 20; //20 results per page
+
 function process_request(request){
 
     var result = {}, key;
 
-    var output = window.salaries; //start assuming any can be returned
-    
-    if (request['department']!="" && request['department']!="ALL"){
+    var output = window.salaries; //start by assuming all values can be returned, then filter down
+
+    if (request['department']!="" && request['department']!="ALL" && request['department']!="FIRE: ALL" && request['department']!="POLICE: ALL"){
         output = _.filter(output, function(item){ return item['department'] == request['department']; });
+    } else if (request['department']=="FIRE: ALL" || request['department']=="POLICE: ALL") { //to return all police or all fire
+        var temp_department = request['department'].replace(': ALL','');  //replace :ALL
+        output = _.filter(output, function(item){ return item['department'].indexOf(temp_department.toUpperCase()) != -1; });   
     }
 
-    if (request['position']!="" && request['department']!="ALL"){
+    if (request['position']!="" && request['position']!="ALL"){
         output = _.filter(output, function(item){ return item['position'] == request['position']; });
     }
 
@@ -37,7 +65,9 @@ function process_request(request){
 
 //to do: template engine
 function get_row(item, id){
-
+    if (typeof item == 'undefined') {
+        return ""; //row is blank. can't "render" row
+    }
     if ($(window).width() > 500) {
           return '<tr data-total="16" data-page="0">\
           <td class="first">' + item['first'].toUpperCase() + '</td>\
@@ -52,8 +82,6 @@ function get_row(item, id){
            <div class="detailsrow"><span class="department">' + item['department'].toUpperCase() + ' | </span><span class="title">'+ item['position'].toUpperCase() +'</span></div>\
            <div><span id="'+ id + '" class="salary">'+ item['salary'].toUpperCase() +'</span></div></div>';
     }
-
-
 }
 
 
@@ -63,12 +91,17 @@ function reformat(id) {
 }
 
 
-function get_rows(results){
+function get_rows(results, page){
     output = "";
-    for (var i = 0; i < results.length; i++) {
+    var offset = page - 1;
+    if (offset < 0){
+        offset = 0;
+    }
+    for (var i = offset * PAGE_LENGTH; i < PAGE_LENGTH; i++) {
         var row = get_row(results[i], i);
         output += row
     }
+
     return output;
 }
 
@@ -76,20 +109,24 @@ function loadTable() {
     $("#results_status").html('');
     var name = encodeURIComponent($('#namebox').val());
     var data = {};
-    data['department'] = $('#department :selected').first().text();
-    data['position'] =$('#position :selected').first().text();
+    data['department'] = $('#departments').val();
+    data['position'] = $('#positions').val();
     data['name'] = name;
     data['page'] = 1;
     $("#tbody").html("");
     var html = $("#myTable").html();
     $("#results_status").html("Searching...");
     var results = process_request(data);
-    var new_rows = get_rows(results);
+    var page = 1;
+    var new_rows = get_rows(results, page);
     $("#tbody").html(new_rows);
     $("#myTable").trigger("update");
+    if (results.length > 20){
+        $("#tbody_div").append('<div><a id="previous">Previous</a> | <a id="next">Next</a></div>');
+    }
     $("#results_status").html(results.length + " results found");
     $.each($(".salary"), function(index, val) {
-        reformat("#" + (index + 1));
+        reformat("#" + (index));
     });
 }
 
