@@ -1,0 +1,118 @@
+
+input[type="input"]:active
+{
+	border: 1px solid #5897fb;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.footnote{
+	padding: 4px;
+}
+
+.tablerow {
+border-bottom: 1px solid gray;
+padding-top: 7px;
+padding-bottom: 7px;
+}
+
+.row{
+  height: 10%;
+  max-height:50px;
+}
+
+div#results_status {
+font-style: italic;
+}
+
+div.detailsrow {
+font-size: .8em;
+}
+
+input {
+min-height: 40px;
+}
+
+.namerow{
+font-weight: bold;
+}
+
+div#department_chosen {
+width: 100% !important;
+}
+
+input{
+text-transform: uppercase; 
+}
+
+div#ui_components {
+	float: right;
+}
+
+input[type="search"]{
+border: 1px solid #aaa!important;
+}
+
+::-webkit-input-placeholder {
+   color: rgba(0, 0, 0, 0.75);
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: rgba(0, 0, 0, 0.75);
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: rgba(0, 0, 0, 0.75);
+}
+
+:-ms-input-placeholder {  
+   color: rgba(0, 0, 0, 0.75);
+}
+
+div#position_chosen {
+width: 100% !important;
+}
+
+input[type="text"]{
+border: 1px solid #aaa !important;
+}
+
+div#position{
+width: 100% !important;
+}
+
+ul.chosen-choices {
+min-height: 36px;
+}
+
+input.default {
+min-height: 36px;
+}
+
+.lensinput{
+/* all */
+-webkit-input-placeholder { color:#f00; }
+-moz-placeholder { color:#f00; } /* firefox 19+ */
+-ms-input-placeholder { color:#f00; } /* ie */
+input:-moz-placeholder { color:#f00; }
+
+}
+
+label {
+  font-style: italic;
+}
+
+a{
+  color:#B43018;
+}
+
+a:hover{
+  color:black;
+}
+
+div#ui_components {
+  padding-top: 10px;
+}
+
+input#departments {
+  margin-bottom: 7px;
+}
