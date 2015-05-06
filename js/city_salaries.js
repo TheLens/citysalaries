@@ -35,6 +35,8 @@ $.get('txt/positions.txt', function(data) {
 
 
 var PAGE_LENGTH = 20; //20 results per page
+var page = 1;
+
 
 function process_request(request){
 
@@ -97,13 +99,14 @@ function get_rows(results, page){
     if (offset < 0){
         offset = 0;
     }
-    for (var i = offset * PAGE_LENGTH; i < PAGE_LENGTH; i++) {
+    for (var i = offset * PAGE_LENGTH; i < offset * PAGE_LENGTH + PAGE_LENGTH; i++) {
         var row = get_row(results[i], i);
         output += row
     }
 
     return output;
 }
+
 
 function loadTable() {
     $("#results_status").html('');
@@ -117,14 +120,30 @@ function loadTable() {
     var html = $("#myTable").html();
     $("#results_status").html("Searching...");
     var results = process_request(data);
-    var page = 1;
     var new_rows = get_rows(results, page);
     $("#tbody").html(new_rows);
     $("#myTable").trigger("update");
-    if (results.length > 20){
-        $("#tbody_div").append('<div><a id="previous">Previous</a> | <a id="next">Next</a></div>');
+    if (results.length > 20 && !$("#nextprev").length !=0){
+        $("#tbody_div").append('<div id="nextprev"><a id="previous">Previous</a> | <a id="next">Next</a></div>');
+        $("#next").on("click", function() {
+           page = page + 1;
+           loadTable();
+        });
+
+       $("#previous").on("click", function() {
+           page = page -1;
+           if (page < 1){
+              page = 1;
+           }
+           loadTable();
+        });
     }
-    $("#results_status").html(results.length + " results found");
+    var results_status = results.length + " results found";
+    var pages = Math.floor(results.length / PAGE_LENGTH);
+    if (results.length > 20){
+        results_status = results_status + " | page " + page + " of " + pages;
+    }
+    $("#results_status").html(results_status);
     $.each($(".salary"), function(index, val) {
         reformat("#" + (index));
     });
@@ -169,6 +188,8 @@ $(document).ready(function() {
     adjustWidth();
 
     $("#searchButton").on("click", function() {
+        page = 1; //reset page to page 1 for new search
         loadTable();
     });
+
 });
