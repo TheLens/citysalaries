@@ -120,6 +120,10 @@ function loadTable() {
     var html = $("#myTable").html();
     $("#results_status").html("Searching...");
     var results = process_request(data);
+    var pages = Math.ceil(results.length / PAGE_LENGTH);
+    if (page > pages){
+      page = pages;
+    }
     var new_rows = get_rows(results, page);
     $("#tbody").html(new_rows);
     $("#myTable").trigger("update");
@@ -139,7 +143,6 @@ function loadTable() {
         });
     }
     var results_status = results.length + " results found";
-    var pages = Math.floor(results.length / PAGE_LENGTH);
     if (results.length > 20){
         results_status = results_status + " | page " + page + " of " + pages;
     }
