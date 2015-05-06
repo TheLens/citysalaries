@@ -3,7 +3,6 @@
 <title>Salary Lookup</title>
 <link rel="stylesheet" href='https://s3-us-west-2.amazonaws.com/lensnola/city+salaries/css/style.css' media="screen" charset="utf-8">
 <link rel="stylesheet" href='https://s3-us-west-2.amazonaws.com/lensnola/city+salaries/css/chosen.css' media="screen" charset="utf-8">
-<link rel="stylesheet" href='https://s3-us-west-2.amazonaws.com/lensnola/city+salaries/css/chosen.css' media="screen" charset="utf-8">
 <link rel="stylesheet" href='https://s3-us-west-2.amazonaws.com/lensnola/city+salaries/css/foundation.css' media="screen" charset="utf-8">
 <link rel="stylesheet" href='https://s3-us-west-2.amazonaws.com/lensnola/city+salaries/css/lens.css' media="screen" charset="utf-8">
 
@@ -16,7 +15,10 @@
    
     <div class="row">
       <div class="large-12 medium-12 columns">
-<select type="text" id="department" data-placeholder="Department (Example: Municipal Court)" multiple class="chosen-select" class="lensinput">
+      <label>Department (Example: Municipal Court)</label>
+<select type="text" id="department" data-placeholder="Department (Example: Municipal Court)">
+    
+    <option value="">ALL</option>
 
     <option value="">311 CALL CENTER OPERATIONS</option>
 
@@ -480,7 +482,10 @@
 
     <div class="row">
       <div class="large-12 medium-12 small-12 columns">
-<select type="text" id="position" data-placeholder="Position (Example: Police Officer 1)" multiple class="chosen-select" class="lensinput">
+      <label>Position (Example: Police Officer 1)</label>
+<select type="text" id="position" data-placeholder="Position (Example: Police Officer 1)">
+  
+    <option value="">ALL</option>
 
     <option value="">ACCOUNTANT</option>
 
@@ -1556,9 +1561,14 @@ The app cites position names as listed in city payroll records. In some cases (f
 <script type="text/javascript" src='https://s3-us-west-2.amazonaws.com/lensnola/city+salaries/js/chosen.jquery.min.js'></script>
 <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js'></script>
 <script type="text/javascript" src='https://s3-us-west-2.amazonaws.com/lensnola/city+salaries/js/foundation.min.js'></script>
-
 <script type="text/javascript" src='js/city_salaries.js'></script>
 <script type="text/javascript" src="jquery.csv-0.71.min.js"></script>
+
+<style type="text/css">
+  label {
+    font-style: italic;
+  }
+</style>
 
 <script>
 
@@ -1575,4 +1585,6 @@ The app cites position names as listed in city payroll records. In some cases (f
         success: function(data) {process(data)}
         });
       });
+
+    $(document).foundation();
 </script>

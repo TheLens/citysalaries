@@ -17,11 +17,11 @@ function process_request(request){
 
     var output = window.salaries; //start assuming any can be returned
     
-    if (request['department']!=""){
+    if (request['department']!="" && request['department']!="ALL"){
         output = _.filter(output, function(item){ return item['department'] == request['department']; });
     }
 
-    if (request['position']!=""){
+    if (request['position']!="" && request['department']!="ALL"){
         output = _.filter(output, function(item){ return item['position'] == request['position']; });
     }
 
@@ -36,14 +36,24 @@ function process_request(request){
 
 
 //to do: template engine
-function get_row(item){
-  return '<tr data-total="16" data-page="0">\
-    <td class="first">' + item['first'].toUpperCase() + '</td>\
-    <td class="last">' + item['last'].toUpperCase() + '</td>\
-    <td class="department">' + item['department'].toUpperCase() + '</td>\
-    <td class="title">'+ item['department'].toUpperCase() +'</td>\
-    <td id="1" class="salary">'+ item['salary'].toUpperCase() +'</td>\
-  </tr>'
+function get_row(item, id){
+
+    if ($(window).width() > 500) {
+          return '<tr data-total="16" data-page="0">\
+          <td class="first">' + item['first'].toUpperCase() + '</td>\
+          <td class="last">' + item['last'].toUpperCase() + '</td>\
+          <td class="department">' + item['department'].toUpperCase() + '</td>\
+          <td class="title">'+ item['position'].toUpperCase() +'</td>\
+          <td id="'+ id + '" class="salary">'+ item['salary'].toUpperCase() +'</td></tr>';
+    } else {
+          $("#thead").remove(); // not in table mode
+          return '<div class="tablerow">\
+           <div class="namerow"><span class="first">' + item['last'].toUpperCase() + '</span> <span class="last">'+ item['first'].toUpperCase() + '</span></div>\
+           <div class="detailsrow"><span class="department">' + item['department'].toUpperCase() + ' | </span><span class="title">'+ item['position'].toUpperCase() +'</span></div>\
+           <div><span id="'+ id + '" class="salary">'+ item['salary'].toUpperCase() +'</span></div></div>';
+    }
+
+
 }
 
 
@@ -56,7 +66,7 @@ function reformat(id) {
 function get_rows(results){
     output = "";
     for (var i = 0; i < results.length; i++) {
-        var row = get_row(results[i]);
+        var row = get_row(results[i], i);
         output += row
     }
     return output;
@@ -78,8 +88,8 @@ function loadTable() {
     $("#tbody").html(new_rows);
     $("#myTable").trigger("update");
     $("#results_status").html(results.length + " results found");
-            $.each($(".salary"), function(index, val) {
-                reformat("#" + (index + 1));
+    $.each($(".salary"), function(index, val) {
+        reformat("#" + (index + 1));
     });
 }
 
