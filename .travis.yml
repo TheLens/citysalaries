@@ -3,7 +3,7 @@ sudo: false
 python:
 - '2.7'
 script:
-- echo 'hi'
+- rm README.md
 deploy:
   provider: s3
   access_key_id: AKIAIWQKYAETOQ2N7CBQ
