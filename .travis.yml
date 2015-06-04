@@ -2,6 +2,8 @@ language: python
 sudo: false
 python:
 - '2.7'
+script:
+- echo 'hi'
 deploy:
   provider: s3
   access_key_id: AKIAIWQKYAETOQ2N7CBQ
