@@ -35,6 +35,10 @@ Property sales styles
   font-size: .8em;
 }
 
+.tablesorter {
+  display: none;
+}
+
 .ui-components {
   padding-top: 10px;
 }

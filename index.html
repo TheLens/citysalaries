@@ -13,13 +13,13 @@
     <script type="text/javascript" src="//use.typekit.net/oct0mkd.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
-    <link rel="stylesheet" href='https://s3-us-west-2.amazonaws.com/lensnola/external-libraries/css/chosen.min.css' media="screen" charset="utf-8">
+    <link rel="stylesheet" href='https://s3-us-west-2.amazonaws.com/lensnola/external-libraries/css/chosen.min.css'>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.4.5/css/foundation.min.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 
-    <link rel="stylesheet" href='css/lens.css' media="screen" charset="utf-8">
-    <link rel="stylesheet" href='css/city-salaries.css' media="screen" charset="utf-8">
+    <link rel="stylesheet" href='css/lens.css'>
+    <link rel="stylesheet" href='css/city-salaries.css'>
   </head>
   <body>
 
@@ -63,7 +63,7 @@
 
     <div class="row">
       <div class="small-12 columns">
-        <table id="myTable" class="tablesorter">
+        <table id="table" class="tablesorter">
           <thead id="thead">
             <tr>
               <th width="20%">First</th>
@@ -73,9 +73,7 @@
               <th width="20%">Salary</th>
             </tr>
           </thead>
-          <div id="tbody-div">
-            <tbody id="tbody"></tbody>
-          </div>
+          <tbody id="tbody"></tbody>
         </table>
         </div>
       </div>
@@ -94,13 +92,16 @@
       <div class="small-12 columns">
         <div class="panel">
           <p>
-            Source: City of New Orleans, Civil Service Department. This information was released under the Louisiana Public Records Act and is current as of May 21, 2015.
+            Source: New Orleans Civil Service Department. This information was released under the Louisiana Public Records Act and is current as of May 21, 2015.
           </p>
           <p>
-            Note: An employee's annual salary is the budgeted amount, and therefore does not include additional money such as overtime pay. However, it might include longevity pay, temporary pay or special rates of pay.
+            Note: An employee's annual salary is the budgeted amount, and therefore does not include additional money such as overtime pay. However, it might include longevity pay, temporary pay, supplemental pay or special rates of pay. View the city's <a href="TODO: Dummy link until we get the document and upload to DocumentCloud" target="_blank">pay plan</a> for more information about these types of income.
           </p>
           <p>
             The data only includes full-time employees in the city's payroll system (?).
+          </p>
+          <p>
+            This cites position names as listed in city's payroll records. In some cases, employees may have different job titles than those listed here, such as some mayoral appointees.
           </p>
           <p>
             <a href='http://thelensnola.org/2014/07/22/with-new-tool-the-lens-makes-it-easy-to-find-out-how-much-city-employees-are-paid/'>Learn more about how these figures were calculated</a>.

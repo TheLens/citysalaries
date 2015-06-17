@@ -190,12 +190,12 @@ function getRows(results, page){
 //   if ($(window).width() < 500) {
 //     console.log('if');
 //     //$("#thead").hide();
-//     //$("#myTable").css("border-color", "white");
+//     //$("#table").css("border-color", "white");
 //     //$("table.tablesorter").css('font-size', '1em');
 //   } else {
 //     console.log('else');
 //     //$("#thead").show();
-//     //$("#myTable").css("border-color", "#dddddd");
+//     //$("#table").css("border-color", "#dddddd");
 //   }
 // }
 
@@ -239,7 +239,9 @@ function loadTable() {
   // $("#results-status").html('');
   // $("#results-status").html("Searching...");
   // $("#tbody").html("");
-  // var html = $("#myTable").html();
+  // var html = $("#table").html();
+
+  $('.tablesorter').css({'display': 'block'});
 
   var data = {};
   data['name'] = $('#employees').val(); // encodeURIComponent();
@@ -259,7 +261,7 @@ function loadTable() {
   var new_rows = getRows(results, page);
 
   $("#tbody").html(new_rows);
-  $("#myTable").trigger("update");
+  $("#table").trigger("update");
 
   var condition = (
     results.length > page_length// &&
@@ -311,7 +313,9 @@ $(document).ready(function() {
   });
 
   $(function() {
-    $("#myTable").tablesorter();
+    $("#table").tablesorter({
+      widgets: ['zebra']
+    });
   });
 
   $(".next").on("click", function() {
