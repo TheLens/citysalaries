@@ -34,11 +34,9 @@ Table of contents
 
  *************/
 
-/*************
-
+/***************
 1. CSS overrides
-
-*************/
+****************/
 
 a, a:focus, a:visited, a:active {
     color: #B43018;
@@ -48,23 +46,17 @@ a:hover {
     color: #000;
 }
 
-/*
- * Misc.
- */
+/* Misc. */
 .map-button {
     vertical-align: baseline;
     font-family: "news-gothic-std", Helvetica, Arial, sans-serif;
 }
 
-/*************
-
+/*****************
 2. The Lens styles
+******************/
 
-*************/
-
-/*
- * Buttons
- */
+/* Buttons */
 button.button {
     background-color: #B33125;
 }
@@ -80,9 +72,7 @@ button.button:hover {
     background-color: #922A21;
 }
 
-/*
- * Autocomplete dropdown
- */
+/* Autocomplete dropdown */
 .ui-autocomplete-category {
     font-weight: bold;
     font-size: 16px;
@@ -108,11 +98,9 @@ button.button:hover {
     padding-left: 0;
 }
 
-/*****
-
+/***********
  Tablesorter
-
- *****/
+ ***********/
 
 .tablesorter {
   font-family: arial;
@@ -125,7 +113,7 @@ button.button:hover {
 }
 .tablesorter tbody tr td,
 .tablesorter thead tr th {
-  font-size: 1.4em;
+  font-size: 1.1em;
 }
 .tablesorter thead tr .header {
   background-image: url(bg.gif);

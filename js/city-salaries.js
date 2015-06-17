@@ -157,14 +157,18 @@ function getRow(item, id){
   } else {
     $("#thead").remove(); // not in table mode
     var output2 = '<div class="tablerow">' +
-      '<div class="namerow"><span class="first">' +
-      item['last_name'] + '</span> <span class="last">' +
-      item['first_name'] + '</span></div>' +
-      '<div class="detailsrow"><span class="department">' +
-      item['department'] + ' | </span><span class="title">' +
-      item['position'] +'</span></div>' +
-      '<div><span id="'+ id + '" class="salary">' +
-      item['salary'] +'</span></div></div>';
+      '<div class="namerow">' +
+        '<span class="first">' + item['first_name'] + '</span> ' +
+        '<span class="last">' + item['last_name'] + '</span>' +
+      '</div>' +
+      '<div class="detailsrow">' +
+        '<span class="title">' + item['position'] + ' | </span>' +
+        '<span class="department">' + item['department'] + '</span>' +
+      '</div>' +
+      '<div class="salaryrow">' +
+        '<span id="'+ id + '" class="salary">' + item['salary'] +'</span>' +
+      '</div>' +
+    '</div>';
 
     return output2;
   }

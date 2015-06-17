@@ -21,18 +21,22 @@ Property sales styles
 
  ************/
 
-/*input {
-  text-transform: uppercase; 
-}*/
-
 .tablerow {
-  border-bottom: 1px solid gray;
-  padding-top: 7px;
-  padding-bottom: 7px;
+  border-bottom: 1px solid #F2F2F2;
+  padding: 7px;
+}
+
+.namerow{
+  /*font-weight: bold;*/
+  font-size: 1.2em;
 }
 
 .detailsrow {
-  font-size: .8em;
+  font-size: 1em;
+}
+
+.salaryrow {
+  font-size: 1em;
 }
 
 .tablesorter {
@@ -55,6 +59,10 @@ Property sales styles
   font-size: 1em;
 }
 
+.results-status {
+  padding-bottom: 5px;
+}
+
 .pager {
   display: none;
 }
@@ -75,10 +83,6 @@ Property sales styles
 
 /*input {
   min-height: 40px;
-}*/
-
-/*.namerow{
-  font-weight: bold;
 }*/
 
 /*div#department_chosen {
@@ -137,6 +141,7 @@ body {
 input[type="search"] {
     padding-left: 0.25rem;
     padding-right: 0.25rem;
+    font-size: 16px;
     font-family: "minion-pro", Georgia, "Times New Roman", Times, serif;
 }
 input {
@@ -164,9 +169,10 @@ li.button, li.button:hover, li.button:active, li.button:focus, li.button:visited
     border-color: #FFFFFF;
 }
 select {
-    height: 100%;
-    font-size:16px;
-    font-family: "news-gothic-std", Helvetica, Arial, sans-serif;
+  font-size: 50px;
+  /*height: 100%;
+  font-size: 16px;
+  font-family: "news-gothic-std", Helvetica, Arial, sans-serif;*/
 }
 textarea {
     min-width: 100px;
@@ -415,58 +421,12 @@ input[type=radio].leaflet-control-layers-selector {
     margin: 0;
     font-weight: normal;
 }
-#document-date,
-#amount {
-    width: 49%;
-    display: inline-block;
-    font-size: 18px;
-    padding: 0;
-    color: #000;
-    font-family: "minion-pro", Georgia, "Times New Roman", Times, serif;
-    margin-bottom: 10px;
-    font-weight: normal; 
-    text-align: right;
-    margin-left: 0;
-}
-#document-date {
-    text-align: left;
-    margin-right: 0;
-}
-#sellers,
-#buyers {
-    display: inline-block;
-    vertical-align: top;
-    margin-top: 0;
-    margin-bottom: 0;
-    text-align: left;
-    background-color: #FFF;
-}
-.sellers {
-    margin-right: 0;
-}
-.buyers {
-    margin-left: 0;
-}
 
-
-.date-from-label-text {
-    display: inline;
-}
-.date-from-label-icon {
-    display: none;
-}
-
-.amount1,
-.amount2,
-.date1,
-.date2,
 .name-address-box  {
     width: 100%;
     font-size: 16px;
 }
-.slim {
-    height: 37px;
-}
+
 .page-title,
 .page-title a {
     text-align: center;
