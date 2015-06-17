@@ -1,113 +1,154 @@
+/*************
+Table of contents
 
-input[type="input"]:active {
-	border: 1px solid #5897fb;
-	box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-}
+1. General styles
+2. Mobile-only
+3. Medium-only
+4. Large-only
+5. Other
 
-.footnote {
-	padding: 4px;
-}
+*************/
 
-.tablerow {
-  border-bottom: 1px solid gray;
-  padding-top: 7px;
-  padding-bottom: 7px;
-}
+/*************
+  Lens Theme
 
-.row {
-  height: 10%;
-  max-height:50px;
-}
+  Red: #B33125;
+  Dark gray: #5A5A54
+  Medium gray: #A8A299
+  Light gray: #F5F5EF
+  Black: #000000;
+  White: #FFFFFF;
 
-div#results_status {
-  font-style: italic;
-}
-
-div.detailsrow {
-  font-size: .8em;
-}
-
-input {
-  min-height: 40px;
-}
-
-.namerow{
+  Headlines (bold)
+  font-family: "news-gothic-std", Helvetica, Arial, sans-serif;
   font-weight: bold;
-}
 
-div#department_chosen {
-  width: 100% !important;
-}
+  Headlines alternate (roman)
+  font-family: "news-gothic-std", Helvetica, Arial, sans-serif;
 
-input {
-  text-transform: uppercase; 
-}
+  Sub-headlines (demi)
+  font-family: "news-gothic-std", Helvetica, Arial, sans-serif;
 
-div#ui_components {
-	float: right;
-  padding-top: 10px;
-}
+  Body content
+  font-family: "minion-pro", Georgia, "Times New Roman", Times, serif;
 
-input[type="search"] {
-  border: 1px solid #aaa!important;
-}
+ *************/
 
-::-webkit-input-placeholder {
-  color: rgba(0, 0, 0, 0.75);
-}
+/*************
 
-:-moz-placeholder { /* Firefox 18- */
-  color: rgba(0, 0, 0, 0.75);
-}
+1. CSS overrides
 
-::-moz-placeholder {  /* Firefox 19+ */
-  color: rgba(0, 0, 0, 0.75);
-}
+*************/
 
-:-ms-input-placeholder {  
-  color: rgba(0, 0, 0, 0.75);
+a, a:focus, a:visited, a:active {
+    color: #B43018;
 }
-
-div#position_chosen {
-  width: 100% !important;
-}
-
-input[type="text"] {
-  border: 1px solid #aaa !important;
-}
-
-div#position {
-  width: 100% !important;
-}
-
-ul.chosen-choices {
-  min-height: 36px;
-}
-
-input.default {
-  min-height: 36px;
-}
-
-.lensinput {
-  /* all */
-  -webkit-input-placeholder { color:#f00; }
-  -moz-placeholder { color:#f00; } /* firefox 19+ */
-  -ms-input-placeholder { color:#f00; } /* ie */
-  input:-moz-placeholder { color:#f00; }
-}
-
-label {
-  font-style: italic;
-}
-
-a {
-  color:#B43018;
-}
-
 a:hover {
-  color:black;
+    text-decoration: underline;
+    color: #000;
 }
 
-input#departments {
-  margin-bottom: 7px;
+/*
+ * Misc.
+ */
+.map-button {
+    vertical-align: baseline;
+    font-family: "news-gothic-std", Helvetica, Arial, sans-serif;
+}
+
+/*************
+
+2. The Lens styles
+
+*************/
+
+/*
+ * Buttons
+ */
+button.button {
+    background-color: #B33125;
+}
+button.button:active, button.button:focus, button.button:hover {
+    background-image: none;
+    background-color: #B33125;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,0.125);
+    -moz-box-shadow: inset 0 3px 5px rgba(0,0,0,0.125);
+    box-shadow: inset 0 6px 10px rgba(0,0,0,0.125);
+    outline: none;
+}
+button.button:hover {
+    background-color: #922A21;
+}
+
+/*
+ * Autocomplete dropdown
+ */
+.ui-autocomplete-category {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 16px;
+    padding: 3px 4px 2px;
+    font-family: "news-gothic-std", Helvetica, Arial, sans-serif;
+}
+.ui-menu .ui-menu-item {
+    font-size: 16px;
+    line-height: 18px;
+    padding: 0 0 0 10px;
+    font-family: "minion-pro", Georgia, "Times New Roman", Times, serif;
+}
+.ui-widget-content .ui-state-focus {
+    background: #F5F5EF;
+    line-height: 16px;
+    border-left: 1px;
+    border-right: none;
+}
+.ui-autocomplete {
+    z-index: 1008;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+/*****
+
+ Tablesorter
+
+ *****/
+
+/* tables */
+table.tablesorter {
+  font-family:arial;
+/*  background-color: #CDCDCD;*/
+  margin:10px 0pt 15px;
+  font-size: 8pt;
+  width: 100%;
+  text-align: left;
+}
+table.tablesorter thead tr th, table.tablesorter tfoot tr th {
+  border: 1px solid #FFF;
+  font-size: 1.3em;
+  /*padding: 4px;*/
+}
+table.tablesorter thead tr .header {
+  background-image: url(bg.gif);
+  background-repeat: no-repeat;
+  background-position: center right;
+  cursor: pointer;
+}
+table.tablesorter tbody td {
+  color: #3D3D3D;
+  padding: 4px;
+  background-color: #FFF;
+  vertical-align: top;
+}
+table.tablesorter tbody tr.odd td {
+  background-color:#F0F0F6;
+}
+table.tablesorter thead tr .headerSortUp {
+  background-image: url(asc.gif);
+}
+table.tablesorter thead tr .headerSortDown {
+  background-image: url(desc.gif);
+}
+table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
+background-color: #8dbdd8;
 }

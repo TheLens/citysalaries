@@ -5,49 +5,53 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="shortcut icon" href="https://s3-us-west-2.amazonaws.com/lensnola/land-records/css/images/favicon.ico">
+    <link rel="shortcut icon" href="https://s3-us-west-2.amazonaws.com/lensnola/images/favicon.ico">
 
     <script type="text/javascript" src="//use.typekit.net/oct0mkd.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
-    <link rel="stylesheet" href='css/style.css' media="screen" charset="utf-8">
-    <link rel="stylesheet" href='css/chosen.css' media="screen" charset="utf-8">
+    <link rel="stylesheet" href='https://s3-us-west-2.amazonaws.com/lensnola/external-libraries/css/chosen.min.css' media="screen" charset="utf-8">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.4.5/css/foundation.min.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 
     <link rel="stylesheet" href='css/lens.css' media="screen" charset="utf-8">
+    <link rel="stylesheet" href='css/city-salaries.css' media="screen" charset="utf-8">
   </head>
   <body>
 
     <div class="row">
+      <div class="small-12 columns input-div" id="input-div">
+        <label>Search employees</label>
+        <input id="employees" class="small-12 columns name-address-box" type="search" placeholder="Mitch Landrieu, Marlin Gusman, Stacy Head" />
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- <div class="ui-widget"> -->
+      <div class="small-12 columns input-div" id="input-div">
+        <label for="tags">Search departments</label>
+        <input class="small-12 columns name-address-box" id="departments" type="search" placeholder="Municipal Court, Office of the Mayor, Taxi Cab Bureau" />
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- <div class="ui-widget"> -->
+      <div class="small-12 columns input-div" id="input-div">
+        <label>Search positions</label>
+        <input id="positions" class="small-12 columns name-address-box" type="search" placeholder="Police captain, mayor, judge, council member" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-12 small-centered text-center columns ui-components" id="ui-components">
+        <button class="small button search-button" id="search-button">Search</button>
+      </div>
+      <div class="small-12 text-left columns results-status" id="results-status"></div>
+    </div>
+
+    <div class="row">
       <div class="small-12 columns">
-        <input id='namebox' type="text" placeholder="Name" class="lensinput"/>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="large-12 medium-12 columns">
-        <div class="ui-widget">
-          <label for="tags">Department (Example: Municipal Court): </label>
-          <input id="departments"  class = "large-12 medium-12 small-12 columns">
-        </div>
-        <div class="ui-widget">
-          <label>Position (Example: Police Officer 1)</label>
-          <input id="positions" class = "large-12 medium-12 small-12 columns">
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div id="ui_components" class="large-12 medium-12 columns">
-        <a href="#" class="small button" id="searchButton">Search</a>
-        <div id="results_status"></div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="large-12 medium-12 small-12 columns">
         <table id="myTable" class="tablesorter">
           <thead id="thead">
             <tr>
@@ -58,7 +62,7 @@
               <th width="20%">Salary</th>
             </tr>
           </thead>
-          <div id="tbody_div">
+          <div id="tbody-div">
             <tbody id="tbody"></tbody>
           </div>
         </table>
@@ -67,25 +71,25 @@
     </div>
 
     <div class="row">
-      <div class="large-12 columns">
+      <div class="small-12 columns">
         <div class="panel">
-          <div class="footnote">
-            Source: Orleans Parish Personnel Department. Information current as of May 3, 2014.
-          </div>
-          <div class="footnote">
-            Footnotes and caveats: An employee's annual salary does not include additional money that the employee may earn for overtime work. However, it might include longevity pay, temporary pay or special rates of pay.
-          </div>
-          <div class="footnote">
-            The data only includes full-time employees in the city's payroll system.
-          </div>
-          <div class="footnote">
-            The app cites position names as listed in city payroll records. In some cases (for instance, in the case of some mayoral appointees) employees may have different job titles than those listed in the app. <a href='http://thelensnola.org/2014/07/22/with-new-tool-the-lens-makes-it-easy-to-find-out-how-much-city-employees-are-paid/'>Learn more about how these figures were calculated</a>.
-          </div>
+          <p>
+            Source: City of New Orleans, Civil Service Department. This information was released under the Louisiana Public Records Act and is current as of May 21, 2015.
+          </p>
+          <p>
+            Note: An employee's annual salary is the budgeted amount, and therefore does not include additional money such as overtime pay. However, it might include longevity pay, temporary pay or special rates of pay.
+          </p>
+          <p>
+            The data only includes full-time employees in the city's payroll system (?).
+          </p>
+          <p>
+            <a href='http://thelensnola.org/2014/07/22/with-new-tool-the-lens-makes-it-easy-to-find-out-how-much-city-employees-are-paid/'>Learn more about how these figures were calculated</a>.
+          </p>
         </div>
       </div>
     </div>
 
-    <!--<script type="text/javascript" src='js/jquery-1.11.0.min.js'></script>-->
+    <!--<script type="text/javascript" src='https://s3-us-west-2.amazonaws.com/lensnola/external-libraries/js/jquery-1.11.0.min.js'></script>-->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/lensnola/external-libraries/js/jquery.tablesorter.min.js"></script>
     <script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/lensnola/external-libraries/js/jquery.csv-0.71.min.js"></script>
@@ -93,23 +97,9 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.4.1/js/foundation.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
-    <script type="text/javascript" src="js/city_salaries.js"></script>
+    <script type="text/javascript" src="js/city-salaries.js"></script>
 
     <script>
-      function process(data) {
-          window.salaries = $.csv.toObjects(data);
-      }
-
-      $(document).foundation();
-      $(document).ready(function() {
-      $.ajax({
-        type: "GET",
-        url: "https://s3-us-west-2.amazonaws.com/lensnola/city-salaries/data/sals.csv",
-        dataType: "text",
-        success: function(data) {process(data)}
-        });
-      });
-
       $(document).foundation();
     </script>
 
