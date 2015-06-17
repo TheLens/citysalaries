@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script type="text/javascript">
+      console.log(Date());
+    </script>
     <title>City employee salaries</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -47,7 +50,15 @@
       <div class="small-12 small-centered text-center columns ui-components" id="ui-components">
         <button class="small button search-button" id="search-button">Search</button>
       </div>
-      <div class="small-12 text-left columns results-status" id="results-status"></div>
+    </div>
+    <div class="row">
+      <div class="small-4 text-left left columns results-status" id="results-status"></div>
+      <div class="small-4 text-center center columns number-of-pages" id="number-of-pages"></div>
+      <div class="small-4 text-right right columns pager" id="pager">
+        <div class="nextprev" id="nextprev">
+          <a class="previous" id="previous">Previous</a> | <a class="next" id="next">Next</a>
+        </div>
+      </div>
     </div>
 
     <div class="row">
@@ -66,6 +77,15 @@
             <tbody id="tbody"></tbody>
           </div>
         </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-4 small-offset-4 text-center center columns number-of-pages" id="number-of-pages"></div>
+      <div class="small-4 text-right right columns pager" id="pager">
+        <div class="nextprev" id="nextprev">
+          <a class="previous" id="previous">Previous</a> | <a class="next" id="next">Next</a>
         </div>
       </div>
     </div>

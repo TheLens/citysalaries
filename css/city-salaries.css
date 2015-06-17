@@ -43,8 +43,16 @@ Property sales styles
   padding: 4px;
 }
 
+.panel {
+  margin: 1.25rem 0;
+}
+
 .panel p {
   font-size: 1em;
+}
+
+.pager {
+  display: none;
 }
 
 /*.row {

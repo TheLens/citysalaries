@@ -1,4 +1,4 @@
-var page_length = 20;
+var page_length = 100;
 var page = 1;
 
 function formatCurrency(number) {
@@ -6,6 +6,16 @@ function formatCurrency(number) {
   var n2 = n.replace(/\d\d\d(?!$)/g, "$&,");
   var return_val = '$' + n2.split('').reverse().join('');
   // console.log(return_val);
+  return return_val;
+}
+
+function formatThousands(number) {
+  if (typeof number === 'number') {
+    number = number.toString();
+  }
+  var n = number.split('').reverse().join("");
+  var n2 = n.replace(/\d\d\d(?!$)/g, "$&,");
+  var return_val = n2.split('').reverse().join('');
   return return_val;
 }
 
@@ -128,7 +138,6 @@ function processRequest(data) {
   return output;
 }
 
-//to do: template engine
 function getRow(item, id){
   if (typeof item === 'undefined') {
     return ""; // row is blank. can't "render" row
@@ -228,12 +237,12 @@ function updateUrl(data) {
 
 function loadTable() {
   // $("#results-status").html('');
-  $("#results-status").html("Searching...");
-  $("#tbody").html("");
+  // $("#results-status").html("Searching...");
+  // $("#tbody").html("");
   // var html = $("#myTable").html();
 
   var data = {};
-  data['name'] = $('#employees').val(); // encodeURIComponent($('#employees').val());
+  data['name'] = $('#employees').val(); // encodeURIComponent();
   data['department'] = $('#departments').val();
   data['position'] = $('#positions').val();
   data['page'] = 1;
@@ -242,9 +251,9 @@ function loadTable() {
 
   var results = processRequest(data);
 
-  var pages = Math.ceil(results.length / page_length);
-  if (page > pages) {
-    page = pages;
+  var number_of_pages = Math.ceil(results.length / page_length);
+  if (page > number_of_pages) {
+    page = number_of_pages;
   }
 
   var new_rows = getRows(results, page);
@@ -253,31 +262,28 @@ function loadTable() {
   $("#myTable").trigger("update");
 
   var condition = (
-    results.length > 20 &&
-    $("#nextprev").length === 0  // Pager already exists
+    results.length > page_length// &&
+    //$("#nextprev").length === 0  // Pager is hidden
   );
   if (condition) {
-    $("#tbody-div").append('<div id="nextprev"><a id="previous">Previous</a> | <a id="next">Next</a></div>');
-    $("#next").on("click", function() {
-      page = page + 1;
-      loadTable();
-    });
-
-    $("#previous").on("click", function() {
-      page = page -1;
-      if (page < 1){
-        page = 1;
-      }
-      loadTable();
-    });
+    // Show pager
+    // document.getElementById("pager").style.display = 'block';
+    $(".pager").css({'display': 'block'});
+  } else {
+    // Hide pager
+    // document.getElementById("pager").style.display = 'none';
+    $(".pager").css({'display': 'none'});
   }
 
-  var results_status = results.length + " results found";
-  if (results.length > 20) {
-    results_status += " | page " + page + " of " + pages;
+  var results_status = '<strong>' + formatThousands(results.length) + "</strong> results found. Displaying " + formatThousands(page_length * (page - 1) + 1) + "-" + formatThousands(page_length * (page)) + ".";
+
+  var page_output;
+  if (results.length > page_length) {
+    page_output = "Page " + page + " of " + number_of_pages;
   }
 
   $("#results-status").html(results_status);
+  $(".number-of-pages").html(page_output);
 
   $.each(
     $(".salary"), function(index, val) {
@@ -299,12 +305,26 @@ $(document).ready(function() {
     url: "https://s3-us-west-2.amazonaws.com/lensnola/city-salaries/data/data.csv",
     dataType: "text",
     success: function(data) {
+      console.log(Date());
       process(data);
     }
   });
 
   $(function() {
     $("#myTable").tablesorter();
+  });
+
+  $(".next").on("click", function() {
+    page += 1;
+    loadTable();
+  });
+
+  $(".previous").on("click", function() {
+    page -= 1;
+    if (page < 1) {
+      page = 1;
+    }
+    loadTable();
   });
 
   $(document).keypress(function(e) {
