@@ -7,8 +7,6 @@ script:
 - rm fabfile.py
 before_deploy:
 - gzip -9 data/export/data.csv
-- git add data/export/data.csv.gz
-- git commit -m "Adding gzipped data file. "
 deploy:
   provider: s3
   access_key_id: AKIAIWQKYAETOQ2N7CBQ
@@ -18,6 +16,3 @@ deploy:
   upload-dir: city-salaries-2
   detect_encoding: true
   acl: public_read
-  on:
-    repo: TheLens/citysalaries
-    branch: development
