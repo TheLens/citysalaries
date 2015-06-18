@@ -139,6 +139,8 @@ function processRequest(data) {
 }
 
 function getRow(item, id){
+  // debugger;
+
   if (typeof item === 'undefined') {
     return ""; // row is blank. can't "render" row
   }
@@ -240,12 +242,13 @@ function updateUrl(data) {
 }
 
 function loadTable() {
+  // debugger;
   // $("#results-status").html('');
   // $("#results-status").html("Searching...");
   // $("#tbody").html("");
   // var html = $("#table").html();
 
-  $('.tablesorter').css({'display': 'block'});
+  $('.tablesorter').css({'display': 'table'});
 
   var data = {};
   data['name'] = $('#employees').val(); // encodeURIComponent();
