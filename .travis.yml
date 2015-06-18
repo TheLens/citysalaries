@@ -17,6 +17,3 @@ deploy:
   upload-dir: city-salaries-2
   detect_encoding: true
   acl: public_read
-  on:
-    repo: TheLens/citysalaries
-    branch: development
