@@ -142,8 +142,8 @@ body {
     font-family: "news-gothic-std", Helvetica, Arial, sans-serif;
 }
 input[type="search"] {
-    padding-left: 0.25rem;
-    padding-right: 0.25rem;
+    padding-left: 0.15rem;
+    padding-right: 0.15rem;
     font-size: 16px;
     font-family: "minion-pro", Georgia, "Times New Roman", Times, serif;
 }

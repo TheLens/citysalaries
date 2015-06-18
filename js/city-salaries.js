@@ -20,7 +20,6 @@ function formatThousands(number) {
 }
 
 function reformat(id) {
-  // debugger;
   var new_id = (id).toString();
   var number = $("#" + new_id).html();
   //var newval = "$" + (Number($(id).html()).formatMoney(2, '.', ','));
@@ -83,9 +82,6 @@ function processRequest(data) {
         conditional = 'or';
       }
 
-      // console.log('first: ', first);
-      // console.log('last: ', last);
-
       var cond1 = item['first_name'].toUpperCase().indexOf(first.toUpperCase()) !== -1;
       var cond2 = item['last_name'].toUpperCase().indexOf(last.toUpperCase()) !== -1; // Returns -1 if the value is not found.
 
@@ -139,8 +135,6 @@ function processRequest(data) {
 }
 
 function getRow(item, id){
-  // debugger;
-
   if (typeof item === 'undefined') {
     return ""; // row is blank. can't "render" row
   }
@@ -157,7 +151,12 @@ function getRow(item, id){
 
     return output;
   } else {
-    $("#thead").remove(); // not in table mode
+    $("#thead").remove(); // Do not show in mobile view
+
+    // document.getElementById('employees').placeholder = 'Mitch Landrieu, Michael Harrison';
+    // document.getElementById('departments').placeholder = 'Municipal Court, Office of the Mayor';
+    // document.getElementById('positions').placeholder = 'Police captain, mayor, judge';
+
     var output2 = '<div class="tablerow">' +
       '<div class="namerow">' +
         '<span class="first">' + item['first_name'] + '</span> ' +
@@ -209,21 +208,28 @@ function buildQueryString(data) {
   var map_query_string = '';
 
   if (data['name'] !== '') {
-    map_query_string = map_query_string + "q=" + data['name'];
+    map_query_string = map_query_string + "q=" + encodeURIComponent(data['name']);
   }
 
   if (data['department'] !== '') {
     if (map_query_string !== '') {
       map_query_string = map_query_string + '&';
     }
-    map_query_string = map_query_string + "dept=" + data['department'];
+    map_query_string = map_query_string + "dept=" + encodeURIComponent(data['department']);
   }
 
   if (data['position'] !== '') {
     if (map_query_string !== '') {
       map_query_string = map_query_string + '&';
     }
-    map_query_string = map_query_string + "pos=" + data['position'];
+    map_query_string = map_query_string + "pos=" + encodeURIComponent(data['position']);
+  }
+
+  if (data['page'] !== '' && data['page'] !== 1) {
+    if (map_query_string !== '') {
+      map_query_string = map_query_string + '&';
+    }
+    map_query_string = map_query_string + "page=" + data['page'];
   }
 
   if (map_query_string === '') {
@@ -243,12 +249,6 @@ function updateUrl(data) {
 
 function loadTable() {
   // debugger;
-  // $("#results-status").html('');
-  // $("#results-status").html("Searching...");
-  // $("#tbody").html("");
-  // var html = $("#table").html();
-
-  $('.tablesorter').css({'display': 'table'});
 
   var data = {};
   data['name'] = $('#employees').val(); // encodeURIComponent();
@@ -274,23 +274,26 @@ function loadTable() {
     results.length > page_length// &&
     //$("#nextprev").length === 0  // Pager is hidden
   );
+
+  // Check that results span multiple pages
   if (condition) {
-    // Show pager
-    // document.getElementById("pager").style.display = 'block';
+    // Show pager and pages
     $(".pager").css({'display': 'block'});
+    $(".number-of-pages").css({'display': 'block'});
   } else {
-    // Hide pager
-    // document.getElementById("pager").style.display = 'none';
+    // Hide pager and pages
     $(".pager").css({'display': 'none'});
+    $(".number-of-pages").css({'display': 'none'});
   }
 
-  var plural;
-  if (results.length === 1) {
-    plural = 'result';
+  // Check that there were results found.
+  if (results.length > 0) {
+    $('.tablesorter').css({'display': 'table'});
   } else {
-    plural = 'results';
+    $('.tablesorter').css({'display': 'none'});
   }
-  var results_status = '<strong>' + formatThousands(results.length) + "</strong> " + plural + " found. Displaying " + formatThousands(page_length * (page - 1) + 1) + "-" + formatThousands(page_length * (page)) + ".";
+
+  var results_status = formResultsLanguage(data, results);
 
   var page_output;
   if (results.length > page_length) {
@@ -302,12 +305,97 @@ function loadTable() {
 
   $.each(
     $(".salary"), function(index, val) {
-      // debugger;
       var id = this.id;
       var formatted_number = reformat(id);
       $(this).html(formatted_number);
     }
   );
+}
+
+function formResultsLanguage(data, results) {
+  var plural;
+  if (results.length === 1) {
+    plural = 'result';
+  } else {
+    plural = 'results';
+  }
+
+  var results_language = '<strong>' + formatThousands(results.length) + "</strong> " + plural + ' found';
+
+  if (data['name'] !== '') {
+    results_language += ' for employee "' + data['name'] + '"';
+  }
+
+  if (data['department'] !== '') {
+    results_language += ' in department ' + data['department'];
+  }
+
+  if (data['department'] !== '') {
+    results_language += ' with the job title ' + data['position'];
+  }
+
+  if (results_language.slice(-1) === '"') {
+    results_language = results_language.substr(0, results_language.length - 1) + '."';
+  } else {
+    results_language += '.';
+  }
+
+  if (results.length !== 0) {
+    results_language += " Displaying " + formatThousands(page_length * (page - 1) + 1) + "-" + formatThousands(page_length * (page)) + ".";
+    // TODO: actual number index scan
+  } else {
+    results_language += " Please try another search.";
+  }
+
+  return results_language;
+}
+
+function parseURL() {
+  /*
+  Reads URL and returns dictionary of values.
+  */
+  var data = {};
+
+  if (typeof window.location.href.split('=')[1] !== 'undefined') {// If unique URL
+    // Match z=(everything until &), then take the portion after the equal sign
+
+    if (window.location.href.match(/q\=[^&]*/i) !== null) {
+      data['name'] = decodeURI(window.location.href.match(/q\=[^&]*/i)[0].split('=')[1]);
+    } else {
+      data['name'] = '';
+    }
+
+    if (window.location.href.match(/dept\=[^&]*/i) !== null) {
+      data['department'] = decodeURI(window.location.href.match(/dept\=[^&]*/i)[0].split('=')[1]);
+    } else {
+      data['department'] = '';
+    }
+
+    if (window.location.href.match(/pos\=[^&]*/i) !== null) {
+      data['position'] = decodeURI(window.location.href.match(/pos\=[^&]*/i)[0].split('=')[1]);
+    } else {
+      data['position'] = '';
+    }
+
+    if (window.location.href.match(/page\=[^&]*/i) !== null) {
+      data['page'] = decodeURI(window.location.href.match(/page\=[^&]*/i)[0].split('=')[1]);
+    } else {
+      data['page'] = 1;
+    }
+  } else {
+    data['name'] = '';
+    data['department'] = '';
+    data['position'] = '';
+    data['page'] = 1;
+  }
+  return data;
+}
+
+function populateSearchParameters(data) {
+  document.getElementById('employees').value = data['name'];
+  document.getElementById('departments').value = data['department'];
+  document.getElementById('positions').value = data['position'];
+  page = data['page'];
 }
 
 function process(data) {
@@ -322,6 +410,19 @@ $(document).ready(function() {
     success: function(data) {
       console.log(Date());
       process(data);
+    }
+  }).then(function() {
+    var data = parseURL();
+    populateSearchParameters(data);
+
+    var condition = (
+      data['name'] !== '' ||
+      data['department'] !== '' ||
+      data['position'] !== '' ||
+      data['page'] !== 1
+    );
+    if (condition) {
+      loadTable();
     }
   });
 
