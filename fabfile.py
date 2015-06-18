@@ -26,6 +26,11 @@ def css():
     local('git add css/lens.css')
 
 
+def data():
+    '''/data/export/'''
+    local('git add data/export/data.csv')
+
+
 def js():
     '''/css'''
 
@@ -44,6 +49,7 @@ def addthemall():
 
     repo()
     css()
+    data()
     js()
     txt()
 
