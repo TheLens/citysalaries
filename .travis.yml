@@ -16,4 +16,8 @@ deploy:
   bucket: lensnola
   upload-dir: city-salaries-2
   detect_encoding: true
+  skip_cleanup: true
   acl: public_read
+  on:
+    repo: TheLens/citysalaries
+    branch: development
