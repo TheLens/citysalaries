@@ -13,7 +13,8 @@ deploy:
     secure: H4BiXLJqRQrXcvnEiSUA6mOfIZPV4ubcfY6a8VFfgBXaF28WP5sUq1sWmYJZqLlf/4p3BdkhD7jHyRczgbnguZbHjZxvbJZAfLoSS7faOODq2crlfX9phNXQPa+6uOnZooF+TCZ8W0pjiIOVEEGKk6/nojJjchaYL8Agf34i+BIEzIKIs66rwgbzPNW1XxWHZIHtxvhqA+a2VlUvYl/ZyEdJVRYllRVbZKkdFor6JghGpH50uMPhDb98aSFI1Fe8m2QC7ecJtRvuJQHTQJXwmSC2/XNr8RIF2BXCjxoB2mCy3MpFnjrcMsdTmhhr7U65t3oMeog3thizAGUzMebfCFnc6YgKtAYlsRvY1iQFegJ9sSGvlRzGqZc3IkOsfR2Pkhekw+dSRoQPEr5D1mP6RXSH8eIQ55PmgCCGJcUbghlQFXlyoev83Qd4qhP6vyiZ2mhttVzlGufBJJjWU03VhNAqVNYoYy37I7yBb7GzVnUVdmxoQDqff8yTTmWX4bJg+fOYC51NJPiIiHlmlTUGZGiKl7Z29AhwKBGOUlt3crutkDefUcrF4V5B25Npm3mh8HWMlgMHOqGbpmLGxsBfS5VXSLW5BEUJfT7Dzv1pvWbyOksulgHTQ6kPDV96l01lJR2emotBklxOowl/72cuuFeIA6DjRjsBeBhmeg1emaE=
   bucket: lensnola
   upload-dir: city-salaries-2
-  acl: public_read, content-encoding 'gzip'
+  detect_encoding: true
+  acl: public_read
   on:
     repo: TheLens/citysalaries
     branch: development
