@@ -347,6 +347,7 @@ $(document).ready(function() {
   $(document).keypress(function(e) {
     if (e.which === 13) {
       page = 1;
+      $("#name-address-box").blur();
       loadTable();
     }
   });

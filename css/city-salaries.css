@@ -25,6 +25,9 @@ Property sales styles
   border-bottom: 1px solid #F2F2F2;
   padding: 7px;
 }
+.tablerow:last-of-type {
+  border-bottom: none;
+}
 
 .namerow{
   /*font-weight: bold;*/
