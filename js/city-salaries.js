@@ -243,6 +243,33 @@ function updateUrl(data) {
   window.location.hash = buildQueryString(data);
 }
 
+function tableSorter() {
+  // $('#example').DataTable();
+  $("#table").tablesorter({
+    widgets: ['zebra']
+  });
+  $("#table").bind("sortStart", function(e) {
+    // debugger;
+    console.log('sortStart');
+
+    // Figure out which header was clicked. Ex. Last name.
+
+    // Determine which order this sort should occur. If alphabetical, then
+    // sort in reverse alphabetical.
+
+    // Using the full results list, run Underscore's sortBy function using
+    // the header and the sorting order.
+
+    // Update table HTML rows
+
+    // Trigger update for tablesorter
+  });
+  $("#table").bind("sortEnd", function(sorter) {
+    // debugger;
+    // Do something else
+  });
+}
+
 function loadTable() {
   // debugger;
 
@@ -256,6 +283,13 @@ function loadTable() {
 
   var results = processRequest(data);
 
+  // Check that there were results found.
+  if (results.length > 0) {
+    $('.tablesorter').css({'display': 'table'});
+  } else {
+    $('.tablesorter').css({'display': 'none'});
+  }
+
   var number_of_pages = Math.ceil(results.length / page_length);
   if (page > number_of_pages) {
     page = number_of_pages;
@@ -264,6 +298,7 @@ function loadTable() {
   var new_rows = getRows(results, page);
 
   $("#tbody").html(new_rows);
+  tableSorter();
   $("#table").trigger("update");
 
   var condition = (
@@ -280,13 +315,6 @@ function loadTable() {
     // Hide pager and pages
     $(".pager").css({'display': 'none'});
     $(".number-of-pages").css({'display': 'none'});
-  }
-
-  // Check that there were results found.
-  if (results.length > 0) {
-    $('.tablesorter').css({'display': 'table'});
-  } else {
-    $('.tablesorter').css({'display': 'none'});
   }
 
   var results_status = formResultsLanguage(data, results);
@@ -402,15 +430,22 @@ function process(data) {
 }
 
 $(document).ready(function() {
-  $(function() {
-    $("#table").tablesorter({
-      widgets: ['zebra']
-    });
-  });
+  //$(function() {
+  // $("#table").tablesorter({
+  //   widgets: ['zebra']
+  // });
+  // $("#table").bind("sortStart", function() {
+  //   // Do something
+  //   console.log('yo');
+  // });
+  // $("#table").bind("sortEnd", function() {
+  //   // Do something else
+  // });
+  ///});
 
   $.ajax({
     type: "GET",
-    url: "https://s3-us-west-2.amazonaws.com/lensnola/city-salaries/data/data.csv",
+    url: "https://s3-us-west-2.amazonaws.com/lensnola/city-salaries/data/data.csv.gz",
     dataType: "text",
     success: function(data) {
       console.log(Date());

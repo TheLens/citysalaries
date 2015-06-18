@@ -13,7 +13,7 @@
     <script type="text/javascript" src="//use.typekit.net/oct0mkd.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
-    <link rel="stylesheet" href='https://s3-us-west-2.amazonaws.com/lensnola/external-libraries/css/chosen.min.css'>
+    <!--<link rel="stylesheet" href='https://s3-us-west-2.amazonaws.com/lensnola/external-libraries/css/chosen.min.css'>-->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.4.5/css/foundation.min.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
@@ -26,12 +26,11 @@
     <div class="row">
       <div class="small-12 columns input-div" id="input-div">
         <label>Search employees</label>
-        <input id="employees" class="small-12 columns name-address-box" type="search" placeholder="Mitch Landrieu, Michael Harrison" />
+        <input class="small-12 columns name-address-box" id="employees" type="search" placeholder="Mitch Landrieu, Michael Harrison" />
       </div>
     </div>
 
     <div class="row">
-      <!-- <div class="ui-widget"> -->
       <div class="small-12 columns input-div" id="input-div">
         <label>Search departments</label>
         <input class="small-12 columns name-address-box" id="departments" type="search" placeholder="Municipal Court, Office of the Mayor" />
@@ -39,7 +38,6 @@
     </div>
 
     <div class="row">
-      <!-- <div class="ui-widget"> -->
       <div class="small-12 columns input-div" id="input-div">
         <label>Search positions</label>
         <input id="positions" class="small-12 columns name-address-box" type="search" placeholder="Police captain, council member" />
@@ -51,6 +49,7 @@
         <button class="small button search-button" id="search-button">Search</button>
       </div>
     </div>
+
     <div class="row">
       <div class="small-12 medium-4 columns results-status" id="results-status"></div>
       <div class="small-6 medium-4 medium-text-center medium-center columns number-of-pages" id="number-of-pages"></div>
@@ -66,11 +65,11 @@
         <table id="table" class="tablesorter">
           <thead id="thead">
             <tr>
-              <th width="20%">First</th>
-              <th width="20%">Last</th>
-              <th width="20%">Department</th>
-              <th width="20%">Position</th>
-              <th width="20%">Salary</th>
+              <th id="th-first" width="20%">First</th>
+              <th id="th-last" width="20%">Last</th>
+              <th id="th-department" width="20%">Department</th>
+              <th id="th-position" width="20%">Position</th>
+              <th id="th-salary" width="20%">Salary</th>
             </tr>
           </thead>
           <tbody id="tbody"></tbody>
