@@ -225,11 +225,11 @@ function buildQueryString(data) {
     map_query_string = map_query_string + "pos=" + encodeURIComponent(data['position']);
   }
 
-  if (data['page'] !== '' && data['page'] !== 1) {
+  if (data['page'] !== 1) {
     if (map_query_string !== '') {
       map_query_string = map_query_string + '&';
     }
-    map_query_string = map_query_string + "page=" + data['page'];
+    map_query_string = map_query_string + "page=" + data['page'].toString();
   }
 
   if (map_query_string === '') {
@@ -241,10 +241,6 @@ function buildQueryString(data) {
 
 function updateUrl(data) {
   window.location.hash = buildQueryString(data);
-    // '&name=' + encodeURI(data['name']) +
-    // '&dept=' + data['department'] +
-    // '&pos=' + data['position'] +
-    // '&page=' + data['page'];
 }
 
 function loadTable() {
@@ -254,7 +250,7 @@ function loadTable() {
   data['name'] = $('#employees').val(); // encodeURIComponent();
   data['department'] = $('#departments').val();
   data['position'] = $('#positions').val();
-  data['page'] = 1;
+  data['page'] = page;
 
   updateUrl(data);
 
@@ -297,7 +293,7 @@ function loadTable() {
 
   var page_output;
   if (results.length > page_length) {
-    page_output = "Page " + page + " of " + number_of_pages;
+    page_output = "Page " + page.toString() + " of " + number_of_pages.toString();
   }
 
   $("#results-status").html(results_status);
@@ -341,8 +337,11 @@ function formResultsLanguage(data, results) {
   }
 
   if (results.length !== 0) {
-    results_language += " Displaying " + formatThousands(page_length * (page - 1) + 1) + "-" + formatThousands(page_length * (page)) + ".";
-    // TODO: actual number index scan
+    var to_number = page_length * page;
+    if (to_number > results.length) {
+      to_number = results.length;
+    }
+    results_language += " Displaying " + formatThousands(page_length * (page - 1) + 1) + "-" + formatThousands(to_number) + ".";
   } else {
     results_language += " Please try another search.";
   }
@@ -378,7 +377,7 @@ function parseURL() {
     }
 
     if (window.location.href.match(/page\=[^&]*/i) !== null) {
-      data['page'] = decodeURI(window.location.href.match(/page\=[^&]*/i)[0].split('=')[1]);
+      data['page'] = parseInt(decodeURI(window.location.href.match(/page\=[^&]*/i)[0].split('=')[1]), 10);
     } else {
       data['page'] = 1;
     }
@@ -403,6 +402,12 @@ function process(data) {
 }
 
 $(document).ready(function() {
+  $(function() {
+    $("#table").tablesorter({
+      widgets: ['zebra']
+    });
+  });
+
   $.ajax({
     type: "GET",
     url: "https://s3-us-west-2.amazonaws.com/lensnola/city-salaries/data/data.csv",
@@ -424,12 +429,6 @@ $(document).ready(function() {
     if (condition) {
       loadTable();
     }
-  });
-
-  $(function() {
-    $("#table").tablesorter({
-      widgets: ['zebra']
-    });
   });
 
   $(".next").on("click", function() {
