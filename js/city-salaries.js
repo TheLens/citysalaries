@@ -281,7 +281,13 @@ function loadTable() {
     $(".pager").css({'display': 'none'});
   }
 
-  var results_status = '<strong>' + formatThousands(results.length) + "</strong> results found. Displaying " + formatThousands(page_length * (page - 1) + 1) + "-" + formatThousands(page_length * (page)) + ".";
+  var plural;
+  if (results.length === 1) {
+    plural = 'result';
+  } else {
+    plural = 'results';
+  }
+  var results_status = '<strong>' + formatThousands(results.length) + "</strong> " + plural + " found. Displaying " + formatThousands(page_length * (page - 1) + 1) + "-" + formatThousands(page_length * (page)) + ".";
 
   var page_output;
   if (results.length > page_length) {
