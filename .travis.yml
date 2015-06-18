@@ -7,6 +7,7 @@ script:
 - rm fabfile.py
 before_deploy:
 - gzip -9 data/export/data.csv
+- ls data/expert
 deploy:
   provider: s3
   access_key_id: AKIAIWQKYAETOQ2N7CBQ
@@ -16,3 +17,6 @@ deploy:
   upload-dir: city-salaries-2
   detect_encoding: true
   acl: public_read
+  on:
+    repo: TheLens/citysalaries
+    branch: development
