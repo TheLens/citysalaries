@@ -429,20 +429,7 @@ function process(data) {
   window.salaries = $.csv.toObjects(data);
 }
 
-$(document).ready(function() {
-  //$(function() {
-  // $("#table").tablesorter({
-  //   widgets: ['zebra']
-  // });
-  // $("#table").bind("sortStart", function() {
-  //   // Do something
-  //   console.log('yo');
-  // });
-  // $("#table").bind("sortEnd", function() {
-  //   // Do something else
-  // });
-  ///});
-
+function getData() {
   $.ajax({
     type: "GET",
     url: "https://s3-us-west-2.amazonaws.com/lensnola/city-salaries-2/data/export/data.csv.gz",
@@ -465,6 +452,23 @@ $(document).ready(function() {
       loadTable();
     }
   });
+}
+
+getData();
+
+$(document).ready(function() {
+  //$(function() {
+  // $("#table").tablesorter({
+  //   widgets: ['zebra']
+  // });
+  // $("#table").bind("sortStart", function() {
+  //   // Do something
+  //   console.log('yo');
+  // });
+  // $("#table").bind("sortEnd", function() {
+  //   // Do something else
+  // });
+  ///});
 
   $(".next").on("click", function() {
     page += 1;
