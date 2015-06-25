@@ -27,19 +27,49 @@ function reformat(id) {
   $("#" + new_id).html(newval);
 }
 
-var departments_url = 'https://s3-us-west-2.amazonaws.com/lensnola/city-salaries-2/txt/departments.txt';
-var positions_url = 'https://s3-us-west-2.amazonaws.com/lensnola/city-salaries-2/txt/positions.txt';
+var employees_url = 'https://s3-us-west-2.amazonaws.com/lensnola/city-salaries-2/data/export/employees.csv';
+var departments_url = 'https://s3-us-west-2.amazonaws.com/lensnola/city-salaries-2/data/export/departments.csv';
+var positions_url = 'https://s3-us-west-2.amazonaws.com/lensnola/city-salaries-2/data/export/positions.csv';
 
-$.get(departments_url, function(data) {
-  addDepartments(data);
-}, 'text');
+$.ajax({
+  type: 'GET',
+  url: employees_url,
+  dataType: 'text',
+  success: function(data) {
+    console.log(data);
+    addEmployees(data);
+  }
+});
 
-$.get(positions_url, function(data) {
-  addPositions(data);
-}, 'text');
+$.ajax({
+  type: 'GET',
+  url: departments_url,
+  dataType: 'text',
+  success: function(data) {
+    addDepartments(data);
+  }
+});
+
+$.ajax({
+  type: 'GET',
+  url: positions_url,
+  dataType: 'text',
+  success: function(data) {
+    addPositions(data);
+  }
+});
+
+function addEmployees(data){
+  var employees = data.split("\n");
+  console.log(employees);
+  $("#employees").autocomplete({
+    source: employees
+  });
+}
 
 function addDepartments(data){
   var departments = data.split("\n");
+  console.log(departments);
   $("#departments").autocomplete({
     source: departments
   });

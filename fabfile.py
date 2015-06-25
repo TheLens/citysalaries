@@ -28,20 +28,17 @@ def css():
 
 def data():
     '''/data/export/'''
+
     local('git add data/export/data.csv')
+    local('git add data/export/departments.csv')
+    local('git add data/export/employees.csv')
+    local('git add data/export/positions.csv')
 
 
 def js():
     '''/css'''
 
     local('git add js/city-salaries.js')
-
-
-def txt():
-    '''/css'''
-
-    local('git add txt/departments.txt')
-    local('git add txt/positions.txt')
 
 
 def addthemall():
@@ -51,7 +48,6 @@ def addthemall():
     css()
     data()
     js()
-    txt()
 
 
 def push():
