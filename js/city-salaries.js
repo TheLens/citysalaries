@@ -27,8 +27,8 @@ function reformat(id) {
   $("#" + new_id).html(newval);
 }
 
-var departments_url = 'https://s3-us-west-2.amazonaws.com/lensnola/city-salaries/txt/departments.txt';
-var positions_url = 'https://s3-us-west-2.amazonaws.com/lensnola/city-salaries/txt/positions.txt';
+var departments_url = 'https://s3-us-west-2.amazonaws.com/lensnola/city-salaries-2/txt/departments.txt';
+var positions_url = 'https://s3-us-west-2.amazonaws.com/lensnola/city-salaries-2/txt/positions.txt';
 
 $.get(departments_url, function(data) {
   addDepartments(data);
@@ -445,7 +445,7 @@ $(document).ready(function() {
 
   $.ajax({
     type: "GET",
-    url: "https://s3-us-west-2.amazonaws.com/lensnola/city-salaries/data/data.csv.gz",
+    url: "https://s3-us-west-2.amazonaws.com/lensnola/city-salaries-2/data/export/data.csv.gz",
     dataType: "text",
     success: function(data) {
       console.log(Date());
