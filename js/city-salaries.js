@@ -432,7 +432,7 @@ function process(data) {
 function getData() {
   $.ajax({
     type: "GET",
-    url: "https://s3-us-west-2.amazonaws.com/lensnola/city-salaries-2/data/export/data.csv.gz",
+    url: "https://s3-us-west-2.amazonaws.com/lensnola/city-salaries-2/data/export/data.csv",
     dataType: "text",
     success: function(data) {
       console.log(Date());

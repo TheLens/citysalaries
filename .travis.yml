@@ -7,6 +7,7 @@ script:
 - rm fabfile.py
 before_deploy:
 - gzip -9 data/export/data.csv
+- mv data/export/data.csv.gz data/export/data.csv
 deploy:
   provider: s3
   access_key_id: AKIAIWQKYAETOQ2N7CBQ
