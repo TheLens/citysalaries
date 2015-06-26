@@ -1,11 +1,15 @@
-var page_length = 100;
-var page = 1;
+
+var employees_url = 'https://s3-us-west-2.amazonaws.com/lensnola/city-salaries-2/data/export/employees.csv';
+var departments_url = 'https://s3-us-west-2.amazonaws.com/lensnola/city-salaries-2/data/export/departments.csv';
+var positions_url = 'https://s3-us-west-2.amazonaws.com/lensnola/city-salaries-2/data/export/positions.csv';
+var results;
+var dt;
 
 function formatCurrency(number) {
   var n = number.split('').reverse().join("");
   var n2 = n.replace(/\d\d\d(?!$)/g, "$&,");
   var return_val = '$' + n2.split('').reverse().join('');
-  // console.log(return_val);
+
   return return_val;
 }
 
@@ -16,52 +20,12 @@ function formatThousands(number) {
   var n = number.split('').reverse().join("");
   var n2 = n.replace(/\d\d\d(?!$)/g, "$&,");
   var return_val = n2.split('').reverse().join('');
+
   return return_val;
 }
 
-function reformat(id) {
-  var new_id = (id).toString();
-  var number = $("#" + new_id).html();
-  //var newval = "$" + (Number($(id).html()).formatMoney(2, '.', ','));
-  var newval = formatCurrency(number);
-  $("#" + new_id).html(newval);
-}
-
-var employees_url = 'https://s3-us-west-2.amazonaws.com/lensnola/city-salaries-2/data/export/employees.csv';
-var departments_url = 'https://s3-us-west-2.amazonaws.com/lensnola/city-salaries-2/data/export/departments.csv';
-var positions_url = 'https://s3-us-west-2.amazonaws.com/lensnola/city-salaries-2/data/export/positions.csv';
-
-$.ajax({
-  type: 'GET',
-  url: employees_url,
-  dataType: 'text',
-  success: function(data) {
-    console.log(data);
-    addEmployees(data);
-  }
-});
-
-$.ajax({
-  type: 'GET',
-  url: departments_url,
-  dataType: 'text',
-  success: function(data) {
-    addDepartments(data);
-  }
-});
-
-$.ajax({
-  type: 'GET',
-  url: positions_url,
-  dataType: 'text',
-  success: function(data) {
-    addPositions(data);
-  }
-});
-
 function addEmployees(data){
   var employees = data.split("\n");
-  console.log(employees);
   $("#employees").autocomplete({
     source: employees
   });
@@ -69,7 +33,6 @@ function addEmployees(data){
 
 function addDepartments(data){
   var departments = data.split("\n");
-  console.log(departments);
   $("#departments").autocomplete({
     source: departments
   });
@@ -80,6 +43,11 @@ function addPositions(data){
   $("#positions").autocomplete({
     source: positions
   });
+}
+
+function loadHighestSalaries(data) {
+  loadTable();
+  dt.fnSort([4, 'desc']);
 }
 
 function processRequest(data) {
@@ -164,75 +132,49 @@ function processRequest(data) {
   return output;
 }
 
-function getRow(item, id){
-  if (typeof item === 'undefined') {
-    return ""; // row is blank. can't "render" row
-  }
+// $("#thead").hide(); // Do not show in mobile view
 
-  if ($(window).width() > 500) {
-    var output = '<tr data-total="16" data-page="0">' +
-      '<td class="first">' + item['first_name'] + '</td>' +
-      '<td class="last">' + item['last_name'] + '</td>' +
-      '<td class="department">' + item['department'] +
-      '</td>' +
-      '<td class="title">'+ item['position'] +'</td>' +
-      '<td id="'+ id + '" class="salary">' +
-      item['salary'] + '</td></tr>';
+// var output2 = '<div class="tablerow">' +
+//   '<div class="namerow">' +
+//     '<span class="first">' + item['first_name'] + '</span> ' +
+//     '<span class="last">' + item['last_name'] + '</span>' +
+//   '</div>' +
+//   '<div class="detailsrow">' +
+//     '<span class="title">' + item['position'] + ' | </span>' +
+//     '<span class="department">' + item['department'] + '</span>' +
+//   '</div>' +
+//   '<div class="salaryrow">' +
+//     '<span id="'+ id + '" class="salary">' + item['salary'] +'</span>' +
+//   '</div>' +
+//   '</div>';
 
-    return output;
-  } else {
-    $("#thead").remove(); // Do not show in mobile view
+// return output2;
 
-    // document.getElementById('employees').placeholder = 'Mitch Landrieu, Michael Harrison';
-    // document.getElementById('departments').placeholder = 'Municipal Court, Office of the Mayor';
-    // document.getElementById('positions').placeholder = 'Police captain, mayor, judge';
+function getRow(item) {
+  var output = [];
 
-    var output2 = '<div class="tablerow">' +
-      '<div class="namerow">' +
-        '<span class="first">' + item['first_name'] + '</span> ' +
-        '<span class="last">' + item['last_name'] + '</span>' +
-      '</div>' +
-      '<div class="detailsrow">' +
-        '<span class="title">' + item['position'] + ' | </span>' +
-        '<span class="department">' + item['department'] + '</span>' +
-      '</div>' +
-      '<div class="salaryrow">' +
-        '<span id="'+ id + '" class="salary">' + item['salary'] +'</span>' +
-      '</div>' +
-    '</div>';
+  output.push(item['first_name']);
+  output.push(item['last_name']);
+  output.push(item['department']);
+  output.push(item['position']);
 
-    return output2;
-  }
-}
-
-function getRows(results, page){
-  var offset = page - 1;
-  if (offset < 0) {
-    offset = 0;
-  }
-
-  var output = "";
-  for (var i = offset * page_length; i < offset * page_length + page_length; i++) {
-    var row = getRow(results[i], i);
-    output += row;
-  }
+  var salary = item['salary'];
+  salary = formatCurrency(salary);
+  output.push(salary);
 
   return output;
 }
 
-// Move this to CSS and Foundation classes
-// function adjustWidth() {
-//   if ($(window).width() < 500) {
-//     console.log('if');
-//     //$("#thead").hide();
-//     //$("#table").css("border-color", "white");
-//     //$("table.tablesorter").css('font-size', '1em');
-//   } else {
-//     console.log('else');
-//     //$("#thead").show();
-//     //$("#table").css("border-color", "#dddddd");
-//   }
-// }
+function getRows(results) {
+  var output = [];
+
+  for (var i = 0; i < results.length; i++) {
+    var row = getRow(results[i]);
+    output.push(row);
+  }
+
+  return output;
+}
 
 function buildQueryString(data) {
   var map_query_string = '';
@@ -255,15 +197,8 @@ function buildQueryString(data) {
     map_query_string = map_query_string + "pos=" + encodeURIComponent(data['position']);
   }
 
-  if (data['page'] !== 1) {
-    if (map_query_string !== '') {
-      map_query_string = map_query_string + '&';
-    }
-    map_query_string = map_query_string + "page=" + data['page'].toString();
-  }
-
   if (map_query_string === '') {
-    map_query_string = ""; // "?q=&dept=&pos=";
+    map_query_string = "";
   }
 
   return map_query_string;
@@ -273,147 +208,62 @@ function updateUrl(data) {
   window.location.hash = buildQueryString(data);
 }
 
-function tableSorter() {
-  // $('#example').DataTable();
-  $("#table").tablesorter({
-    widgets: ['zebra']
-  });
-  $("#table").bind("sortStart", function(e) {
-    // debugger;
-    console.log('sortStart');
-
-    // Figure out which header was clicked. Ex. Last name.
-
-    // Determine which order this sort should occur. If alphabetical, then
-    // sort in reverse alphabetical.
-
-    // Using the full results list, run Underscore's sortBy function using
-    // the header and the sorting order.
-
-    // Update table HTML rows
-
-    // Trigger update for tablesorter
-  });
-  $("#table").bind("sortEnd", function(sorter) {
-    // debugger;
-    // Do something else
+function dataTables() {
+  dt = $('#table').dataTable({
+    searching: false,
+    lengthChange: false,
+    order: [[4, 'desc']],
+    filter: false,
+    pageLength: 50,
+    autoWidth: false,
+    columns: [
+      {"width": "20%"},
+      {"width": "20%"},
+      {"width": "20%"},
+      {"width": "20%"},
+      {"width": "20%"},
+    ],
+    oLanguage: {
+      sInfo: "Showing _START_ to _END_ of _TOTAL_ results. <a class='show-all'>Show all</a>",
+      oPaginate: {
+        sPrevious: "<i class='fa fa-arrow-left'></i> Previous",
+        sNext: "Next <i class='fa fa-arrow-right'></i>"
+      }
+    }
+    //"lengthMenu": [ [25, 50, 100, -1], [25, 50, 100, 'All'] ]
   });
 }
 
 function loadTable() {
-  // debugger;
+  $(".tablesorter").css({'display': 'table'});
+  $(".dataTables_wrapper").css({'display': 'block'});
+
+  // Make sure keyboard is hidden in mobile view
+  $(".name-address-box").blur();
 
   var data = {};
-  data['name'] = $('#employees').val(); // encodeURIComponent();
+  data['name'] = $('#employees').val();
   data['department'] = $('#departments').val();
   data['position'] = $('#positions').val();
-  data['page'] = page;
 
   updateUrl(data);
 
   var results = processRequest(data);
 
-  // Check that there were results found.
-  if (results.length > 0) {
-    $('.tablesorter').css({'display': 'table'});
-  } else {
-    $('.tablesorter').css({'display': 'none'});
-  }
+  var new_rows = getRows(results);
 
-  var number_of_pages = Math.ceil(results.length / page_length);
-  if (page > number_of_pages) {
-    page = number_of_pages;
-  }
-
-  var new_rows = getRows(results, page);
-
-  $("#tbody").html(new_rows);
-  tableSorter();
-  $("#table").trigger("update");
-
-  var condition = (
-    results.length > page_length// &&
-    //$("#nextprev").length === 0  // Pager is hidden
-  );
-
-  // Check that results span multiple pages
-  if (condition) {
-    // Show pager and pages
-    $(".pager").css({'display': 'block'});
-    $(".number-of-pages").css({'display': 'block'});
-  } else {
-    // Hide pager and pages
-    $(".pager").css({'display': 'none'});
-    $(".number-of-pages").css({'display': 'none'});
-  }
-
-  var results_status = formResultsLanguage(data, results);
-
-  var page_output;
-  if (results.length > page_length) {
-    page_output = "Page " + page.toString() + " of " + number_of_pages.toString();
-  }
-
-  $("#results-status").html(results_status);
-  $(".number-of-pages").html(page_output);
-
-  $.each(
-    $(".salary"), function(index, val) {
-      var id = this.id;
-      var formatted_number = reformat(id);
-      $(this).html(formatted_number);
-    }
-  );
-}
-
-function formResultsLanguage(data, results) {
-  var plural;
-  if (results.length === 1) {
-    plural = 'result';
-  } else {
-    plural = 'results';
-  }
-
-  var results_language = '<strong>' + formatThousands(results.length) + "</strong> " + plural + ' found';
-
-  if (data['name'] !== '') {
-    results_language += ' for employee "' + data['name'] + '"';
-  }
-
-  if (data['department'] !== '') {
-    results_language += ' in department ' + data['department'];
-  }
-
-  if (data['department'] !== '') {
-    results_language += ' with the job title ' + data['position'];
-  }
-
-  if (results_language.slice(-1) === '"') {
-    results_language = results_language.substr(0, results_language.length - 1) + '."';
-  } else {
-    results_language += '.';
-  }
-
-  if (results.length !== 0) {
-    var to_number = page_length * page;
-    if (to_number > results.length) {
-      to_number = results.length;
-    }
-    results_language += " Displaying " + formatThousands(page_length * (page - 1) + 1) + "-" + formatThousands(to_number) + ".";
-  } else {
-    results_language += " Please try another search.";
-  }
-
-  return results_language;
+  dt.fnClearTable();
+  dt.fnSettings()._iDisplayLength = 50;
+  dt.fnAddData(new_rows);
+  dt.fnSort([[1, 'asc'], [0, "asc"]]);
 }
 
 function parseURL() {
-  /*
-  Reads URL and returns dictionary of values.
-  */
+  // Reads URL and returns dictionary of values.
   var data = {};
 
-  if (typeof window.location.href.split('=')[1] !== 'undefined') {// If unique URL
+  // Check if unique URL
+  if (typeof window.location.href.split('=')[1] !== 'undefined') {
     // Match z=(everything until &), then take the portion after the equal sign
 
     if (window.location.href.match(/q\=[^&]*/i) !== null) {
@@ -433,17 +283,10 @@ function parseURL() {
     } else {
       data['position'] = '';
     }
-
-    if (window.location.href.match(/page\=[^&]*/i) !== null) {
-      data['page'] = parseInt(decodeURI(window.location.href.match(/page\=[^&]*/i)[0].split('=')[1]), 10);
-    } else {
-      data['page'] = 1;
-    }
   } else {
     data['name'] = '';
     data['department'] = '';
     data['position'] = '';
-    data['page'] = 1;
   }
   return data;
 }
@@ -452,7 +295,6 @@ function populateSearchParameters(data) {
   document.getElementById('employees').value = data['name'];
   document.getElementById('departments').value = data['department'];
   document.getElementById('positions').value = data['position'];
-  page = data['page'];
 }
 
 function process(data) {
@@ -467,6 +309,10 @@ function getData() {
     success: function(data) {
       console.log(Date());
       process(data);
+      dataTables();
+      loadHighestSalaries();
+      // $(".tablesorter").css({'display': 'table'});
+      // $(".dataTables_wrapper").css({'display': 'table'});
     }
   }).then(function() {
     var data = parseURL();
@@ -475,8 +321,7 @@ function getData() {
     var condition = (
       data['name'] !== '' ||
       data['department'] !== '' ||
-      data['position'] !== '' ||
-      data['page'] !== 1
+      data['position'] !== ''
     );
     if (condition) {
       loadTable();
@@ -484,46 +329,45 @@ function getData() {
   });
 }
 
-getData();
-
 $(document).ready(function() {
-  //$(function() {
-  // $("#table").tablesorter({
-  //   widgets: ['zebra']
-  // });
-  // $("#table").bind("sortStart", function() {
-  //   // Do something
-  //   console.log('yo');
-  // });
-  // $("#table").bind("sortEnd", function() {
-  //   // Do something else
-  // });
-  ///});
+  getData();
+
+  $.get(employees_url, function(data) {
+    addEmployees(data);
+  }, 'text');
+
+  $.get(departments_url, function(data) {
+    addDepartments(data);
+  }, 'text');
+
+  $.get(positions_url, function(data) {
+    addPositions(data);
+  }, 'text');
+
+  $(document).on("click", ".show-all", function() {
+    console.log('show-all');
+    var oSettings = dt.fnSettings();
+    console.log(oSettings);
+    oSettings._iDisplayLength = -1;
+    dt.fnDraw();
+    $(".show-all").css({'display': 'none'});
+  });
 
   $(".next").on("click", function() {
-    page += 1;
     loadTable();
   });
 
   $(".previous").on("click", function() {
-    page -= 1;
-    if (page < 1) {
-      page = 1;
-    }
     loadTable();
   });
 
   $(document).keypress(function(e) {
     if (e.which === 13) {
-      page = 1;
-      $(".name-address-box").blur();
       loadTable();
     }
   });
 
   $(".search-button").on("click", function() {
-    page = 1; //reset page to page 1 for new search
     loadTable();
   });
-
 });

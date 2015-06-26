@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script type="text/javascript">
-      console.log(Date());
-    </script>
+    <!-- <script type="text/javascript">
+       console.log(Date());
+    </script> -->
     <title>City of New Orleans employee salaries</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,10 +13,10 @@
     <script type="text/javascript" src="//use.typekit.net/oct0mkd.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
-    <!--<link rel="stylesheet" href='https://s3-us-west-2.amazonaws.com/lensnola/external-libraries/css/chosen.min.css'>-->
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.4.5/css/foundation.min.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/lensnola/external-libraries/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
 
     <link rel="stylesheet" href='css/lens.css'>
     <link rel="stylesheet" href='css/city-salaries.css'>
@@ -33,7 +33,7 @@
     <div class="row">
       <div class="small-12 columns input-div" id="input-div">
         <label>Search departments</label>
-        <input class="small-12 columns name-address-box" id="departments" type="search" placeholder="Municipal Court, Office of the Mayor" />
+        <input class="small-12 columns name-address-box" id="departments" type="search" placeholder="Traffic Court, Office of the Mayor" />
       </div>
     </div>
 
@@ -50,26 +50,31 @@
       </div>
     </div>
 
-    <div class="row">
+    <!-- <div class="row">
       <div class="small-12 columns results-status" id="results-status"></div>
-      <div class="small-6 medium-text-center medium-center columns number-of-pages" id="number-of-pages"></div>
+      <div class="small-6 columns number-of-pages" id="number-of-pages"></div>
       <div class="small-6 text-right right columns pager" id="pager">
         <div class="nextprev" id="nextprev">
           <a class="previous" id="previous">Previous</a> | <a class="next" id="next">Next</a>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="row">
       <div class="small-12 columns">
         <table id="table" class="tablesorter">
           <thead id="thead">
             <tr>
-              <th id="th-first" width="20%">First</th>
+              <!-- <th id="th-first" width="20%">First</th>
               <th id="th-last" width="20%">Last</th>
               <th id="th-department" width="20%">Department</th>
               <th id="th-position" width="20%">Position</th>
-              <th id="th-salary" width="20%">Salary</th>
+              <th id="th-salary" width="20%">Salary</th> -->
+              <th>First</th>
+              <th>Last</th>
+              <th>Department</th>
+              <th>Position</th>
+              <th>Salary</th>
             </tr>
           </thead>
           <tbody id="tbody"></tbody>
@@ -78,15 +83,14 @@
       </div>
     </div>
 
-    <div class="row">
-      <div class="hide-for-small-only medium-4 columns">&nbsp;</div>
-      <div class="small-6 medium-4 medium-text-center medium-center columns number-of-pages" id="number-of-pages"></div>
-      <div class="small-6 medium-4 text-right right columns pager" id="pager">
+    <!-- <div class="row">
+      <div class="small-6 columns number-of-pages" id="number-of-pages"></div>
+      <div class="small-6 text-right right columns pager" id="pager">
         <div class="nextprev" id="nextprev">
           <a class="previous" id="previous">Previous</a> | <a class="next" id="next">Next</a>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="row">
       <div class="small-12 columns">
@@ -110,9 +114,11 @@
       </div>
     </div>
 
-    <!--<script type="text/javascript" src='https://s3-us-west-2.amazonaws.com/lensnola/external-libraries/js/jquery-1.11.0.min.js'></script>-->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/lensnola/external-libraries/js/jquery.tablesorter.min.js"></script>
+
+    <!--<script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/lensnola/external-libraries/js/jquery.tablesorter.min.js"></script>-->
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+
     <script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/lensnola/external-libraries/js/jquery.csv-0.71.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.4.1/js/foundation.min.js"></script>

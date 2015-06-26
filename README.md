@@ -23,4 +23,4 @@ Creates a PostgreSQL database and imports the .csv file into one table and impor
 
 `export.sh`
 
-JOINs the two database tables before exporting the results as a new .csv file.
+JOINs the two database tables before exporting the results as a new .csv file. Also exports departments.csv, employees.csv and positions.csv, which power the autocomplete dropdown menus. 
