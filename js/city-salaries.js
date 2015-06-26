@@ -45,8 +45,29 @@ function addPositions(data){
   });
 }
 
-function loadHighestSalaries(data) {
-  loadTable();
+function loadHighestSalaries() {
+  // loadTable();
+
+  $(".tablesorter").css({'display': 'table'});
+  $(".dataTables_wrapper").css({'display': 'block'});
+
+  // Make sure keyboard is hidden in mobile view
+  $(".name-address-box").blur();
+
+  var data = {};
+  data['name'] = $('#employees').val();
+  data['department'] = $('#departments').val();
+  data['position'] = $('#positions').val();
+
+  var results = processRequest(data);
+
+  var new_rows = getRows(results, 10);
+
+  dt.fnClearTable();
+  dt.fnSettings()._iDisplayLength = 50;
+  dt.fnAddData(new_rows);
+  // dt.fnSort([[1, 'asc'], [0, "asc"]]);
+
   dt.fnSort([4, 'desc']);
 }
 
@@ -165,12 +186,16 @@ function getRow(item) {
   return output;
 }
 
-function getRows(results) {
+function getRows(results, limit) {
   var output = [];
 
   for (var i = 0; i < results.length; i++) {
     var row = getRow(results[i]);
     output.push(row);
+
+    if ((i + 1) === limit) {
+      return output;
+    }
   }
 
   return output;
@@ -235,6 +260,9 @@ function dataTables() {
 }
 
 function loadTable() {
+  // Remove loading animation
+
+
   $(".tablesorter").css({'display': 'table'});
   $(".dataTables_wrapper").css({'display': 'block'});
 
@@ -330,6 +358,9 @@ function getData() {
 }
 
 $(document).ready(function() {
+  // Add loading animation
+  // document.getElementById('animation').innerHTML = '<img >';
+
   getData();
 
   $.get(employees_url, function(data) {
