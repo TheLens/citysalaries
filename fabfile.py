@@ -96,6 +96,7 @@ def addthemall():
     repo()
     citysalaries()
     lib()
+    static()
     css()
     js()
     templates()
