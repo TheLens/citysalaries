@@ -12,6 +12,7 @@ before_deploy:
 - rm -rf citysalaries/app.py
 - rm -rf citysalaries/lib
 - rm -rf citysalaries/templates
+- mv citysalaries/static/* . # Move to /neworleans/
 - gzip -9 data/export/data.csv
 - mv data/export/data.csv.gz data/export/data.csv
 deploy:
