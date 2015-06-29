@@ -65,14 +65,12 @@ function processRequest(data) {
 
       // Split name input
       split_input = data['name'].split(' '); // ['first', 'last']
-      // console.log('split_input: ', split_input);
 
       if (split_input.length === 2) {//two words
         first = split_input[0];
         last = split_input[1];
         conditional = 'and';
       } else if (split_input.length > 2) {// >2 words, so require exact match
-        // debugger;
         full = split_input.join(' ');// Reconstruct name fragments
         conditional = 'concatenate';
       } else {//one word
@@ -256,7 +254,6 @@ function gatherData() {
   data['department'] = data['department'].replace(/ +(?= )/g,'');
   data['position'] = data['position'].replace(/ +(?= )/g,'');
 
-  console.log('data: ', data);
   return data;
 }
 
@@ -301,6 +298,7 @@ function loadTable() {
 
 function process(data) {
   window.salaries = $.csv.toObjects(data);
+  debugger;
 }
 
 $(document).ready(function() {

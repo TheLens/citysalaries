@@ -13,6 +13,8 @@ function loadHighestSalaries() {
 
   var new_rows = getRows(results, 25);
 
+  // console.log('new rows: ', new_rows);
+
   dt.fnClearTable();
   dt.fnSettings()._iDisplayLength = page_length;
   dt.fnAddData(new_rows);
