@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    {% include 'head.html' %}
+
+    <style>
+      .show-all {display: none;}
+    </style> 
+    
+  </head>
+  <body>
+
+    {% include 'banner.html' %}
+
+    {% include 'search-area.html' %}
+
+    <div class="row">
+      <div class="small-12 columns highest-paid" id="highest-paid">
+        Highest-paid employees
+      </div>
+    </div>
+
+    {% include 'table.html' %}
+
+    {% include 'foot-note.html' %}
+
+    {% include 'js.html' %}
+    <script type="text/javascript" src={{ index_js }}></script>
+
+  </body>
+</html>

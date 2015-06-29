@@ -15,15 +15,55 @@ def repo():
     local('git add .gitignore')
     local('git add .travis.yml')
     local('git add fabfile.py')
-    local('git add index.html')
     local('git add README.md')
+
+
+def citysalaries():
+    '''/citysalaries'''
+
+    local('git add citysalaries/__init__.py')
+
+
+def lib():
+    '''/lib'''
+
+    local('git add citysalaries/lib/clean.py')
+    local('git add citysalaries/lib/prepare_data.py')
+    local('git add citysalaries/lib/render_html.py')
+    local('git add citysalaries/lib/utilities.py')
 
 
 def css():
     '''/css'''
 
-    local('git add css/city-salaries.css')
-    local('git add css/lens.css')
+    local('git add citysalaries/static/css/banner.css')
+    local('git add citysalaries/static/css/city-salaries.css')
+    local('git add citysalaries/static/css/index.css')
+    local('git add citysalaries/static/css/lens.css')
+    local('git add citysalaries/static/css/search.css')
+
+
+def js():
+    '''/js'''
+
+    local('git add citysalaries/static/js/city-salaries.js')
+    local('git add citysalaries/static/js/index.js')
+    local('git add citysalaries/static/js/lens.js')
+    local('git add citysalaries/static/js/search.js')
+
+
+def templates():
+    '''/templates'''
+
+    local('git add citysalaries/templates/404.html')
+    local('git add citysalaries/templates/banner.html')
+    local('git add citysalaries/templates/foot-note.html')
+    local('git add citysalaries/templates/head.html')
+    local('git add citysalaries/templates/index.html')
+    local('git add citysalaries/templates/js.html')
+    local('git add citysalaries/templates/search-area.html')
+    local('git add citysalaries/templates/search.html')
+    local('git add citysalaries/templates/table.html')
 
 
 def data():
@@ -32,22 +72,29 @@ def data():
     local('git add data/export/data.csv')
     local('git add data/export/departments.csv')
     local('git add data/export/employees.csv')
+    local('git add data/export/highest-paid.csv')
     local('git add data/export/positions.csv')
 
 
-def js():
-    '''/css'''
+def scripts():
+    '''/scripts/'''
 
-    local('git add js/city-salaries.js')
+    local('git add scripts/export.sh')
+    local('git add scripts/import.sh')
+    local('git add scripts/main.sh')
 
 
 def addthemall():
     '''Run through entire deployment.'''
 
     repo()
+    citysalaries()
+    lib()
     css()
-    data()
     js()
+    templates()
+    data()
+    scripts()
 
 
 def push():
