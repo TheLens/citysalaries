@@ -2,9 +2,10 @@ language: python
 sudo: false
 python:
 - '2.7'
-before_deploy:
+script:
 - rm README.md
 - rm fabfile.py
+before_deploy:
 - rm requirements.txt
 - rm -rf scripts
 - rm -rf citysalaries/__init__.py
