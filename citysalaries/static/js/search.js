@@ -40,7 +40,7 @@ function populateSearchParameters(data) {
 function getData() {
   $.ajax({
     type: "GET",
-    url: "http://salaries.thelensnola.org/neworleans/data/export/data.csv",
+    url: "https://s3-us-west-2.amazonaws.com/salaries.thelensnola.org/neworleans/data/export/data.csv",
     dataType: "text",
     success: function(data) {
       console.log(Date());
@@ -65,33 +65,53 @@ function getData() {
   });
 }
 
+function showAllResults() {
+  var oSettings = dt.fnSettings();
+  oSettings._iDisplayLength = -1;
+  dt.fnDraw();
+  $(".show-all").css({'display': 'none'});
+  showHideResultsInfo();
+}
+
 $(document).ready(function () {
   getData();
 
   $(document).on("click", ".show-all", function() {
-    console.log('show-all');
-    var oSettings = dt.fnSettings();
-    console.log(oSettings);
-    oSettings._iDisplayLength = -1;
-    dt.fnDraw();
-    $(".show-all").css({'display': 'none'});
+    showAllResults();
   });
 
   $(".next").on("click", function() {
     loadTable();
+    var data = gatherData();
+    updateUrl(data);
   });
 
   $(".previous").on("click", function() {
     loadTable();
+    var data = gatherData();
+    updateUrl(data);
   });
 
   $(document).keypress(function (e) {
     if (e.which === 13) {
       loadTable();
+      var data = gatherData();
+      updateUrl(data);
     }
   });
 
   $(".search-button").on("click", function () {
     loadTable();
+    var data = gatherData();
+    updateUrl(data);
+  });
+
+  $(".show-everything").on("click", function () {
+    debugger;
+    clearAllParameters();
+    loadTable();
+    var data = gatherData();
+    updateUrl(data);
+    showAllResults();
   });
 });

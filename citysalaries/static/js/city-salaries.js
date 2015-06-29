@@ -3,6 +3,7 @@ var employees_url = 'https://s3-us-west-2.amazonaws.com/lensnola/city-salaries-2
 var departments_url = 'https://s3-us-west-2.amazonaws.com/lensnola/city-salaries-2/data/export/departments.csv';
 var positions_url = 'https://s3-us-west-2.amazonaws.com/lensnola/city-salaries-2/data/export/positions.csv';
 var results;
+var page_length = 50;
 var dt;
 
 function formatCurrency(number) {
@@ -157,7 +158,7 @@ function getRows(results, limit) {
   return output;
 }
 
-function buildQueryString(data, search) {
+function buildQueryString(data) {
   var map_query_string = '';
 
   if (data['name'] !== '') {
@@ -178,25 +179,18 @@ function buildQueryString(data, search) {
     map_query_string = map_query_string + "pos=" + encodeURIComponent(data['position']);
   }
 
-  if (map_query_string === '') {
-    map_query_string = "";
-  }
+  // if (map_query_string === '') {
+  //   map_query_string = "";
+  // }
 
-  if (search !== null) {
-    console.log('not null');
-    if (map_query_string === '') {
-      map_query_string = 'search.html'.concat(map_query_string);
-    } else {
-      map_query_string = 'search.html#'.concat(map_query_string);
-    }
-    console.log(map_query_string);
+  if (map_query_string !== '') {
+    map_query_string = "#" + map_query_string;
   }
 
   return map_query_string;
 }
 
 function updateUrl(data) {
-  // debugger;
   window.location.hash = buildQueryString(data);
 }
 
@@ -206,7 +200,7 @@ function dataTables() {
     lengthChange: false,
     order: [[4, 'desc']],
     filter: false,
-    pageLength: 50,
+    pageLength: page_length,
     autoWidth: false,
     columns: [
       {"width": "20%"},
@@ -223,14 +217,21 @@ function dataTables() {
       {sClass: "salary"},
     ],
     oLanguage: {
-      sInfo: "Showing _START_ to _END_ of _TOTAL_ results. <a class='show-all'>Show all</a>",
+      sInfo: "Showing _START_ to _END_ of _TOTAL_ results. <a class='show-all'>Show all results.</a>",
       oPaginate: {
         sPrevious: "<i class='fa fa-arrow-left'></i> Previous",
         sNext: "Next <i class='fa fa-arrow-right'></i>"
       }
-    }
+    },
+    dom: '<ip<t>ip>'// Info and pager at top and bottom of table
     //"lengthMenu": [ [25, 50, 100, -1], [25, 50, 100, 'All'] ]
   });
+}
+
+function clearAllParameters() {
+  $('#employees').val('');
+  $('#departments').val('');
+  $('#positions').val('');
 }
 
 function gatherData() {
@@ -242,6 +243,18 @@ function gatherData() {
   return data;
 }
 
+function showHideResultsInfo() {
+  var number_of_pages = $('#table').DataTable().page.info().pages;
+
+  if (number_of_pages === 1) {
+    $(".show-all").css({'display': 'none'});
+    $(".dataTables_paginate").css({'display': 'none'});
+  } else {
+    $(".show-all").css({'display': 'inline-block'});
+    $(".dataTables_paginate").css({'display': 'block'});
+  }
+}
+
 function loadTable() {
   $(".tablesorter").css({'display': 'table'});
   $(".dataTables_wrapper").css({'display': 'block'});
@@ -251,50 +264,21 @@ function loadTable() {
 
   var data = gatherData();
 
-  // TODO:
-  // updateUrl(data);
-
   var results = processRequest(data);
 
   var new_rows = getRows(results);
 
   dt.fnClearTable();
-  dt.fnSettings()._iDisplayLength = 50;
+  dt.fnSettings()._iDisplayLength = page_length;
   dt.fnAddData(new_rows);
   dt.fnSort([[1, 'asc'], [0, "asc"]]);
+
+  showHideResultsInfo();
 }
 
 function process(data) {
   window.salaries = $.csv.toObjects(data);
 }
-
-// function getData() {
-//   $.ajax({
-//     type: "GET",
-//     url: "https://s3-us-west-2.amazonaws.com/lensnola/city-salaries-2/data/export/highest-paid.csv",
-//     dataType: "text",
-//     success: function(data) {
-//       console.log(Date());
-//       process(data);
-//       dataTables();
-//       loadHighestSalaries();
-//       // $(".tablesorter").css({'display': 'table'});
-//       // $(".dataTables_wrapper").css({'display': 'table'});
-//     }
-//   }).then(function() {
-//     var data = parseURL();
-//     populateSearchParameters(data);
-
-//     var condition = (
-//       data['name'] !== '' ||
-//       data['department'] !== '' ||
-//       data['position'] !== ''
-//     );
-//     if (condition) {
-//       loadTable();
-//     }
-//   });
-// }
 
 $(document).ready(function() {
   $.get(employees_url, function(data) {

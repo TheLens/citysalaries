@@ -10,7 +10,9 @@ from citysalaries import (
     PROJECT_DIR,
     BANNER_CSS_RENDER,
     CITY_SALARIES_CSS_RENDER,
+    INDEX_CSS_RENDER,
     LENS_CSS_RENDER,
+    SEARCH_CSS_RENDER,
     CITY_SALARIES_JS_RENDER,
     INDEX_JS_RENDER,
     LENS_JS_RENDER,
@@ -36,6 +38,7 @@ class Render(object):
         output = template.render(
             banner_css=BANNER_CSS_RENDER,
             citysalaries_css=CITY_SALARIES_CSS_RENDER,
+            index_css=INDEX_CSS_RENDER,
             lens_css=LENS_CSS_RENDER,
             citysalaries_js=CITY_SALARIES_JS_RENDER,
             index_js=INDEX_JS_RENDER,
@@ -56,6 +59,7 @@ class Render(object):
             banner_css=BANNER_CSS_RENDER,
             citysalaries_css=CITY_SALARIES_CSS_RENDER,
             lens_css=LENS_CSS_RENDER,
+            search_css=SEARCH_CSS_RENDER,
             citysalaries_js=CITY_SALARIES_JS_RENDER,
             lens_js=LENS_JS_RENDER,
             search_js=SEARCH_JS_RENDER

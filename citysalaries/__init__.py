@@ -22,11 +22,15 @@ DATA_DIR = '%s/data' % PROJECT_DIR
 # CSS
 BANNER_CSS = '/static/css/banner.css'
 CITY_SALARIES_CSS = '/static/css/city-salaries.css'
+INDEX_CSS = '/static/css/index.css'
 LENS_CSS = '/static/css/lens.css'
+SEARCH_CSS = '/static/css/search.css'
 
 BANNER_CSS_RENDER = 'css/banner.css'
 CITY_SALARIES_CSS_RENDER = 'css/city-salaries.css'
+INDEX_CSS_RENDER = 'css/index.css'
 LENS_CSS_RENDER = 'css/lens.css'
+SEARCH_CSS_RENDER = 'css/search.css'
 
 # JavaScript
 CITY_SALARIES_JS = '/static/js/city-salaries.js'

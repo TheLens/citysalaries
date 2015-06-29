@@ -7,28 +7,22 @@ function loadHighestSalaries() {
   // Make sure keyboard is hidden in mobile view
   $(".name-address-box").blur();
 
-  var data = {};
-  data.name = $('#employees').val();
-  data.department = $('#departments').val();
-  data.position = $('#positions').val();
+  var data = gatherData();
 
   var results = processRequest(data);
 
   var new_rows = getRows(results, 25);
 
   dt.fnClearTable();
-  dt.fnSettings()._iDisplayLength = 50;
+  dt.fnSettings()._iDisplayLength = page_length;
   dt.fnAddData(new_rows);
-  // dt.fnSort([[1, 'asc'], [0, "asc"]]);
-
   dt.fnSort([4, 'desc']);
 }
 
 function loadNewPage() {
-  // debugger;
   var data = gatherData();
-  var url = buildQueryString(data, 'search');// For updated search pages, not the initial load.
-  window.location.href = url;
+  var query_string = buildQueryString(data);// For updated search pages, not the initial load.
+  window.location.href = 'search.html' + query_string;
 }
 
 function getData() {
@@ -37,13 +31,12 @@ function getData() {
     url: "https://s3-us-west-2.amazonaws.com/lensnola/city-salaries-2/data/export/highest-paid.csv",
     dataType: "text",
     success: function(data) {
-      console.log(Date());
       process(data);
       dataTables();
-      loadHighestSalaries();
     }
   }).then(function() {
     loadTable();
+    loadHighestSalaries();
   });
 }
 
@@ -57,6 +50,11 @@ $(document).ready(function () {
   });
 
   $(".search-button").on("click", function () {
+    loadNewPage();
+  });
+
+  $(".show-everything").on("click", function () {
+    clearAllParameters();
     loadNewPage();
   });
 });

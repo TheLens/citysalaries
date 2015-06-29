@@ -19,10 +19,10 @@ deploy:
     access_key_id: AKIAIWQKYAETOQ2N7CBQ
     secret_access_key:
       secure: rsPUqE8JC6ivKD3BJb4yFPgg93w65U12zuv42sVALlqJZCtsUh4BZXcwvnHdmp8De3qNMk/qQaRZvhz0WqfG4heNzee5qLFKsQ2KBpWXzqvfoLcz3xv4wp9ZYhr+5nYEnbla16/yIljqIorUPnGilz1Iet18491BE3wWPAses6EXVCjpprU4V8raTao54PphjaG8d4fbfjGNo8TgDwve2jhuQqgNn3kXvyWxFwUYTqSmYeOq88jLxc5/Hfpaa5JHWRi2rzgiKUfG8/79cQ9ICHS3F+QBwwNd2GdpMF5XfywBoPHl3djz7Ji65RbIqv9KRDhtB/vdjixMKAvyuuTI19wUHlEOn/0kf0gAEO1MlDNjHU03CuCnX8xL72NJuDQf4vWA3SkdK56VYIXn1Hv6tToSJLuHVbenQU9vZVyaZtn+6EjTUyOv94eM080aca+fNbTOvTiacaEfuODWG8Lh25eV3mUyahB9GZOppoTHhAJrituUt7aVwjarh9+nlM6se0sgRsiTf1R31gKGHe/SHCwqF4ctIe9OdEiDwkAjJUn+UbjiA6ZEXIzJZETzytCZH/F5fqy6DJrRVsT5ADbwrdyjCWjCA0yT1EsrR7rz83JFpIBHd0d7uD5jZz82Oy635rgxGeLxuJt5fKhJ2Yp8Yb1ExKhr/vJ0gIGMqFO/chs=
-    bucket: "salaries.thelensnola.org"
-    endpoint: "salaries.thelensnola.org.s3-website-us-west-2.amazonaws.com"
-    region: "us-west-2"
-    upload-dir: "neworleans"
+    bucket: salaries.thelensnola.org
+    endpoint: salaries.thelensnola.org.s3-website-us-west-2.amazonaws.com
+    region: us-west-2
+    upload-dir: neworleans
     detect_encoding: true
     skip_cleanup: true
     acl: public_read
@@ -33,10 +33,10 @@ deploy:
     access_key_id: AKIAIWQKYAETOQ2N7CBQ
     secret_access_key:
       secure: rsPUqE8JC6ivKD3BJb4yFPgg93w65U12zuv42sVALlqJZCtsUh4BZXcwvnHdmp8De3qNMk/qQaRZvhz0WqfG4heNzee5qLFKsQ2KBpWXzqvfoLcz3xv4wp9ZYhr+5nYEnbla16/yIljqIorUPnGilz1Iet18491BE3wWPAses6EXVCjpprU4V8raTao54PphjaG8d4fbfjGNo8TgDwve2jhuQqgNn3kXvyWxFwUYTqSmYeOq88jLxc5/Hfpaa5JHWRi2rzgiKUfG8/79cQ9ICHS3F+QBwwNd2GdpMF5XfywBoPHl3djz7Ji65RbIqv9KRDhtB/vdjixMKAvyuuTI19wUHlEOn/0kf0gAEO1MlDNjHU03CuCnX8xL72NJuDQf4vWA3SkdK56VYIXn1Hv6tToSJLuHVbenQU9vZVyaZtn+6EjTUyOv94eM080aca+fNbTOvTiacaEfuODWG8Lh25eV3mUyahB9GZOppoTHhAJrituUt7aVwjarh9+nlM6se0sgRsiTf1R31gKGHe/SHCwqF4ctIe9OdEiDwkAjJUn+UbjiA6ZEXIzJZETzytCZH/F5fqy6DJrRVsT5ADbwrdyjCWjCA0yT1EsrR7rz83JFpIBHd0d7uD5jZz82Oy635rgxGeLxuJt5fKhJ2Yp8Yb1ExKhr/vJ0gIGMqFO/chs=
-    bucket: "www.salaries.thelensnola.org"
-    endpoint: "www.salaries.thelensnola.org.s3-website-us-west-2.amazonaws.com"
-    region: "us-west-2"
-    upload-dir: "neworleans"
+    bucket: www.salaries.thelensnola.org
+    endpoint: www.salaries.thelensnola.org.s3-website-us-west-2.amazonaws.com
+    region: us-west-2
+    upload-dir: neworleans
     detect_encoding: true
     skip_cleanup: true
     acl: public_read
