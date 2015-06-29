@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>City of New Orleans employee salaries</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" href="https://s3-us-west-2.amazonaws.com/lensnola/images/favicon.ico">
+
+<meta name="description" content="Louisiana and New Orleans elections results for the March 28 municipal primary election.">
+<meta name="keywords" content="New Orleans, elections, Louisiana, March 28, primary, election, election day" />
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@TheLensNOLA">
+<meta name="twitter:site:id" content="thelensnola">
+<meta name="twitter:creator" content="@TheLensNOLA">
+<meta name="twitter:title" content="Live election results for Louisiana and New Orleans, March 28, 2015">
+<meta name="twitter:description" content="Follow live results for the municipal primary election.">
+<meta name="twitter:image:src" content="https://s3-us-west-2.amazonaws.com/elections.thelensnola.org/statepromo2.png">
+
+<meta property="og:title" content="Live election results for Louisiana and New Orleans, March 28, 2015 - The Lens" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://elections.thelensnola.org"/>
+<meta property="og:description" content="Follow live results for the municipal primary election." />      
+<meta property="og:site_name" content="The Lens" />
+<meta property="og:image" content="https://s3-us-west-2.amazonaws.com/elections.thelensnola.org/statepromo2.png" />
+<meta property="article:publisher" content="https://www.facebook.com/thelensnola" />
+
+<script type="text/javascript" src="//use.typekit.net/oct0mkd.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.4.5/css/foundation.min.css">
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/lensnola/external-libraries/css/tablesaw.stackonly.css">
+
+<link rel="stylesheet" href=css/lens.css>
+<link rel="stylesheet" href=css/banner.css>
+<link rel="stylesheet" href=css/city-salaries.css>
+<!--<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54458129-3', 'auto');
+  ga('send', 'pageview');
+
+</script>-->
+
+    <style>
+      .show-all {display: none;}
+    </style> 
+    
+  </head>
+  <body>
+
+    <div class="banner" id="banner">
+  <a href="http://thelensnola.org/" target="_blank" class="banner-logo" id="banner-logo">
+      <img src="https://s3-us-west-2.amazonaws.com/lensnola/land-records/css/images/lens-logo-retina.png" class="banner-image" id="banner-image" width="100">
+  </a>
+  <a href="/index.html" class="banner-title" id="banner-title">City of New Orleans employee salaries</a>
+  <a href="http://thelensnola.org/support-us/" target="_blank" class="banner-support" id="banner-support">Support<br>The Lens</a>
+  <a href="mailto:?subject=Live%20election%20results%20by%20The%20Lens&body=http://elections.thelensnola.org" target="_blank" class="banner-social-email" id="banner-social-email"><i class="fa fa-envelope"></i></a>
+  <a href="https://twitter.com/intent/tweet?url=http://elections.thelensnola.org;text=I'm watching live election results of Louisiana and New Orleans.;source=webclient" target="_blank" class="banner-social-twitter" id="banner-social-twitter"><i id="social-twitter" class="fa fa-twitter"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=http://elections.thelensnola.org&p[title]=The Lens presents live election results for New Orleans and Louisiana. View precinct-by-precinct vote totals with an interactive map" target="_blank" class="banner-social-facebook" id="banner-social-facebook"><i class="fa fa-facebook"></i></a>
+</div>
+
+    <div class="row">
+  <div class="small-12 columns input-div" id="input-div">
+    <label>Search employees</label>
+    <input class="small-12 columns name-address-box" id="employees" type="search" placeholder="Mitch Landrieu, Michael Harrison" />
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 columns input-div" id="input-div">
+    <label>Search departments</label>
+    <input class="small-12 columns name-address-box" id="departments" type="search" placeholder="Traffic Court, Office of the Mayor" />
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 columns input-div" id="input-div">
+    <label>Search positions</label>
+    <input id="positions" class="small-12 columns name-address-box" type="search" placeholder="Police captain, council member" />
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 small-centered text-center columns ui-components" id="ui-components">
+    <button class="small button search-button" id="search-button">Search</button>
+    <a class="show-all">Show all</a>
+  </div>
+</div>
+
+    <div class="row">
+      <div class="small-12 columns highest-paid" id="highest-paid">
+        Highest-paid employees
+      </div>
+    </div>
+
+    <div class="row">
+  <div class="small-12 columns">
+    <table id="table" class="tablesorter tablesaw tablesaw-stack" data-tablesaw-mode="stack">
+      <thead id="thead">
+        <tr>
+          <th>First</th>
+          <th>Last</th>
+          <th>Department</th>
+          <th>Position</th>
+          <th>Salary</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+    </div>
+  </div>
+</div>
+
+    <div class="row">
+  <div class="small-12 columns">
+    <div class="panel">
+      <p>
+        Source: New Orleans Civil Service Department. This information was released under the Louisiana Public Records Act and is current as of May 21, 2015.
+      </p>
+      <p>
+        Note: An employee's annual salary is the budgeted amount, and therefore does not include additional money such as overtime pay. However, it might include longevity pay, temporary pay, supplemental pay or special rates of pay. View the city's <a href="TODO: Dummy link until we get the document and upload to DocumentCloud" target="_blank">pay plan</a> for more information about these types of income.
+      </p>
+      <p>
+        The data only includes full-time employees in the city's payroll system (?).
+      </p>
+      <p>
+        This cites position names as listed in city's payroll records. In some cases, employees may have different job titles than those listed here, such as some mayoral appointees.
+      </p>
+      <p>
+        <a href='http://thelensnola.org/2014/07/22/with-new-tool-the-lens-makes-it-easy-to-find-out-how-much-city-employees-are-paid/'>Learn more about how these figures were calculated</a>.
+      </p>
+    </div>
+  </div>
+</div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+<!--[if lt IE 9]><script src="https://s3-us-west-2.amazonaws.com/lensnola/external-libraries/js/respond.js"></script><!--<![endif]-->
+<script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/lensnola/external-libraries/js/tablesaw.stackonly.js"></script>
+<script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/lensnola/external-libraries/js/jquery.csv-0.71.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.4.1/js/foundation.min.js"></script>
+<script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/lensnola/external-libraries/js/jquery-ui-1.11.4.autocomplete-only.min.js"></script>
+<script type="text/javascript">
+  $(document).foundation();
+</script>
+<script type="text/javascript" src=js/lens.js></script>
+<script type="text/javascript" src=js/city-salaries.js></script>
+<!-- <script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/lensnola/chartbeat.js"></script> -->
+    <script type="text/javascript" src=js/index.js></script>
+
+  </body>
+</html>
