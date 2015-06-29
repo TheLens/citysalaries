@@ -33,6 +33,12 @@ def lib():
     local('git add citysalaries/lib/utilities.py')
 
 
+def static():
+    '''/static'''
+
+    local('git add citysalaries/static/index.html')
+
+
 def css():
     '''/css'''
 
