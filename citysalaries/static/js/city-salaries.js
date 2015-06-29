@@ -1,7 +1,7 @@
 
-var employees_url = 'https://s3-us-west-2.amazonaws.com/lensnola/city-salaries-2/data/export/employees.csv';
-var departments_url = 'https://s3-us-west-2.amazonaws.com/lensnola/city-salaries-2/data/export/departments.csv';
-var positions_url = 'https://s3-us-west-2.amazonaws.com/lensnola/city-salaries-2/data/export/positions.csv';
+var employees_url = 'https://s3-us-west-2.amazonaws.com/salaries.thelensnola.org/neworleans/data/export/employees.csv';
+var departments_url = 'https://s3-us-west-2.amazonaws.com/salaries.thelensnola.org/neworleans/data/export/departments.csv';
+var positions_url = 'https://s3-us-west-2.amazonaws.com/salaries.thelensnola.org/neworleans/data/export/positions.csv';
 var results;
 var page_length = 50;
 var dt;
@@ -298,7 +298,6 @@ function loadTable() {
 
 function process(data) {
   window.salaries = $.csv.toObjects(data);
-  debugger;
 }
 
 $(document).ready(function() {

@@ -30,7 +30,7 @@ function loadNewPage() {
 function getData() {
   $.ajax({
     type: "GET",
-    url: "https://s3-us-west-2.amazonaws.com/lensnola/city-salaries-2/data/export/highest-paid.csv",
+    url: "https://s3-us-west-2.amazonaws.com/salaries.thelensnola.org/neworleans/data/export/highest-paid.csv",
     dataType: "text",
     success: function(data) {
       process(data);
