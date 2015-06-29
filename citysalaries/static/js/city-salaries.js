@@ -221,7 +221,8 @@ function dataTables() {
       oPaginate: {
         sPrevious: "<i class='fa fa-arrow-left'></i> Previous",
         sNext: "Next <i class='fa fa-arrow-right'></i>"
-      }
+      },
+      sZeroRecords: "No records found. Please try another search."
     },
     dom: '<ip<t>ip>'// Info and pager at top and bottom of table
     //"lengthMenu": [ [25, 50, 100, -1], [25, 50, 100, 'All'] ]
@@ -270,8 +271,11 @@ function loadTable() {
 
   dt.fnClearTable();
   dt.fnSettings()._iDisplayLength = page_length;
-  dt.fnAddData(new_rows);
-  dt.fnSort([[1, 'asc'], [0, "asc"]]);
+
+  if (results.length !== 0) {
+    dt.fnAddData(new_rows);
+    dt.fnSort([[1, 'asc'], [0, "asc"]]);
+  }
 
   showHideResultsInfo();
 }

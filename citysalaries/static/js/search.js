@@ -107,7 +107,6 @@ $(document).ready(function () {
   });
 
   $(".show-everything").on("click", function () {
-    debugger;
     clearAllParameters();
     loadTable();
     var data = gatherData();
