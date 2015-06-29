@@ -38,6 +38,7 @@ def static():
     '''/static'''
 
     local('git add citysalaries/static/index.html')
+    local('git add citysalaries/static/search.html')
 
 
 def css():
