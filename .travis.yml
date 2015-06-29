@@ -5,6 +5,7 @@ python:
 before_deploy:
 - rm README.md
 - rm fabfile.py
+- rm requirements.txt
 - rm -rf scripts
 - rm -rf citysalaries/__init__.py
 - rm -rf citysalaries/app.py

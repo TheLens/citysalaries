@@ -16,6 +16,7 @@ def repo():
     local('git add .travis.yml')
     local('git add fabfile.py')
     local('git add README.md')
+    local('git add requirements.txt')
 
 
 def citysalaries():
