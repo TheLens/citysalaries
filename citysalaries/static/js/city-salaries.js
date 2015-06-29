@@ -59,6 +59,7 @@ function processRequest(data) {
     output = _.filter(output, function(item) {
       var first = '';
       var last = '';
+      var full = '';
       var condition;
       var conditional;
 
@@ -66,25 +67,32 @@ function processRequest(data) {
       split_input = data['name'].split(' '); // ['first', 'last']
       // console.log('split_input: ', split_input);
 
-      if (split_input.length > 1) {
+      if (split_input.length === 2) {//two words
         first = split_input[0];
         last = split_input[1];
         conditional = 'and';
-      } else {
+      } else if (split_input.length > 2) {// >2 words, so require exact match
+        // debugger;
+        full = split_input.join(' ');// Reconstruct name fragments
+        conditional = 'concatenate';
+      } else {//one word
         first = data['name'];
         last = data['name'];
         conditional = 'or';
       }
 
-      var cond1 = item['first_name'].toUpperCase().indexOf(first.toUpperCase()) !== -1;
-      var cond2 = item['last_name'].toUpperCase().indexOf(last.toUpperCase()) !== -1; // Returns -1 if the value is not found.
+      // Check if value is found:
+      var cond1 = item['first_name'].toUpperCase().indexOf(first.toUpperCase()) !== -1;// (Returns -1 if the value is not found.)
+      var cond2 = item['last_name'].toUpperCase().indexOf(last.toUpperCase()) !== -1;
+      var thing_to_check = item['first_name'] + ' ' + item['last_name'];
+      var cond3 = (thing_to_check).toUpperCase().indexOf(full.toUpperCase()) !== -1;
 
       if (conditional === 'and') {
         condition = cond1 && cond2;
       } else if (conditional === 'or') {
         condition = cond1 || cond2;
-      }
-
+      } else if (conditional === 'concatenate')
+        condition = cond3;
       return condition;
     });
   }
@@ -218,11 +226,13 @@ function dataTables() {
     ],
     oLanguage: {
       sInfo: "Showing _START_ to _END_ of _TOTAL_ results. <a class='show-all'>Show all results.</a>",
+      sInfoEmpty: "",
       oPaginate: {
         sPrevious: "<i class='fa fa-arrow-left'></i> Previous",
         sNext: "Next <i class='fa fa-arrow-right'></i>"
       },
-      sZeroRecords: "No records found. Please try another search."
+      sZeroRecords: "No records found. Please try another search.",
+      sEmptyTable: "No records found. Please try another search."
     },
     dom: '<ip<t>ip>'// Info and pager at top and bottom of table
     //"lengthMenu": [ [25, 50, 100, -1], [25, 50, 100, 'All'] ]
@@ -241,13 +251,19 @@ function gatherData() {
   data['department'] = $('#departments').val();
   data['position'] = $('#positions').val();
 
+  // Replace any extraneous spaces with a single space
+  data['name'] = data['name'].replace(/ +(?= )/g,'');
+  data['department'] = data['department'].replace(/ +(?= )/g,'');
+  data['position'] = data['position'].replace(/ +(?= )/g,'');
+
+  console.log('data: ', data);
   return data;
 }
 
 function showHideResultsInfo() {
   var number_of_pages = $('#table').DataTable().page.info().pages;
 
-  if (number_of_pages === 1) {
+  if (number_of_pages <= 1) {
     $(".show-all").css({'display': 'none'});
     $(".dataTables_paginate").css({'display': 'none'});
   } else {
@@ -275,6 +291,9 @@ function loadTable() {
   if (results.length !== 0) {
     dt.fnAddData(new_rows);
     dt.fnSort([[1, 'asc'], [0, "asc"]]);
+  } else {
+    $(".dataTables_paginate").css({'display': 'none'});
+    $(".dataTables_info").css({'display': 'none'});
   }
 
   showHideResultsInfo();

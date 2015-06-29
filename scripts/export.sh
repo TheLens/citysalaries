@@ -3,8 +3,7 @@
 echo "JOIN employees and agencies tables and export..."
 psql citysalaries -c "COPY (
   SELECT e.last_name,
-         e.first_name,
-         e.middle_name,
+         concat_ws(' ', e.first_name::text, e.middle_name::text) AS first_name,
          e.salary,
          e.job_title AS position,
          a.name AS department
@@ -15,8 +14,7 @@ psql citysalaries -c "COPY (
 echo "JOIN employees and agencies tables and export highest 25 salaries..."
 psql citysalaries -c "COPY (
   SELECT e.last_name,
-         e.first_name,
-         e.middle_name,
+         concat_ws(' ', e.first_name::text, e.middle_name::text) AS first_name,
          e.salary,
          e.job_title AS position,
          a.name AS department
