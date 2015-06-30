@@ -69,7 +69,7 @@ def clean_data(worksheet, writer, headers):
 
             if header == 'job_title':
                 cell_value = cell_value.title()
-                # cell_value = Clean().job_titles_only(cell_value)
+                cell_value = Clean().job_titles_only(cell_value)
             else:
                 # Correct things like Iii, Jr, Iv, etc.
                 cell_value = Clean().all(cell_value)
