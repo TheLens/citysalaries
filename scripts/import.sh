@@ -25,7 +25,7 @@ CREATE TABLE employees (
     first_name    varchar(50),
     middle_name   varchar(50),
     job_code      varchar(50),
-    job_title     varchar(50),
+    job_title     varchar(100),
     hours         numeric(9, 2),
     salary        numeric(9, 2)  
 );"
