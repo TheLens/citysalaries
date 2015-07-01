@@ -58,10 +58,9 @@ table.dataTable thead td {
   display: none;
 }
 
-/*.show-everything,
-.show-all {
-  display: block;
-}*/
+.show-everything {
+  padding-left: 15px;
+}
 
 .tablerow {
   border-bottom: 1px solid #F2F2F2;
