@@ -1,39 +1,5 @@
 #!/bin/bash
 
-# echo "JOIN employees and agencies tables and export to data.csv..."
-# psql citysalaries -c "COPY (
-#   SELECT e.last_name,
-#          concat_ws(' ', e.first_name::text, e.middle_name::text) AS first_name,
-#          e.salary,
-#          e.job_title AS position,
-#          a.name AS department
-#   FROM employees AS e
-#   JOIN agencies AS a on e.department_id = a.department_id
-#   ORDER BY last_name ASC
-# ) to '$PYTHONPATH/data/export/data.csv' WITH CSV HEADER;"
-
-# echo "JOIN employees and agencies tables and export highest 25 salaries to highest-paid.csv..."
-# psql citysalaries -c "COPY (
-#   SELECT e.last_name,
-#          concat_ws(' ', e.first_name::text, e.middle_name::text) AS first_name,
-#          e.salary,
-#          e.job_title AS position,
-#          a.name AS department
-#   FROM employees AS e
-#   JOIN agencies AS a on e.department_id = a.department_id
-#   ORDER BY salary DESC
-#   LIMIT 25
-# ) to '$PYTHONPATH/data/export/highest-paid.csv' WITH CSV HEADER;"
-
-# echo "JOIN employees and agencies tables and export to departments.csv..."
-# psql citysalaries -c "COPY (
-#     SELECT DISTINCT name
-#     FROM agencies
-#     JOIN employees on employees.department_id = agencies.department_id
-#     ORDER BY name ASC
-# ) to '$PYTHONPATH/data/export/departments.csv';"
-# sed -i '' 1d /Users/thomasthoren/projects/city-salaries/data/export/departments.csv
-
 echo "Export employee list to employees.csv..."
 psql citysalaries -c "COPY (
     SELECT (first_name || ' ' || middle_name || ' ' || last_name) AS name
@@ -72,10 +38,6 @@ psql citysalaries -c "COPY (
 ) to '$PYTHONPATH/data/export/offices.csv' WITH CSV HEADER;"
 sed -i '' 1d /Users/thomasthoren/projects/city-salaries/data/export/positions.csv
 
-######
-# For more specific department + office descriptions (from 7-digit code)
-######
-
 echo "JOIN employees and offices tables and export..."
 psql citysalaries -c "COPY (
   SELECT e.last_name,
@@ -91,6 +53,24 @@ psql citysalaries -c "COPY (
       FROM offices
   ) AS o on e.department_office_id = o.department_office_id
 ) to '$PYTHONPATH/data/export/data.csv' WITH CSV HEADER;"
+
+echo "JOIN employees and departments/offices tables and export to data.csv..."
+psql citysalaries -c "COPY (
+  SELECT e.last_name,
+         concat_ws(' ', e.first_name::text, e.middle_name::text) AS first_name,
+         e.salary,
+         e.job_title AS position,
+         o.office_description AS department
+  FROM employees AS e
+  JOIN (
+      SELECT DISTINCT ON (department_office_id)
+          department_office_id,
+          office_description
+      FROM offices
+  ) AS o on e.department_office_id = o.department_office_id
+  ORDER BY first_name ASC
+) to '$PYTHONPATH/data/export/data.csv' WITH CSV HEADER;"
+
 
 echo "JOIN employees and departments/offices tables and export highest 25 salaries to highest-paid.csv..."
 psql citysalaries -c "COPY (
@@ -108,18 +88,4 @@ psql citysalaries -c "COPY (
   ) AS o on e.department_office_id = o.department_office_id
   ORDER BY salary DESC
   LIMIT 25
-) to '$PYTHONPATH/data/export/data.csv' WITH CSV HEADER;"
-
-
-# echo "JOIN employees and departments/offices tables and export highest 25 salaries to highest-paid.csv..."
-# psql citysalaries -c "COPY (
-#   SELECT e.last_name,
-#          concat_ws(' ', e.first_name::text, e.middle_name::text) AS first_name,
-#          e.salary,
-#          e.job_title AS position,
-#          a.name AS department
-#   FROM employees AS e
-#   JOIN agencies AS a on e.department_id = a.department_id
-#   ORDER BY salary DESC
-#   LIMIT 25
-# ) to '$PYTHONPATH/data/export/highest-paid.csv' WITH CSV HEADER;"
+) to '$PYTHONPATH/data/export/highest-paid.csv' WITH CSV HEADER;"

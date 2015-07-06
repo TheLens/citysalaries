@@ -1,0 +1,425 @@
+department_id,office_id,department_office_id,office_description
+All,,,All
+898,8973,8988973,Canal Street Development Corporation
+220,2234,2202234,Chief Administrative Office - 311 Call Center Operations
+220,2282,2202282,Chief Administrative Office - Budget And Planning
+220,2297,2202297,Chief Administrative Office - Equipment Maintenance Division - General Maintenance
+220,2215,2202215,Chief Administrative Office - Executive Office
+220,2288,2202288,Chief Administrative Office - Internal Audit
+220,2280,2202280,Chief Administrative Office - Mail Room
+220,2231,2202231,Chief Administrative Office - Management Information Systems
+220,2277,2202277,Chief Administrative Office - Municipal Training Academy
+220,2213,2202213,Chief Administrative Office - Office Emerg Preparedness
+220,2216,2202216,Chief Administrative Office - Office Municipal Invest.
+220,2285,2202285,Chief Administrative Office -Capital Projects
+220,2275,2202275,Chief Administrative Office -Hospital - Insurance
+220,2273,2202273,Chief Administrative Office -Personnel/Office Mgmt
+220,2284,2202284,Chief Administrative Office -Special Projects
+200,2020,2002020,City Council - Clerk Of Council
+200,2040,2002040,City Council - Council Fiscal Office
+200,2030,2002030,City Council - Council Research
+200,2013,2002013,City Council - Councilmember District A
+200,2014,2002014,City Council - Councilmember District B
+200,2015,2002015,City Council - Councilmember District C
+200,2016,2002016,City Council - Councilmember District D
+200,2017,2002017,City Council - Councilmember District E
+200,2011,2002011,City Council - Councilmember-At-Large (A)
+200,2012,2002012,City Council - Councilmember-At-Large (B)
+200,2010,2002010,City Council - Councilmembers' Office
+200,2050,2002050,City Council - Utility Regulatory/Energy
+670,6714,6706714,City Planning Commission - Board Of Zoning Adjustment
+670,6723,6706723,City Planning Commission - Comprehensive Planning
+670,6713,6706713,City Planning Commission - Land Use Regulation
+670,6711,6706711,City Planning Commission - Mapping
+670,6701,6706701,City Planning Commission - Policy Formulation & Admin
+670,6717,6706717,City Planning Commission -Enhancement
+480,4801,4804801,Civil Service Department - Director's Office
+480,4825,4804825,Civil Service Department - Fire  Testing & Validation
+480,4827,4804827,Civil Service Department - Police Hiring
+860,8610,8608610,Clerk of Criminal District Court - Clerk Administration
+860,8640,8608640,Clerk of Criminal District Court - Clerk Cj Infrastruct Recov
+860,8630,8608630,Clerk of Criminal District Court - Clerk In-Court
+860,8642,8608642,Clerk of Criminal District Court - Clerk Microfilm
+860,8643,8608643,Clerk of Criminal District Court - Clerk Polling Sites
+860,8620,8608620,Clerk of Criminal District Court - Clerk Pre-Court
+860,8641,8608641,Clerk of Criminal District Court - Clerk Records Room
+860,8644,8608644,Clerk of Criminal District Court - Court Delay Reduction Prog
+899,8990,8998990,Clf Audubon Park Payroll
+820,8201,8208201,Coroner's Office - Coroner Administration
+820,8210,8208210,Coroner's Office - Coroner Autopsies / Lab
+820,8220,8208220,Coroner's Office - Coroner Commitments
+820,8240,8208240,Coroner's Office - Coroner Examinations
+820,8230,8208230,Coroner's Office - Coroner Investigations
+837,8375,8378375,Dic Custodians / Messengers
+781,7810,7817810,Economic Development Fund
+400,4011,4004011,Finance Department - Accounting Administration
+400,4043,4004043,Finance Department - Ad Valorem Taxes
+400,4035,4004035,Finance Department - Audit
+400,4039,4004039,Finance Department - Bingo Unit
+400,4046,4004046,Finance Department - Brake Tag/Sanitation
+400,4042,4004042,Finance Department - Cashiers
+400,4055,4004055,Finance Department - Central Supply
+400,4019,4004019,Finance Department - Control
+400,4001,4004001,Finance Department - Director's Office
+400,4081,4004081,Finance Department - Employee Retirement System
+400,4036,4004036,Finance Department - Field Collections
+400,4033,4004033,Finance Department - Fiscal Records
+400,4071,4004071,Finance Department - Food Stamps Administration
+400,4072,4004072,Finance Department - Food Stamps Issuance
+400,4016,4004016,Finance Department - General Fund
+400,4054,4004054,Finance Department - Inventory Control
+400,9640,4009640,Finance Department - No Mus Art P/R
+400,4026,4004026,Finance Department - Payroll/Payroll Deductions
+400,4053,4004053,Finance Department - Procurement & Support
+400,4051,4004051,Finance Department - Purchasing Administration
+400,4044,4004044,Finance Department - Receipts & Disbursements
+400,4031,4004031,Finance Department - Revenue Administration
+400,4032,4004032,Finance Department - Revenue Applications
+400,4038,4004038,Finance Department - Settlements/Legal Enforce
+400,4034,4004034,Finance Department - Tax Control
+400,4045,4004045,Finance Department - Tax Research
+400,4041,4004041,Finance Department - Treasury Administration
+250,2522,2502522,Fire Department - Airport Suppression
+250,2521,2502521,Fire Department - City Suppression
+250,2530,2502530,Fire Department - Fire Academy Training
+250,2510,2502510,Fire Department - Fire Administration
+250,2540,2502540,Fire Department - Fire Communications
+250,2552,2502552,Fire Department - Fire Prevention & Safety
+250,2553,2502553,Fire Department - Gf-Prevention Insp & Educ
+250,2523,2502523,Fire Department - Hazardous Materials
+250,2545,2502545,Fire Department - Nasa Suppression
+250,2513,2502513,Fire Department - Public Affairs
+250,2555,2502555,Fire Department - Safer Grant
+250,2514,2502514,Fire Department - Supply Shop
+892,8920,8928920,French Market Corporation - Fmc Administration
+892,8922,8928922,French Market Corporation - Fmc Markets
+892,8921,8928921,French Market Corporation - Fmc Shopping Center
+892,8924,8928924,French Market Corporation - Fmc Vistor Info Ctr
+892,8923,8928923,French Market Corporation - Washington Artillery Park
+360,3608,3603608,Health Department - Admin Adjudication
+360,3698,3603698,Health Department - Aids Activity
+360,3619,3603619,Health Department - Algiers Fischer Clinic
+360,3626,3603626,Health Department - Asthma Diabetes & Obesity
+360,3638,3603638,Health Department - B.T. Washington Sch Clinic
+360,3652,3603652,Health Department - Blood Lead Surveillance
+360,3630,3603630,Health Department - Booker T. Washington Gf
+360,3615,3603615,Health Department - Carver School - Gf
+360,3637,3603637,Health Department - Carver School Clinic-La
+360,3655,3603655,Health Department - City Health Laboratory
+360,3629,3603629,Health Department - Code Enforcement
+360,3691,3603691,Health Department - Communicable Disease Cont
+360,3665,3603665,Health Department - Emergency Medical Service
+360,3682,3603682,Health Department - Epsdt Dental
+360,3624,3603624,Health Department - Epsdt Medical Services
+360,3611,3603611,Health Department - Esse Pub Heal Administr
+360,3631,3603631,Health Department - Esse Pub Heal Services
+360,3681,3603681,Health Department - Family Dental Program
+360,3601,3603601,Health Department - Head -Enviorn Asthma In La
+360,3662,3603662,Health Department - Health Impact Assessments
+360,3633,3603633,Health Department - Healthcare/Homeless
+360,3651,3603651,Health Department - Healthy Homes
+360,3618,3603618,Health Department - Healthy Start Grant Init
+360,3609,3603609,Health Department - Hlth-Environmental Enforce
+360,3686,3603686,Health Department - Homeless Dental
+360,3640,3603640,Health Department - Homeless Katrina Relief
+360,3695,3603695,Health Department - Hypertension Control
+360,3685,3603685,Health Department - L A P S Grant
+360,3653,3603653,Health Department - Lead Poison Prevention
+360,3621,3603621,Health Department - Low Risk Maternity Clinic
+360,3614,3603614,Health Department - Maternal/Child Health Prog
+360,3683,3603683,Health Department - Mobile Dental Care
+360,3684,3603684,Health Department - Portable Dental
+360,3605,3603605,Health Department - Primary Care Access Prg
+360,3603,3603603,Health Department - Primary Care Access Stblzt
+360,3617,3603617,Health Department - Reach 2010
+360,3671,3603671,Health Department - Ryan White Administrative
+360,3674,3603674,Health Department - Ryan White Program Support
+360,3672,3603672,Health Department - Ryan White Quality Mgmt
+360,3634,3603634,Health Department - Sickles Pharmacy
+360,3647,3603647,Health Department - Special Health Project
+360,3646,3603646,Health Department - Special Health Project 2
+360,3622,3603622,Health Department - St. Bernard Commun Clinic
+360,3602,3603602,Health Department - Strategic Prevent Framewrk
+360,3613,3603613,Health Department - Supplemental Food Program
+360,3690,3603690,Health Department - Syphilis Elimination Prog
+360,3693,3603693,Health Department - Tb Control-Gf
+360,3696,3603696,Health Department - Vd Control
+360,3627,3603627,Health Department - Violence Risk Reduction
+360,3692,3603692,Health Department - Wellness Shop
+360,3612,3603612,Health Department - Wic Food Program
+640,6450,6406450,Historic District Landmarks Commission - Historic Dist Landmark Com
+750,7551,7507551,Housing and Urban Development - Cd Home 10% Admin
+750,7613,7507613,Housing and Urban Development - Code Enforce Revolving Fnd
+750,7106,7507106,Housing and Urban Development - Dcdbg Admin/Prog Delivery
+750,7110,7507110,Housing and Urban Development - Energy Conservation Grant
+750,7697,7507697,Housing and Urban Development - Environmental Audit Revie
+750,7692,7507692,Housing and Urban Development - Financial & Fiscal Affair
+750,7685,7507685,Housing and Urban Development - Fiscal Monitoring
+750,7296,7507296,Housing and Urban Development - Hopwa Grant
+750,7603,7507603,Housing and Urban Development - Housing Code Enforcement
+750,7614,7507614,Housing and Urban Development - Housing Rehab Admin
+750,7687,7507687,Housing and Urban Development - Neighborhood Planning
+750,7691,7507691,Housing and Urban Development - Operations & Admin
+750,7204,7507204,Housing and Urban Development - Parish Recovery Plan Grant
+750,7694,7507694,Housing and Urban Development - Prog Mgmt & Monitor
+750,7611,7507611,Housing and Urban Development - Relocation Administration
+750,7637,7507637,Housing and Urban Development - St Bernard Health Clinic
+750,7207,7507207,Housing and Urban Development - State & Federal Programs
+380,3801,3803801,Human Services - Director's Office
+380,3821,3803821,Human Services - Emergency Assistance
+380,3878,3803878,Human Services - Maintenance
+380,3810,3803810,Human Services - Management Services
+380,3879,3803879,Human Services - Medical
+380,3831,3803831,Human Services - Milne Administration
+380,3837,3803837,Human Services - Milne Family Preservation
+380,3834,3803834,Human Services - Milne Maintenance
+380,3832,3803832,Human Services - Milne Social Services
+380,3833,3803833,Human Services - Youth Gang Prevent Prog
+380,3871,3803871,Human Services - Ysc Administration
+380,3872,3803872,Human Services - Ysc Diagnostic Svcs
+380,3875,3803875,Human Services - Ysc Dietary Svcs
+380,3874,3803874,Human Services - Ysc Elec. Monitoring Grant
+380,3873,3803873,Human Services - Ysc Residential Life
+710,7109,7107109,Independent Police Monitor - Police Mediation Project
+880,8851,8808851,Judicial Retirement - Old Judicial Retirement
+830,8302,8308302,Juvenile Court - Administrative Services
+830,8303,8308303,Juvenile Court - Clerk's Services
+830,8307,8308307,Juvenile Court - Fiscal Services
+830,8313,8308313,Juvenile Court - Hearing Officer Program
+830,8308,8308308,Juvenile Court - Judges' Personnel
+830,8312,8308312,Juvenile Court - Restitution
+830,8304,8308304,Juvenile Court - Traffic
+230,2360,2302360,Law Department - Adjudication
+230,2350,2302350,Law Department - Civil Litigation
+230,2312,2302312,Law Department - Civil Service
+230,2370,2302370,Law Department - Environmental Court
+230,2311,2302311,Law Department - Finance
+230,2375,2302375,Law Department - Housing Unit
+230,2378,2302378,Law Department - Housing Unit-Cdbg
+230,2377,2302377,Law Department - Housing Unit-Llebg
+230,2310,2302310,Law Department - Law Administration
+230,2330,2302330,Law Department - Municipal And Traffic
+230,2320,2302320,Law Department - Police Litigation
+230,2340,2302340,Law Department - Risk Management
+230,2331,2302331,Law Department - Victim / Witness Program
+630,6301,6306301,Library - Library Administration
+630,6331,6306331,Library - Nopl Gulf Coast Libraries
+630,6330,6306330,Library - Public Services
+210,2150,2102150,Mayor's Office - Bloomberg Match
+210,2188,2102188,Mayor's Office - Brac Comm Base Reuse Plan
+210,2180,2102180,Mayor's Office - Bus Service Representati
+210,2193,2102193,Mayor's Office - Cease Fire
+210,2127,2102127,Mayor's Office - Commissioner-Crim Justice
+210,2115,2102115,Mayor's Office - Communications
+210,2137,2102137,Mayor's Office - Economic Development
+210,2179,2102179,Mayor's Office - Eda Planning Grant
+210,2142,2102142,Mayor's Office - Environmental Affairs
+210,2131,2102131,Mayor's Office - Exec. Office/Econ Develop.
+210,2111,2102111,Mayor's Office - Executive Office Admin.
+210,2124,2102124,Mayor's Office - Federal Homeland Security
+210,2153,2102153,Mayor's Office - Health Start Initiative
+210,2108,2102108,Mayor's Office - Housing Constrct Financing
+210,2174,2102174,Mayor's Office - Housing/Community Affairs
+210,2107,2102107,Mayor's Office - Human Relations Comm
+210,2171,2102171,Mayor's Office - Human Resource Policy/Plan
+210,2164,2102164,Mayor's Office - Infant Mortality Init.
+210,2112,2102112,Mayor's Office - Intergov Relations
+210,2165,2102165,Mayor's Office - La Artworks
+210,2113,2102113,Mayor's Office - Legislative Coordination
+210,2173,2102173,Mayor's Office - Mayoral Fellows
+210,2176,2102176,Mayor's Office - Ofc - Neighborhood Engage
+210,2130,2102130,Mayor's Office - Office - Homeland Security
+210,2101,2102101,Mayor's Office - Office Of The Mayor
+210,2144,2102144,Mayor's Office - Orm Blight Reduction
+210,2167,2102167,Mayor's Office - Orm Environ Soil Assess
+210,2134,2102134,Mayor's Office - Policy Planning
+210,2199,2102199,Mayor's Office - Program Delivery Unit
+210,2106,2102106,Mayor's Office - Program Delivery/Admin
+210,2146,2102146,Mayor's Office - Program Support Budget
+210,2103,2102103,Mayor's Office - Recovery Office
+210,2140,2102140,Mayor's Office - Ryan White Administration
+210,2141,2102141,Mayor's Office - Ryan White Quality Mgmt.
+210,2172,2102172,Mayor's Office - Serve Nola
+210,2192,2102192,Mayor's Office - Solar America Cities
+210,2138,2102138,Mayor's Office - Special Events
+210,2175,2102175,Mayor's Office - State And Federal Programs
+210,2135,2102135,Mayor's Office - State Cooperative Endeavor
+210,2110,2102110,Mayor's Office - State Homeland Security
+210,2114,2102114,Mayor's Office - State Relations
+210,2178,2102178,Mayor's Office - Supplier & Diversity
+210,2136,2102136,"Mayor's Office - Tourism, Arts, & Entertain"
+210,2132,2102132,Mayor's Office - Urban Development
+210,2118,2102118,Mayor's Office - Violence Against Women Act
+685,6856,6856856,McB Formosan-Bait City Struct
+685,6859,6856859,McB French Quarter Termite Prj
+685,6850,6856850,McB Mosquito Control Unit
+685,6858,6856858,McB Structual Pest Control
+685,6857,6856857,McB Vector Control Program
+700,7015,7007015,Miscellaneous - Misc Office Of Administrat
+700,7006,7007006,Miscellaneous - Norc Aquatic Programs
+700,7004,7007004,Miscellaneous - Norc Athletics Programs
+700,7005,7007005,Miscellaneous - Norc Centers
+700,7001,7007001,Miscellaneous - Norc Director & Management
+700,7003,7007003,Miscellaneous - Norc Maintenance
+700,7002,7007002,Miscellaneous - Norc Spec Program/Culture
+700,7030,7007030,Miscellaneous - Office Of Service & Innov
+700,7016,7007016,Miscellaneous - Office-Perform & Accountab
+700,7099,7007099,Miscellaneous - Public Works Pdu
+700,7017,7007017,Miscellaneous Risk Management
+835,9160,8359160,Municipal Court - Judicial E P Rev Fund
+835,8351,8358351,Municipal Court - Municipal Court
+895,8950,8958950,Municipal Yacht Harbor Corporation
+689,9611,6899611,Museum of Art - Administration
+689,9646,6899646,Museum of Art - Arts Quarterly
+689,9613,6899613,Museum of Art - Building
+689,9621,6899621,Museum of Art - Collections
+689,9627,6899627,Museum of Art - Education
+689,9626,6899626,Museum of Art - Library
+689,9641,6899641,Museum of Art - Public Relations
+689,9612,6899612,Museum of Art - Security
+900,8910,9008910,N.O. Aviation Board
+782,7822,7827822,Neighborhood Housing Improvement Fund - Code Enforcement/Demo
+781,7821,7817821,Neighborhood Housing Improvement Fund - General Administrat
+710,7107,7107107,Office of Inspector General - Construction Fraud Div
+710,7102,7107102,Office of Inspector General - Ethics Review Board-Oig
+710,7101,7107101,Office of Inspector General - Inspector General Offc Ad
+260,2610,2602610,One Stop Shop Permits
+770,7750,7707750,Otd Welfare To Work Initiative
+770,7756,7707756,Otd Welfare-To-Work
+620,6221,6206221,Parks and Parkways - Administration
+620,6255,6206255,Parks and Parkways - Armstrong Park
+620,6222,6206222,Parks and Parkways - Building Maintenance
+620,6280,6206280,Parks and Parkways - Chef Highway Project
+620,6252,6206252,Parks and Parkways - Golf Course Brechtel Park
+620,6250,6206250,Parks and Parkways - Golf Courses
+620,6270,6206270,Parks and Parkways - Grass Cutting
+620,6224,6206224,Parks and Parkways - Grass Cutting Millage
+620,6243,6206243,Parks and Parkways - Grounds Maintenance
+620,6245,6206245,Parks and Parkways - Grounds Mtce. Gentill/East
+620,6263,6206263,Parks and Parkways - Heavy Equipment
+620,6251,6206251,Parks and Parkways - Joe Bartholomew Golf Cours
+620,6253,6206253,Parks and Parkways - Joe Brown Park
+620,6233,6206233,Parks and Parkways - Mardi Gras & Special Event
+620,6261,6206261,Parks and Parkways - Nursery & Greenhouse
+620,6232,6206232,Parks and Parkways - Nursery & Park Security
+620,6231,6206231,Parks and Parkways - Operations Administration
+620,6210,6206210,Parks and Parkways - Planning & Design
+620,6223,6206223,Parks and Parkways - Private Lot Maintenance
+620,6201,6206201,Parks and Parkways - Superintendent's Office
+620,6242,6206242,Parks and Parkways - Tree Maintenance
+620,6241,6206241,Parks and Parkways - Tree Trimming Millage
+620,6275,6206275,Parks and Parkways - Vacant Lot Grass Cutting
+270,2758,2702758,Police Department - Casino Support -Gaming
+270,2749,2702749,Police Department - Cops In School
+270,2787,2702787,Police Department - Cops Tech Opsp
+270,2746,2702746,Police Department - Crime Lab
+270,2724,2702724,Police Department - Crisis Trauma Center
+270,2738,2702738,Police Department - Eighth District
+270,2780,2702780,Police Department - Field Operations
+270,2735,2702735,Police Department - Fifth  District
+270,2731,2702731,Police Department - First District
+270,2750,2702750,Police Department - Fiscal Management
+270,2734,2702734,Police Department - Fourth District
+270,2764,2702764,Police Department - Grip Grant
+270,2793,2702793,Police Department - Hano Program Grant
+270,2760,2702760,Police Department - Investigations & Sprt Bure
+270,2740,2702740,Police Department - Managemnt Services Bureau
+270,2791,2702791,Police Department - Mid City
+270,2747,2702747,Police Department - Narcotics
+270,2759,2702759,Police Department - Nopd Ddd Law Enforcement
+270,2702,2702702,Police Department - Off Of The Superintendent
+270,2718,2702718,Police Department - Police Recruits
+270,2711,2702711,Police Department - Public Affairs
+270,2705,2702705,Police Department - Public Integrity
+270,2751,2702751,Police Department - Recruitment
+270,2779,2702779,Police Department - Sanitation
+270,2783,2702783,Police Department - School Crossing Guards
+270,2732,2702732,Police Department - Second District
+270,2795,2702795,Police Department - Security
+270,2737,2702737,Police Department - Seventh District
+270,2736,2702736,Police Department - Sixth  District
+270,2720,2702720,Police Department - Special Investigation Div
+270,2739,2702739,Police Department - Special Operations
+270,2733,2702733,Police Department - Third  District
+270,2769,2702769,Police Department - Traffic
+270,2784,2702784,Police Department - Transit Security
+450,4560,4504560,Property Management - Cemeteries
+450,4512,4504512,Property Management - City Hall Garage
+450,4581,4504581,Property Management - Cultural Center
+450,4525,4504525,Property Management - Custodians
+450,4511,4504511,Property Management - Director's Office
+450,4550,4504550,Property Management - Gallier Hall
+450,4542,4504542,Property Management - Mechanical Engine Room
+450,4555,4504555,Property Management - Multi-Purpose Centers
+450,4527,4504527,Property Management - Public Buildings Mnt
+450,4576,4504576,Property Management - Realty Records
+450,4522,4504522,Property Management - Security
+500,5359,5005359,Public Works - Abandoned Car Unit
+500,5053,5005053,Public Works - Capital Construction
+500,5355,5005355,Public Works - Communications
+500,5112,5005112,Public Works - Dedicated Millage
+500,5001,5005001,Public Works - Director's Office
+500,5051,5005051,Public Works - Engineering & Planning
+500,5130,5005130,Public Works - Field Operations Staff
+500,5354,5005354,Public Works - Meter Operations
+500,5002,5005002,Public Works - Parking Adjudication
+500,5351,5005351,Public Works - Parking Administration
+500,5052,5005052,Public Works - Planning & Design
+500,5352,5005352,Public Works - Residential Parking
+500,5110,5005110,Public Works - Right-Of-Way Management
+500,5253,5005253,Public Works - Signal Shop
+500,5356,5005356,Public Works - Ticket Writing Section
+500,5358,5005358,Public Works - Towing & Impoundment
+500,5251,5005251,Public Works - Traffic Management
+500,5252,5005252,Public Works - Traffic Sign Shop
+500,5357,5005357,Public Works - Vehicle Immobilization
+580,5925,5805925,Recreation - Acquatics Program
+580,5812,5805812,Recreation - Administration Millage
+580,5921,5805921,Recreation - Athletics
+580,5919,5805919,Recreation - Athletics Millage
+580,5923,5805923,Recreation - Centers
+580,5912,5805912,Recreation - Centers Millage
+580,5922,5805922,Recreation - Cultural
+580,5914,5805914,Recreation - Cultural Millage
+580,5811,5805811,Recreation - Director's Office
+580,5910,5805910,Recreation - Maintenance
+580,5911,5805911,Recreation - Maintenance Millage
+580,5821,5805821,Recreation - Management
+580,5913,5805913,Recreation - Recreation Enhancement
+580,5902,5805902,Recreation - Special Programs- Millage
+580,5924,5805924,Recreation - Summer Day Camps
+580,5947,5805947,Recreation - Yrs Nord Summer Programs
+897,8972,8978972,Recreation Development Commission - Rivergate Development Corp
+260,2620,2602620,Safety and Permits - Gohsep Reimbursable Grant
+260,2616,2602616,Safety and Permits - Inspectors Section
+260,2606,2602606,Safety and Permits - Permit Processing
+260,2602,2602602,Safety and Permits - S&P Bd Bldg Stand/Appeal
+260,2612,2602612,Safety and Permits - S&P Building Inspection
+260,2601,2602601,Safety and Permits - S&P Directors Office
+260,2614,2602614,"Safety and Permits - S&P, Electrical Inspect"
+260,2615,2602615,"Safety and Permits - S&P, Mechanical Inspect"
+260,2625,2602625,"Safety and Permits - S&P, Motor Vehicle Inspct"
+260,2617,2602617,"Safety and Permits - S&P, Plan Processing"
+260,2618,2602618,Safety and Permits - Taxi Cab Bureau
+260,2605,2602605,Safety and Permits - Zoning Bureau
+300,3044,3003044,San Algiers Cleaning
+300,3048,3003048,San Core Area Clean-Up-Ddd
+300,3047,3003047,San Core Area Clean-Up-Gf
+300,3006,3003006,San Curbside Recycling
+300,3030,3003030,San Enviorn Beauty Sanitation
+300,3022,3003022,San Fla Ave Transfer
+300,3041,3003041,San Manual Cleaning
+300,3042,3003042,San Mardi Gras Cleaning
+300,3002,3003002,San Operation Support
+300,3005,3003005,San Recycling Buyback Center
+300,3001,3003001,San Sanitation Director Off
+300,3043,3003043,San Sanitation Posse
+836,9120,8369120,Traffic Court - Tfc Court Rev Fund
+836,8361,8368361,Traffic Court - Traffic Court
+700,7021,7007021,Unknown
+550,5501,5505501,Ut Directors Office
+550,5510,5505510,Ut Taxicab Regulatory
+550,5511,5505511,Ut Vc Enforcement
+650,6501,6506501,Vieux Carre Commission
+772,7720,7727720,Workforce Investment Act - Adult
+772,7722,7727722,Workforce Investment Act - Youth
