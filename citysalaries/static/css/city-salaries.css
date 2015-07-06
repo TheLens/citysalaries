@@ -145,7 +145,7 @@ li.button, li.button:hover, li.button:active, li.button:focus, li.button:visited
     border-color: #FFFFFF;
 }
 select {
-  font-size: 50px;
+  font-size: 1.1em;
   /*height: 100%;
   font-size: 16px;
   font-family: "news-gothic-std", Helvetica, Arial, sans-serif;*/

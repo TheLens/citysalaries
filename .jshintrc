@@ -1,0 +1,21 @@
+{
+  "bitwise": true,
+  "browser": true,
+  "curly": true,
+  "eqeqeq": true,
+  "esnext": true,
+  "globals": {
+    "_": true,
+    "Handlebars": true
+  },
+  "immed": true,
+  "indent": 2,
+  "jquery": true,
+  "newcap": true,
+  "noarg": true,
+  "node": false,
+  "quotmark": "single",
+  "strict": false,
+  "undef": true,
+  "unused": "undef" /* "vars" */
+}

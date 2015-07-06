@@ -13,6 +13,7 @@ def repo():
     '''/'''
 
     local('git add .gitignore')
+    local('git add .jshintrc')
     local('git add .travis.yml')
     local('git add fabfile.py')
     local('git add README.md')

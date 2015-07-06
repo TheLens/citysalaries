@@ -8,14 +8,32 @@
 <div class="row">
   <div class="small-12 columns input-div" id="input-div">
     <label>Search departments</label>
-    <input class="small-12 columns name-address-box" id="departments" type="search" placeholder="Traffic Court, Office of the Mayor" />
+    <select id="departments" name="departments">
+      <script id="departments-template" type="text/x-handlebars-template">
+        <option value="" selected>Select department</option>
+        {% raw %}
+          {{#each this}}
+            <option value="{{this}}">{{this}}</option>
+          {{/each}}
+        {% endraw %}
+      </script>
+    </select>
   </div>
 </div>
 
 <div class="row">
   <div class="small-12 columns input-div" id="input-div">
     <label>Search positions</label>
-    <input id="positions" class="small-12 columns name-address-box" type="search" placeholder="Police captain, council member" />
+    <select id="positions" name="positions">
+      <script id="positions-template" type="text/x-handlebars-template">
+        <option value="" selected>Select position</option>
+        {% raw %}
+          {{#each this}}
+            <option value="{{this}}">{{this}}</option>
+          {{/each}}
+        {% endraw %}
+      </script>
+    </select>
   </div>
 </div>
 
