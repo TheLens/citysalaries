@@ -21,17 +21,45 @@ def make_headers(worksheet):
         if cell_type == 1:  # If unicode
 
             if cell_value == 'home_agcy':
-                cell_value = 'department'
-            elif cell_value == 'department_id_job_dta':
                 cell_value = 'department_id'
+            elif cell_value == 'department_id_job_dta':
+                cell_value = 'department_office_id'
             elif cell_value == 'job_code_job_dta':
-                cell_value = 'job_code'
+                cell_value = 'job_id'
             elif cell_value == 'description_position_dta':
                 cell_value = 'job_title'
             elif cell_value == 'standard_hours_job_dta':
                 cell_value = 'hours'
             elif cell_value == 'annual_rate_job_dta':
                 cell_value = 'salary'
+
+            headers[cell_id] = cell_value
+
+        cell_id += 1
+
+    return headers
+
+
+def make_office_headers(worksheet):
+    '''docstring'''
+
+    headers = {}
+    cell_id = 0
+    row_id = 0
+
+    while cell_id < worksheet.ncols:
+        cell_type = worksheet.cell_type(row_id, cell_id)
+        cell_value = worksheet.cell_value(row_id, cell_id)
+        cell_value = str(slugify(cell_value).replace('-', '_')).strip()
+
+        if cell_type == 1:  # If unicode
+
+            if cell_value == 'home_agcy':
+                cell_value = 'department_id'
+            elif cell_value == 'home_orgn':
+                cell_value = 'office_id'
+            elif cell_value == 'orgn_desc':
+                cell_value = 'office_description'
 
             headers[cell_id] = cell_value
 
@@ -125,14 +153,48 @@ def clean_data(worksheet, writer, headers):
             if header == 'salary':
                 cell_value = float(cell_value)
 
-                if row_dict['job_code'] in police_codes:  # Checking job codes
+                if row_dict['job_id'] in police_codes:  # Checking job codes
                     cell_value += 2921  # City millage
                     cell_value += 6000  # State millage
 
-                if row_dict['job_code'] in fire_codes:  # Checking job codes
+                if row_dict['job_id'] in fire_codes:  # Checking job codes
                     cell_value += 4020  # City millage
                     cell_value += 6000  # State millage
                     cell_value += 288.08  # ADP software
+
+            row_dict[header] = cell_value
+            cell_id += 1
+
+        writer.writerow(row_dict)
+        row_id += 1
+
+
+def clean_office_data(worksheet, writer, headers):
+    '''docstring'''
+
+    row_id = 1
+    while row_id < worksheet.nrows:  # For each row...
+        cell_id = 0
+        row_dict = {}
+        while cell_id < worksheet.ncols:  # For each column in this row...
+            try:
+                header = headers[cell_id]  # Not sure why try/except necessary
+            except KeyError:
+                cell_id += 1
+                continue
+
+            # Convert cells to correct data types
+            try:
+                # Strings
+                cell_value = worksheet.cell_value(row_id, cell_id).strip()
+                cell_value = str(cell_value)
+            except AttributeError:
+                # Numbers, so take as is
+                cell_value = worksheet.cell_value(row_id, cell_id)
+
+            cell_value = cell_value.title()
+
+            cell_value = Clean().departments_only(cell_value)
 
             row_dict[header] = cell_value
             cell_id += 1

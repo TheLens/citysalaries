@@ -1,14 +1,11 @@
 function loadHighestSalaries() {
-  // loadTable();
-
   $('.tablesorter').css({'display': 'table'});
   $('.dataTables_wrapper').css({'display': 'block'});
 
   // Make sure keyboard is hidden in mobile view
   $('.name-address-box').blur();
 
-  var data = gatherData();
-  var results = processRequest(data);
+  var results = window.salaries;
   var new_rows = getRows(results, 25);
 
   dt.fnClearTable();
@@ -33,14 +30,12 @@ function getData() {
       dataTables();
     }
   }).then(function() {
-    loadTable();
+    // loadTable();
     loadHighestSalaries();
   });
 }
 
 $(document).ready(function () {
-  getData();
-
   $(document).keypress(function (e) {
     if (e.which === 13) {
       loadNewPage();

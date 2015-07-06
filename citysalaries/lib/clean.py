@@ -8,6 +8,79 @@ class Clean(object):
 
     '''docstring'''
 
+    def departments(self, value):
+        '''docstring'''
+
+        departments = [
+            [r'^Cao ', 'Chief Administrative Office - '],
+            [' Cao ', ''],
+            [' Cao-', ''],
+            [r'^Ccd ', 'Clerk of Criminal District Court - '],
+            [r'^Cco ', 'City Council - '],
+            [r'^Cor ', "Coroner's Office - "],
+            [r'^Cpc ', 'City Planning Commission - '],
+            [' Cpc ', ''],
+            [
+                'Csd Canal St. Development Corp',
+                'Canal Street Development Corporation'
+            ],
+            [r'^Cvs ', 'Civil Service Department - '],
+            [r'^Edf ', ''],  # Done
+            [r'^Edf ', 'Economic Development Fund '],
+            [r'^Fin ', 'Finance Department - '],
+            [r'^Fir ', 'Fire Department - '],
+            [r'^Fmc ', 'French Market Corporation - '],
+            [r'^Hdl ', 'Historic District Landmarks Commission - '],
+            [r'^Hel ', 'Health Department - '],
+            [r'^Hud ', 'Housing and Urban Development - '],
+            [r'^Hus ', 'Human Services - '],
+            [r'^Ipm ', 'Independent Police Monitor - '],
+            [r'^Jur ', 'Judicial Retirement - '],
+            [r'^Jvc ', 'Juvenile Court - '],
+            [r'^Law ', 'Law Department - '],
+            [r'^Lib ', 'Library - '],
+            [r'^May ', "Mayor's Office - "],
+            [r'^Mcb ', 'Mosquito, Termite and Rodent Control Board - '],
+            [r'^Mis ', 'Miscellaneous - '],
+            [r'^Moa ', 'Museum of Art - '],
+            [r'^Muc ', 'Municipal Court - '],
+            [
+                'Myh Municipal Yacht Harbor Cor',
+                'Municipal Yacht Harbor Corporation'
+            ],
+            [r'^Nab ', ''],  # Done
+            [r'^Nhi ', ''],  # Done
+            ['Nhif ', 'Neighborhood Housing Improvement Fund - '],
+            [r'^Oig ', 'Office of Inspector General - '],
+            [r'^Pap ', 'Parks and Parkways - '],
+            [r'^Pol ', 'Police Department - '],
+            [r'^Prm ', 'Property Management - '],
+            [r'^Pwr ', 'Public Works - '],
+            [r'^Rdc ', 'Recreation Development Commission - '],
+            [r'^Rec ', 'Recreation - '],
+            [r'^Sap ', 'Safety and Permits - '],
+            [r'^Trc ', 'Traffic Court - '],
+            # ['Unknown' ', ' '],  # delete
+            ['Vcc Vieux Carre Commission', 'Vieux Carre Commission'],
+            [r'^Wia Wia ', 'Workforce Investment Act - '],
+            # General stuff:
+            ['Emd-', 'Equipment Maintenance Division - '],
+            ['Hosp-', 'Hospital - '],
+            ['Mgt ', 'Management '],
+            ['Munc.', 'Municipal'],
+            ['Ta  ', 'Tax ']  # todo
+            # ['Gf', 'Municipal'],
+        ]
+
+        for department in departments:
+            value = re.sub(
+                department[0],
+                department[1],
+                value
+            )
+
+        return value
+
     def all(self, value):
         '''docstring'''
 
@@ -24,6 +97,14 @@ class Clean(object):
 
         cleaned_value = self.all(value)
         cleaned_value = self.job_titles(cleaned_value)
+
+        return cleaned_value
+
+    def departments_only(self, value):
+        '''docstring'''
+
+        cleaned_value = self.all(value)
+        cleaned_value = self.departments(cleaned_value)
 
         return cleaned_value
 
@@ -45,7 +126,8 @@ class Clean(object):
             [', Sr', ' Sr'],
             [', Jr', ' Jr'],
             ['  Jr', ' Jr'],
-            ['  Sr', ' Sr']
+            ['  Sr', ' Sr'],
+            ["'S ", "'s "]
         ]
 
         for descendent in descendents:
@@ -77,12 +159,11 @@ class Clean(object):
             [r'Administrato$', 'Administrator'],
             ['Adm & Prog S', 'Administrative & Program Support'],
             ['Wkr', 'Worker'],
-            [r'Ig$', 'Inspector General'],
+            [r'Ig$', '(Inspector General)'],
             ['Ig ', 'Inspector General '],
             ['I&E', 'Inspections and Evaluations'],
             ['Ocjc', 'Orleans Criminal Justice Coordination'],
             ['Proj&Plan', 'Project & Planning'],
-            ["'S ", "'s "],
             ['Emer ', 'Emergency '],
             ['Mgt ', 'Management '],
             [r'Mgt$', 'Management'],

@@ -61,15 +61,13 @@ function addPositions(data) {
 }
 
 function processRequest(data) {
-  // Assumes all values can be returned, then filters down.
-  var output = window.salaries; // A global variable
+  // debugger;
 
-  var cond1 = (
-    data.name !== ''
-  );
+  // Assumes all values can be returned, then filters down.
+  var output = window.salaries;// A global variable
 
   // Filter by name
-  if (cond1) {
+  if (data.name !== '') {
     output = _.filter(output, function (item) {
       var first = '';
       var last = '';
@@ -94,53 +92,31 @@ function processRequest(data) {
       }
 
       // Check if value is found:
-      var cond11 = item.first_name.toUpperCase().indexOf(first.toUpperCase()) !== -1;// (Returns -1 if the value is not found.)
-      var cond12 = item.last_name.toUpperCase().indexOf(last.toUpperCase()) !== -1;
+      var cond1 = item.first_name.toUpperCase().indexOf(first.toUpperCase()) !== -1;// (Returns -1 if the value is not found.)
+      var cond2 = item.last_name.toUpperCase().indexOf(last.toUpperCase()) !== -1;
       var thing_to_check = item.first_name + ' ' + item.last_name;
-      var cond13 = thing_to_check.toUpperCase().indexOf(full.toUpperCase()) !== -1;
+      var cond3 = thing_to_check.toUpperCase().indexOf(full.toUpperCase()) !== -1;
 
       if (conditional === 'and') {
-        condition = cond11 && cond12;
+        condition = cond1 && cond2;
       } else if (conditional === 'or') {
-        condition = cond11 || cond12;
+        condition = cond1 || cond2;
       } else if (conditional === 'concatenate') {
-        condition = cond13;
+        condition = cond3;
       }
       return condition;
     });
   }
 
-  var cond2 = (
-    data.department !== '' &&
-    data.department !== 'ALL' &&
-    data.department !== 'FIRE: ALL' &&
-    data.department !== 'POLICE: ALL'
-  );
-
-  var cond3 = (
-    data.department === 'FIRE: ALL' ||
-    data.department === 'POLICE: ALL'
-  );
-
   // Filter by department
-  if (cond2) {
+  if (data.department !== '') {
     output = _.filter(output, function (item) {
       return item.department === data.department;
     });
-  } else if (cond3) {
-    var temp_department = data.department.replace(': ALL', '');  // replace :ALL
-    output = _.filter(output, function (item) {
-      return item.department.indexOf(temp_department.toUpperCase()) !== -1;
-    });
   }
 
-  var cond4 = (
-    data.position !== '' &&
-    data.position !== 'ALL'
-  );
-
   // Filter by position
-  if (cond4) {
+  if (data.position !== '') {
     output = _.filter(output, function (item) {
       return item.position === data.position;
     });
@@ -150,12 +126,13 @@ function processRequest(data) {
 }
 
 function getRow(item) {
+  // debugger;
   var output = [];
 
-  output.push(item.first_name);
+  output.push(item.first_name + ' ' + item.last_name);
   output.push(item.last_name);
-  output.push(item.department);
   output.push(item.position);
+  output.push(item.department);
 
   var salary = item.salary;
   salary = formatCurrency(salary);
@@ -230,10 +207,16 @@ function dataTables() {
       {'width': '20%'},
     ],
     aoColumns: [
-      {sClass: 'first'},
-      {sClass: 'last'},
-      {sClass: 'department'},
+      {
+        sClass: 'first',
+        iDataSort: 1
+      },
+      {
+        sClass: 'last',
+        bVisible: false
+      },
       {sClass: 'position'},
+      {sClass: 'department'},
       {sClass: 'salary'},
     ],
     oLanguage: {
@@ -289,9 +272,7 @@ function loadTable() {
   $('.name-address-box').blur();
 
   var data = gatherData();
-
   var results = processRequest(data);
-
   var new_rows = getRows(results);
 
   dt.fnClearTable();
@@ -315,13 +296,15 @@ function process(data) {
 $(document).ready(function () {
   $.get(employees_url, function (data) {
     addEmployees(data);
-  }, 'text');
-
-  $.get(departments_url, function (data) {
-    addDepartments(data);
-  }, 'text');
-
-  $.get(positions_url, function (data) {
-    addPositions(data);
-  }, 'text');
+  }, 'text').then(function () {
+    $.get(departments_url, function (data) {
+      addDepartments(data);
+    }, 'text');
+  }).then(function () {
+    $.get(positions_url, function (data) {
+      addPositions(data);
+    }, 'text');
+  }).then(function () {
+    getData();// Different function for index.js and search.js
+  });
 });

@@ -87,6 +87,18 @@ table.dataTable thead td {
   margin: 1.25rem 0;
 }
 
+.page-title {
+  display: none;
+  font-size: 1.8em;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
 .panel p {
   font-size: 1em;
 }
@@ -146,9 +158,6 @@ li.button, li.button:hover, li.button:active, li.button:focus, li.button:visited
 }
 select {
   font-size: 1.1em;
-  /*height: 100%;
-  font-size: 16px;
-  font-family: "news-gothic-std", Helvetica, Arial, sans-serif;*/
 }
 textarea {
     min-width: 100px;
@@ -253,17 +262,28 @@ label {
 
 @media screen and (max-width: 640px) {
   table.dataTable tbody td {
-    padding: 8px 1%;
-    width: 98%;
+    padding: 10px 2%;
+    width: 96%;
   }
   table.dataTable tbody td.first,
   table.dataTable tbody td.last {
     font-size: 1.2em;
+    font-weight: bold;
   }
-  table.dataTable tbody td.department,
-  table.dataTable tbody td.position,
+
+  table.dataTable tbody td.position {
+    padding-bottom: 0;
+    font-style: italic;
+    font-size: 1.1em;
+  }
+  table.dataTable tbody td.department {
+    padding-top: 0;
+    font-size: 1.1em;
+  }
+
   table.dataTable tbody td.salary {
-    font-size: 1em;
+    text-align: center;
+    font-size: 1.3em;
   }
 }
 
@@ -279,4 +299,21 @@ label {
   table.dataTable tbody td.salary {
     font-size: 1.1em;
   }
+}
+
+/*@media screen and (max-width: 39.9375em) {
+  .tablesaw-stack tbody td.first {
+    width: 40%;
+  }
+  .tablesaw-stack tbody td.last {
+    width: 40%;
+    float: right;
+  }
+}*/
+
+/* To match page title resizing with logo resizing in lens.js */
+@media screen and (max-width: 650px) {
+    .page-title {
+        display: block;
+    }
 }

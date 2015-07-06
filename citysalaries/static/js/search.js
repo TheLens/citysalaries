@@ -74,7 +74,7 @@ function showAllResults() {
 }
 
 $(document).ready(function () {
-  getData();
+  // getData();
 
   $(document).on("click", ".show-all", function() {
     showAllResults();

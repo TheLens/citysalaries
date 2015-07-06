@@ -236,37 +236,3 @@ label {
         padding-right: 0;
     }
 }
-
-/* 
- * Tablesaw
- */
-
-@media screen and (max-width: 640px) {
-  table.dataTable tbody td {
-    padding: 8px 1%;
-    width: 98%;
-  }
-  table.dataTable tbody td.first,
-  table.dataTable tbody td.last {
-    font-size: 1.2em;
-  }
-  table.dataTable tbody td.department,
-  table.dataTable tbody td.position,
-  table.dataTable tbody td.salary {
-    font-size: 1em;
-  }
-}
-
-@media screen and (min-width: 641px) {
-  table.dataTable tbody td {
-    padding: 8px 10px;
-    width: auto;
-  } 
-  table.dataTable tbody td.first,
-  table.dataTable tbody td.last,
-  table.dataTable tbody td.department,
-  table.dataTable tbody td.position,
-  table.dataTable tbody td.salary {
-    font-size: 1.1em;
-  }
-}

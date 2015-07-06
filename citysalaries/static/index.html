@@ -50,14 +50,20 @@
 
     <div class="banner" id="banner">
   <a href="http://thelensnola.org/" class="banner-logo" id="banner-logo">
-      <img src="https://s3-us-west-2.amazonaws.com/lensnola/land-records/css/images/lens-logo-retina.png" class="banner-image" id="banner-image" width="100">
+      <img src="https://s3-us-west-2.amazonaws.com/lensnola/images/lens-logo-retina.png" class="banner-image" id="banner-image" width="100">
   </a>
   <a href="." class="banner-title" id="banner-title">City of New Orleans employee salaries</a>
   <a href="http://thelensnola.org/support-us/" target="_blank" class="banner-support" id="banner-support">Support<br>The Lens</a>
-  <a href="mailto:?subject=Live%20election%20results%20by%20The%20Lens&body=http://elections.thelensnola.org" target="_blank" class="banner-social-email" id="banner-social-email"><i class="fa fa-envelope"></i></a>
-  <a href="https://twitter.com/intent/tweet?url=http://elections.thelensnola.org;text=I'm watching live election results of Louisiana and New Orleans.;source=webclient" target="_blank" class="banner-social-twitter" id="banner-social-twitter"><i id="social-twitter" class="fa fa-twitter"></i></a>
-  <a href="http://www.facebook.com/sharer.php?u=http://elections.thelensnola.org&p[title]=The Lens presents live election results for New Orleans and Louisiana. View precinct-by-precinct vote totals with an interactive map" target="_blank" class="banner-social-facebook" id="banner-social-facebook"><i class="fa fa-facebook"></i></a>
+  <!--<a href="mailto:?subject=Live%20election%20results%20by%20The%20Lens&body=http://elections.thelensnola.org" target="_blank" class="banner-social-email" id="banner-social-email"><i class="fa fa-envelope"></i></a>-->
+  <a href="https://twitter.com/intent/tweet?url=http://salaries.thelensnola.org;text=View the salaries of City of New Orleans employees.;source=webclient" target="_blank" class="banner-social-twitter" id="banner-social-twitter"><i id="social-twitter" class="fa fa-twitter"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=http://salaries.thelensnola.org&p[title]=City of New Orleans employee salaries. View employees' salaries by department and job title." target="_blank" class="banner-social-facebook" id="banner-social-facebook"><i class="fa fa-facebook"></i></a>
 </div>
+
+    <div class="row">
+      <div class="small-12 columns page-title" id="page-title">
+        <span class="no-wrap">City of New Orleans</span> <span class="no-wrap">employee salaries</span>
+      </div>
+    </div>
 
     <div class="row">
   <div class="small-12 columns input-div" id="input-div">
@@ -116,10 +122,10 @@
     <table id="table" class="tablesorter tablesaw tablesaw-stack" data-tablesaw-mode="stack">
       <thead id="thead">
         <tr>
-          <th>First</th>
+          <th>Name</th>
           <th>Last</th>
-          <th>Department</th>
           <th>Position</th>
+          <th>Department</th>
           <th>Salary</th>
         </tr>
       </thead>
@@ -163,7 +169,7 @@
 <script type="text/javascript">
   $(document).foundation();
 </script>
-<script type="text/javascript" src=js/lens.js></script>
+<!--<script type="text/javascript" src=js/lens.js></script>-->
 <script type="text/javascript" src=js/city-salaries.js></script>
 <script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/lensnola/app-template/js/vault_analytics.js"></script>
 <script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/lensnola/app-template/js/chartbeat.js"></script>
