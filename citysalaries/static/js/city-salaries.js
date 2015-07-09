@@ -49,17 +49,19 @@ function addEmployees(data) {
       var thisValue = ui.item.value;
       document.getElementById('employees').value = thisValue;
       document.activeElement.blur();
+      // $('#employees').autocomplete('close');
       doSearch();
     },
     search: function () {
       $('#employees').autocomplete('close');
     },
     minLength: 1,
-    delay: 0
-    // open: function (event, ui) {
-    //   var input_width = $('#input-div').width();
-    //   $('.ui-menu').width(input_width);
-    // }
+    delay: 0,
+    open: function (event, ui) {
+      $('.ui-autocomplete').off('menufocus hover mouseover mouseenter');
+      // var input_width = $('#input-div').width();
+      // $('.ui-menu').width(input_width);
+    }
   }).keyup(function (event) {
     if (event.which === 13) {
       $('#employees').autocomplete('close');
@@ -81,8 +83,6 @@ function addPositions(data) {
 }
 
 function processRequest(data) {
-  // debugger;
-
   // Assumes all values can be returned, then filters down.
   var output = window.salaries;// A global variable
 
@@ -146,7 +146,6 @@ function processRequest(data) {
 }
 
 function getRow(item) {
-  // debugger;
   var output = [];
 
   output.push(item.first_name + ' ' + item.last_name);
