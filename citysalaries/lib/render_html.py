@@ -14,6 +14,7 @@ from citysalaries import (
     LENS_CSS_RENDER,
     SEARCH_CSS_RENDER,
     CITY_SALARIES_JS_RENDER,
+    EVENT_TRACKING_JS_RENDER,
     INDEX_JS_RENDER,
     LENS_JS_RENDER,
     SEARCH_JS_RENDER
@@ -41,6 +42,7 @@ class Render(object):
             index_css=INDEX_CSS_RENDER,
             lens_css=LENS_CSS_RENDER,
             citysalaries_js=CITY_SALARIES_JS_RENDER,
+            event_tracking_js=EVENT_TRACKING_JS_RENDER,
             index_js=INDEX_JS_RENDER,
             lens_js=LENS_JS_RENDER
         )

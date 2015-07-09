@@ -14,7 +14,7 @@ function loadHighestSalaries() {
   dt.fnSort([4, 'desc']);
 }
 
-function loadNewPage() {
+function doSearch() {
   var data = gatherData();
   var query_string = buildQueryString(data);// For updated search pages, not the initial load.
   window.location.href = 'search.html' + query_string;
@@ -38,16 +38,16 @@ function getData() {
 $(document).ready(function () {
   $(document).keypress(function (e) {
     if (e.which === 13) {
-      loadNewPage();
+      doSearch();
     }
   });
 
   $('.search-button').on('click', function () {
-    loadNewPage();
+    doSearch();
   });
 
   $('.show-everything').on('click', function () {
     clearAllParameters();
-    loadNewPage();
+    doSearch();
   });
 });

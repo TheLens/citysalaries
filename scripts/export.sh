@@ -5,9 +5,9 @@ psql citysalaries -c "COPY (
     SELECT (first_name || ' ' || middle_name || ' ' || last_name) AS name
     FROM employees
     ORDER BY name ASC
-) to '$PYTHONPATH/data/export/employees.csv' WITH CSV HEADER;"
-# Don't need to use FORCE QUOTE * because jQuery's Autocomplete reads as text
-sed -i '' '1,2d' /Users/thomasthoren/projects/city-salaries/data/export/employees.csv
+) to '$PYTHONPATH/data/intermediate/employees.csv' WITH CSV HEADER;"
+# Don't need to use FORCE QUOTE * because this is converted to .txt later
+# sed -i '' '1,2d' /Users/thomasthoren/projects/city-salaries/data/intermediate/employees.csv
 
 echo "JOIN employees and agencies tables and export to departments.csv..."
 psql citysalaries -c "COPY (
@@ -15,18 +15,18 @@ psql citysalaries -c "COPY (
     FROM offices
     JOIN employees on employees.department_office_id = offices.department_office_id
     ORDER BY office_description ASC
-) to '$PYTHONPATH/data/export/departments.csv' WITH CSV HEADER;"
-sed -i '' '1,2d' /Users/thomasthoren/projects/city-salaries/data/export/departments.csv
+) to '$PYTHONPATH/data/intermediate/departments.csv' WITH CSV HEADER;"
+# sed -i '' '1,2d' /Users/thomasthoren/projects/city-salaries/data/intermediate/departments.csv
 
 echo "Export job titles to positions.csv..."
 psql citysalaries -c "COPY (
     SELECT DISTINCT job_title
     FROM employees
     ORDER BY job_title ASC
-) to '$PYTHONPATH/data/export/positions.csv' WITH CSV HEADER;"
-sed -i '' 1d /Users/thomasthoren/projects/city-salaries/data/export/positions.csv
+) to '$PYTHONPATH/data/intermediate/positions.csv' WITH CSV HEADER;"
+# sed -i '' 1d /Users/thomasthoren/projects/city-salaries/data/intermediate/positions.csv
 
-echo "Export offices and codes to offices.csv..."
+echo "Export offices and codes to offices.csv for internal purposes..."
 psql citysalaries -c "COPY (
     SELECT DISTINCT ON (office_description)
         department_id,
@@ -36,7 +36,7 @@ psql citysalaries -c "COPY (
     FROM offices
     ORDER BY office_description ASC
 ) to '$PYTHONPATH/data/export/offices.csv' WITH CSV HEADER;"
-sed -i '' 1d /Users/thomasthoren/projects/city-salaries/data/export/positions.csv
+# sed -i '' 1d /Users/thomasthoren/projects/city-salaries/data/export/offices.csv
 
 echo "JOIN employees and offices tables and export..."
 psql citysalaries -c "COPY (
@@ -89,3 +89,23 @@ psql citysalaries -c "COPY (
   ORDER BY salary DESC
   LIMIT 25
 ) to '$PYTHONPATH/data/export/highest-paid.csv' WITH CSV HEADER;"
+
+echo "Changing .csv files to .txt files..."
+cp $PYTHONPATH/data/intermediate/departments.csv $PYTHONPATH/data/export/departments.txt
+cp $PYTHONPATH/data/intermediate/employees.csv $PYTHONPATH/data/export/employees.txt
+cp $PYTHONPATH/data/intermediate/positions.csv $PYTHONPATH/data/export/positions.txt
+
+# echo "Removing double quotes in .txt files..."
+# sed -i '' 's/^"//g' $PYTHONPATH/data/export/departments.txt
+# sed -i '' 's/"$//g' $PYTHONPATH/data/export/departments.txt
+
+# sed -i '' 's/^"//g' $PYTHONPATH/data/export/employees.txt
+# sed -i '' 's/"$//g' $PYTHONPATH/data/export/employees.txt
+
+# sed -i '' 's/^"//g' $PYTHONPATH/data/export/positions.txt
+# sed -i '' 's/"$//g' $PYTHONPATH/data/export/positions.txt
+
+# echo "Deleting empty lines in .txt files..."
+# sed -i '' '/^$/d' $PYTHONPATH/data/export/departments.txt
+# sed -i '' '/^$/d' $PYTHONPATH/data/export/employees.txt
+# sed -i '' '/^$/d' $PYTHONPATH/data/export/positions.txt

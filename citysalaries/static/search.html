@@ -31,7 +31,8 @@
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.4.5/css/foundation.min.css">
-<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/lensnola/external-libraries/css/jquery-ui-1.10.4.min.css">
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
 <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/lensnola/external-libraries/css/tablesaw.stackonly.css">
@@ -126,7 +127,7 @@
         Source: New Orleans Civil Service Department. This information was released under the Louisiana Public Records Act and is current as of May 21, 2015.
       </p>
       <p>
-        Note: An employee's annual salary is the budgeted amount of base pay, and therefore does not include additional money such as overtime pay. However, it might include longevity pay, temporary pay, supplemental pay or special rates of pay. View the city's <a href="https://www.documentcloud.org/documents/2157610-city-of-new-orleans-civil-service-pay-plan.html" target="_blank">pay plan</a> for more information about these types of income.
+        Note: An employee's annual salary is the budgeted amount of base pay, and therefore does not include additional money such as overtime pay. However, it might include longevity pay, temporary pay, supplemental pay or special rates of pay. View the city's <a href="https://www.documentcloud.org/documents/2157610-city-of-new-orleans-civil-service-pay-plan.html" id="pay-plan" target="_blank">pay plan</a> for more information about these types of income.
       </p>
       <p>
         The data only includes full-time employees in the city's payroll system.
@@ -135,13 +136,19 @@
         Job positions are as listed in the city's payroll records. Some employees, such as mayoral appointees, may have different job titles than those listed here.
       </p>
       <p>
-        <a href='http://thelensnola.org/2014/07/22/with-new-tool-the-lens-makes-it-easy-to-find-out-how-much-city-employees-are-paid/'>Learn more about how these figures were calculated</a>.
+        <a href='http://thelensnola.org/2014/07/22/with-new-tool-the-lens-makes-it-easy-to-find-out-how-much-city-employees-are-paid/' id="learn-more">Learn more about how these figures were calculated</a>.
       </p>
     </div>
   </div>
 </div>
+<div class="row">
+  <div class="small-12 text-center columns">
+    <a href="http://www.thelensnola.org/thevault"><img src='https://s3-us-west-2.amazonaws.com/lensnola/images/vault-logo-small.png'></img></a>
+  </div>
+</div>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
 <!--[if lt IE 9]><script src="https://s3-us-west-2.amazonaws.com/lensnola/external-libraries/js/respond.js"></script><!--<![endif]-->
 <script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/lensnola/external-libraries/js/tablesaw.stackonly.js"></script>
@@ -155,7 +162,17 @@
 </script>
 <!--<script type="text/javascript" src=js/lens.js></script>-->
 <script type="text/javascript" src=js/city-salaries.js></script>
-<script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/lensnola/app-template/js/vault_analytics.js"></script>
+<!--<script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/lensnola/app-template/js/vault_analytics.js"></script>-->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54458129-4', 'auto');
+  ga('send', 'pageview');
+</script>
+<script type="text/javascript" src=></script>
 <script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/lensnola/app-template/js/chartbeat.js"></script>
 
     <script type="text/javascript" src=js/search.js></script>

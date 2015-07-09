@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Setup database
 echo "Force users to quit citysalaries database session..."
 psql citysalaries -c "
 SELECT pg_terminate_backend(pg_stat_activity.pid)
@@ -14,9 +13,7 @@ dropdb --if-exists citysalaries
 echo "Create citysalaries database..."
 createdb citysalaries
 
-# Define database layout
 echo "Create employees table..."
-# python make_db.py
 psql citysalaries -c "
 CREATE TABLE employees (
     department_id        varchar(3),
@@ -30,13 +27,6 @@ CREATE TABLE employees (
     salary               numeric(9, 2)  
 );"
 
-# echo "Create agency codes table..."
-# psql citysalaries -c "
-# CREATE TABLE agencies (
-#     name          varchar(50),
-#     department_id varchar(50) 
-# );"
-
 echo "Create office codes table..."
 psql citysalaries -c "
 CREATE TABLE offices (
@@ -46,19 +36,11 @@ CREATE TABLE offices (
     office_description   varchar(200)
 );"
 
-# CSVs that were generated from LDOE's Excel file:
-
 echo "Import salaries.csv to employees table..."
 psql citysalaries -c "
 COPY employees (department_id, department_office_id, last_name, first_name, middle_name, job_id, job_title, hours, salary)
 FROM '$PYTHONPATH/data/intermediate/salaries.csv'
 DELIMITER ',' CSV HEADER;"
-
-# echo "Import agency-codes-hand-cleaned.csv to agencies table..."
-# psql citysalaries -c "
-# COPY agencies (name, code)
-# FROM '$PYTHONPATH/data/intermediate/agency-codes-hand-cleaned.csv'
-# DELIMITER ',' CSV HEADER;"
 
 echo "Import org-descriptions.csv to offices table..."
 psql citysalaries -c "
@@ -68,4 +50,11 @@ DELIMITER ',' CSV HEADER;"
 
 echo "Create concatenated department_office_id (department_id + office_id) field in offices table..."
 psql citysalaries -c "
-UPDATE offices SET department_office_id = department_id || office_id;"
+UPDATE offices
+SET department_office_id = department_id || office_id;"
+
+echo "Change department_office_id 7007021 description from 'unknown' to 'Office of Police Secondary Employment'..."
+psql citysalaries -c "
+UPDATE offices
+SET office_description = 'Office of Police Secondary Employment'
+WHERE department_office_id = '7007021';"

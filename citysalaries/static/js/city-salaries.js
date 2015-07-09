@@ -1,7 +1,7 @@
 
-var employees_url = 'https://s3-us-west-2.amazonaws.com/salaries.thelensnola.org/neworleans/data/export/employees.csv';
-var departments_url = 'https://s3-us-west-2.amazonaws.com/salaries.thelensnola.org/neworleans/data/export/departments.csv';
-var positions_url = 'https://s3-us-west-2.amazonaws.com/salaries.thelensnola.org/neworleans/data/export/positions.csv';
+var employees_url = 'https://s3-us-west-2.amazonaws.com/salaries.thelensnola.org/neworleans/data/export/employees.txt';
+var departments_url = 'https://s3-us-west-2.amazonaws.com/salaries.thelensnola.org/neworleans/data/export/departments.txt';
+var positions_url = 'https://s3-us-west-2.amazonaws.com/salaries.thelensnola.org/neworleans/data/export/positions.txt';
 var results;
 var page_length = 50;
 var dt;
@@ -44,7 +44,27 @@ function renderPositionsHandlebarsHtml(data) {
 function addEmployees(data) {
   var employees = data.split('\n');
   $('#employees').autocomplete({
-    source: employees
+    source: employees,
+    select: function (event, ui) {
+      var thisValue = ui.item.value;
+      document.getElementById('employees').value = thisValue;
+      document.activeElement.blur();
+      doSearch();
+    },
+    search: function () {
+      $('#employees').autocomplete('close');
+    },
+    minLength: 1,
+    delay: 0
+    // open: function (event, ui) {
+    //   var input_width = $('#input-div').width();
+    //   $('.ui-menu').width(input_width);
+    // }
+  }).keyup(function (event) {
+    if (event.which === 13) {
+      $('#employees').autocomplete('close');
+      document.activeElement.blur();
+    }
   });
 }
 

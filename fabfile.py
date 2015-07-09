@@ -56,6 +56,7 @@ def js():
     '''/js'''
 
     local('git add citysalaries/static/js/city-salaries.js')
+    local('git add citysalaries/static/js/event-tracking.js')
     local('git add citysalaries/static/js/index.js')
     local('git add citysalaries/static/js/lens.js')
     local('git add citysalaries/static/js/search.js')
@@ -79,10 +80,10 @@ def data():
     '''/data/export/'''
 
     local('git add data/export/data.csv')
-    local('git add data/export/departments.csv')
-    local('git add data/export/employees.csv')
+    local('git add data/export/departments.txt')
+    local('git add data/export/employees.txt')
     local('git add data/export/highest-paid.csv')
-    local('git add data/export/positions.csv')
+    local('git add data/export/positions.txt')
 
 
 def scripts():

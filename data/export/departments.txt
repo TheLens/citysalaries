@@ -1,14 +1,16 @@
+office_description
+Canal Street Development Corporation
 Chief Administrative Office - 311 Call Center Operations
-Chief Administrative Office - Budget And Planning
+Chief Administrative Office - Budget and Planning
+Chief Administrative Office - Capital Projects
 Chief Administrative Office - Equipment Maintenance Division - General Maintenance
 Chief Administrative Office - Executive Office
+Chief Administrative Office - Hospital - Insurance
 Chief Administrative Office - Mail Room
 Chief Administrative Office - Management Information Systems
 Chief Administrative Office - Municipal Training Academy
-Chief Administrative Office -Capital Projects
-Chief Administrative Office -Hospital - Insurance
-Chief Administrative Office -Special Projects
-City Council - Clerk Of Council
+Chief Administrative Office - Special Projects
+City Council - Clerk of Council
 City Council - Council Fiscal Office
 City Council - Council Research
 City Council - Councilmember District A
@@ -21,9 +23,9 @@ City Council - Councilmember-At-Large (B)
 City Council - Councilmembers' Office
 City Council - Utility Regulatory/Energy
 City Planning Commission - Comprehensive Planning
+City Planning Commission - Enhancement
 City Planning Commission - Land Use Regulation
-City Planning Commission - Policy Formulation & Admin
-City Planning Commission -Enhancement
+City Planning Commission - Policy Formulation and Administration
 Civil Service Department - Director's Office
 Clerk of Criminal District Court - Clerk Administration
 Clerk of Criminal District Court - Clerk In-Court
@@ -45,55 +47,55 @@ Finance Department - Fiscal Records
 Finance Department - General Fund
 Finance Department - Payroll/Payroll Deductions
 Finance Department - Purchasing Administration
-Finance Department - Receipts & Disbursements
+Finance Department - Receipts and Disbursements
 Finance Department - Revenue Administration
 Finance Department - Revenue Applications
-Finance Department - Tax Research
+Finance Department - TA Research
 Finance Department - Treasury Administration
 Fire Department - Airport Suppression
 Fire Department - City Suppression
 Fire Department - Fire Academy Training
 Fire Department - Fire Administration
 Fire Department - Fire Communications
-Fire Department - Gf-Prevention Insp & Educ
+"Fire Department - General Fund - Prevention, Inspection and Education"
 Fire Department - Hazardous Materials
-Fire Department - Nasa Suppression
+Fire Department - NASA Suppression
 Fire Department - Public Affairs
 Fire Department - Supply Shop
-French Market Corporation - Fmc Administration
-French Market Corporation - Fmc Markets
-French Market Corporation - Fmc Shopping Center
-Health Department - Booker T. Washington Gf
-Health Department - Emergency Medical Service
-Health Department - Esse Pub Heal Administr
-Health Department - Esse Pub Heal Services
+French Market Corporation - Administration
+French Market Corporation - Markets
+French Market Corporation - Shopping Center
+Health Department - Booker T. Washington General Fund
+Health Department - Emergency Medical Services
+Health Department - Essential Public Health Administration
+Health Department - Essential Public Health Services
 Health Department - Healthcare/Homeless
-Health Department - Healthy Start Grant Init
+Health Department - Healthy Start Grant Initiative
 Health Department - Ryan White Administrative
 Health Department - Ryan White Program Support
-Health Department - Ryan White Quality Mgmt
+Health Department - Ryan White Quality Management
 Health Department - Special Health Project 2
-Health Department - Wic Food Program
-Historic District Landmarks Commission - Historic Dist Landmark Com
-Housing and Urban Development - Cd Home 10% Admin
-Housing and Urban Development - Code Enforce Revolving Fnd
-Housing and Urban Development - Dcdbg Admin/Prog Delivery
+"Health Department - Women, Infants and Children Food Program"
+Historic District Landmark Commission
+Housing and Urban Development - CD Home 10% Administration
+Housing and Urban Development - Code Enforce Revolving Fund
+Housing and Urban Development - Disaster Community Development Block Grant Administration/Program Delivery
 Housing and Urban Development - Energy Conservation Grant
-Housing and Urban Development - Financial & Fiscal Affair
+Housing and Urban Development - Financial and Fiscal Affair
 Housing and Urban Development - Fiscal Monitoring
-Housing and Urban Development - Hopwa Grant
 Housing and Urban Development - Housing Code Enforcement
-Housing and Urban Development - Housing Rehab Admin
+Housing and Urban Development - Housing Opportunities for Persons with AIDS Grant
+Housing and Urban Development - Housing Rehabilitation Administration
 Housing and Urban Development - Neighborhood Planning
-Housing and Urban Development - Operations & Admin
-Housing and Urban Development - Prog Mgmt & Monitor
+Housing and Urban Development - Operations and Administration
+Housing and Urban Development - Program Management and Monitor
 Housing and Urban Development - Relocation Administration
 Human Services - Maintenance
 Human Services - Management Services
 Human Services - Medical
-Human Services - Ysc Administration
-Human Services - Ysc Dietary Svcs
-Human Services - Ysc Residential Life
+Human Services - Youth Study Center Administration
+Human Services - Youth Study Center Dietary Services
+Human Services - Youth Study Center Residential Life
 Independent Police Monitor - Police Mediation Project
 Judicial Retirement - Old Judicial Retirement
 Juvenile Court - Administrative Services
@@ -104,54 +106,55 @@ Law Department - Civil Litigation
 Law Department - Civil Service
 Law Department - Environmental Court
 Law Department - Finance
-Law Department - Housing Unit-Cdbg
+Law Department - Housing Unit-Community Development Block Grant
 Law Department - Law Administration
-Law Department - Municipal And Traffic
+Law Department - Municipal and Traffic
 Law Department - Police Litigation
 Library - Library Administration
 Mayor's Office - Cease Fire
-Mayor's Office - Commissioner-Crim Justice
+Mayor's Office - Commissioner - Criminal Justice
 Mayor's Office - Communications
 Mayor's Office - Environmental Affairs
 Mayor's Office - Federal Homeland Security
 Mayor's Office - Housing Constrct Financing
 Mayor's Office - Housing/Community Affairs
-Mayor's Office - Infant Mortality Init.
-Mayor's Office - Intergov Relations
-Mayor's Office - Ofc - Neighborhood Engage
+Mayor's Office - Infant Mortality Initiative
+Mayor's Office - Intergovernmental Relations
 Mayor's Office - Office - Homeland Security
-Mayor's Office - Office Of The Mayor
+Mayor's Office - Office - Neighborhood Engagement
+Mayor's Office - Office of the Mayor
 Mayor's Office - Program Delivery Unit
-Mayor's Office - Program Delivery/Admin
+Mayor's Office - Program Delivery/Administration
 Mayor's Office - Program Support Budget
-Mayor's Office - State And Federal Programs
-Mayor's Office - Supplier & Diversity
-"Mayor's Office - Tourism, Arts, & Entertain"
+Mayor's Office - State and Federal Programs
+Mayor's Office - Supplier and Diversity
+"Mayor's Office - Tourism, Arts and Entertainment"
 Mayor's Office - Urban Development
 Mayor's Office - Violence Against Women Act
-McB Mosquito Control Unit
-Miscellaneous - Misc Office Of Administrat
-Miscellaneous - Norc Aquatic Programs
-Miscellaneous - Norc Athletics Programs
-Miscellaneous - Norc Centers
-Miscellaneous - Norc Director & Management
-Miscellaneous - Norc Maintenance
-Miscellaneous - Norc Spec Program/Culture
-Miscellaneous - Office Of Service & Innov
-Miscellaneous - Office-Perform & Accountab
-Miscellaneous - Public Works Pdu
+Miscellaneous - Miscellaneous Office of Administration
+Miscellaneous - New Orleans Recreation Development Commission Aquatic Programs
+Miscellaneous - New Orleans Recreation Development Commission Athletics Programs
+Miscellaneous - New Orleans Recreation Development Commission Centers
+Miscellaneous - New Orleans Recreation Development Commission Director and Management
+Miscellaneous - New Orleans Recreation Development Commission Maintenance
+Miscellaneous - New Orleans Recreation Development Commission Special Program/Culture
+Miscellaneous - Office of Performance and Accountability
+Miscellaneous - Office of Service and Innovation
+Miscellaneous - Public Works Project Delivery Unit
 Miscellaneous Risk Management
-Municipal Court - Judicial E P Rev Fund
+"Mosquito, Termite and Rodent Control Board - Mosquito Control Unit"
+Municipal Court - Judicial E P Revenue Fund
 Municipal Court - Municipal Court
 Municipal Yacht Harbor Corporation
 Museum of Art - Building
 Museum of Art - Collections
 Museum of Art - Security
 N.O. Aviation Board
-Neighborhood Housing Improvement Fund - Code Enforcement/Demo
-Neighborhood Housing Improvement Fund - General Administrat
-Office of Inspector General - Construction Fraud Div
-Office of Inspector General - Inspector General Offc Ad
+Neighborhood Housing Improvement Fund - Code Enforcement/Demolition
+Neighborhood Housing Improvement Fund - General Administration
+Office of Inspector General - Construction Fraud Division
+Office of Inspector General - Inspector General Office Administration
+Office of Police Secondary Employment
 One Stop Shop Permits
 Parks and Parkways - Administration
 Parks and Parkways - Armstrong Park
@@ -162,34 +165,34 @@ Parks and Parkways - Golf Courses
 Parks and Parkways - Grass Cutting Millage
 Parks and Parkways - Grounds Maintenance
 Parks and Parkways - Heavy Equipment
-Parks and Parkways - Joe Bartholomew Golf Cours
-Parks and Parkways - Nursery & Greenhouse
-Parks and Parkways - Nursery & Park Security
+Parks and Parkways - Joe Bartholomew Golf Course
+Parks and Parkways - Nursery and Greenhouse
+Parks and Parkways - Nursery and Park Security
 Parks and Parkways - Operations Administration
-Parks and Parkways - Planning & Design
+Parks and Parkways - Planning and Design
 Parks and Parkways - Superintendent's Office
 Parks and Parkways - Tree Maintenance
 Police Department - Eighth District
 Police Department - Field Operations
-Police Department - Fifth  District
+Police Department - Fifth District
 Police Department - First District
 Police Department - Fiscal Management
 Police Department - Fourth District
-Police Department - Investigations & Sprt Bure
-Police Department - Managemnt Services Bureau
+Police Department - Investigations and Support Bureau
+Police Department - Management Services Bureau
 Police Department - Mid City
 Police Department - Narcotics
-Police Department - Off Of The Superintendent
+Police Department - Office of the Superintendent
 Police Department - Police Recruits
 Police Department - Public Affairs
 Police Department - Public Integrity
 Police Department - School Crossing Guards
 Police Department - Second District
 Police Department - Seventh District
-Police Department - Sixth  District
-Police Department - Special Investigation Div
+Police Department - Sixth District
+Police Department - Special Investigation Division
 Police Department - Special Operations
-Police Department - Third  District
+Police Department - Third District
 Police Department - Traffic
 Police Department - Transit Security
 Property Management - Cemeteries
@@ -198,34 +201,33 @@ Property Management - Director's Office
 Property Management - Gallier Hall
 Property Management - Mechanical Engine Room
 Property Management - Multi-Purpose Centers
-Property Management - Public Buildings Mnt
+Property Management - Public Buildings Maintenance
 Property Management - Realty Records
 Public Works - Abandoned Car Unit
 Public Works - Dedicated Millage
 Public Works - Director's Office
-Public Works - Engineering & Planning
+Public Works - Engineering and Planning
 Public Works - Field Operations Staff
 Public Works - Parking Adjudication
 Public Works - Right-Of-Way Management
 Public Works - Signal Shop
 Public Works - Ticket Writing Section
-Public Works - Towing & Impoundment
+Public Works - Towing and Impoundment
 Public Works - Traffic Management
 Public Works - Traffic Sign Shop
+Safety and Permits - Building Inspection
+Safety and Permits - Directors Office
+Safety and Permits - Electrical Inspector
 Safety and Permits - Inspectors Section
+Safety and Permits - Mechanical Inspector
+Safety and Permits - Motor Vehicle Inspector
 Safety and Permits - Permit Processing
-Safety and Permits - S&P Building Inspection
-Safety and Permits - S&P Directors Office
-"Safety and Permits - S&P, Electrical Inspect"
-"Safety and Permits - S&P, Mechanical Inspect"
-"Safety and Permits - S&P, Motor Vehicle Inspct"
-"Safety and Permits - S&P, Plan Processing"
+Safety and Permits - Plan Processing
 Safety and Permits - Taxi Cab Bureau
 Safety and Permits - Zoning Bureau
-San Manual Cleaning
-San Sanitation Director Off
-Traffic Court - Tfc Court Rev Fund
-Traffic Court - Traffic Court
-Unknown
+Sanitation - Manual Cleaning
+Sanitation - Sanitation Director Office
+Traffic Court
+Traffic Court Revenue Fund
 Vieux Carre Commission
 Workforce Investment Act - Adult

@@ -34,11 +34,13 @@ SEARCH_CSS_RENDER = 'css/search.css'
 
 # JavaScript
 CITY_SALARIES_JS = '/static/js/city-salaries.js'
+EVENT_TRACKING_JS_RENDER = '/static/js/event-tracking.js'
 INDEX_JS = '/static/js/index.js'
 LENS_JS = '/static/js/lens.js'
 SEARCH_JS = '/static/js/search.js'
 
 CITY_SALARIES_JS_RENDER = 'js/city-salaries.js'
+EVENT_TRACKING_JS_RENDER = 'js/event-tracking.js'
 INDEX_JS_RENDER = 'js/index.js'
 LENS_JS_RENDER = 'js/lens.js'
 SEARCH_JS_RENDER = 'js/search.js'

@@ -7,41 +7,41 @@ function parseURL() {
     // Match z=(everything until &), then take the portion after the equal sign
 
     if (window.location.href.match(/q\=[^&]*/i) !== null) {
-      data['name'] = decodeURI(window.location.href.match(/q\=[^&]*/i)[0].split('=')[1]);
+      data.name = decodeURI(window.location.href.match(/q\=[^&]*/i)[0].split('=')[1]);
     } else {
-      data['name'] = '';
+      data.name = '';
     }
 
     if (window.location.href.match(/dept\=[^&]*/i) !== null) {
-      data['department'] = decodeURI(window.location.href.match(/dept\=[^&]*/i)[0].split('=')[1]);
+      data.department = decodeURI(window.location.href.match(/dept\=[^&]*/i)[0].split('=')[1]);
     } else {
-      data['department'] = '';
+      data.department = '';
     }
 
     if (window.location.href.match(/pos\=[^&]*/i) !== null) {
-      data['position'] = decodeURI(window.location.href.match(/pos\=[^&]*/i)[0].split('=')[1]);
+      data.position = decodeURI(window.location.href.match(/pos\=[^&]*/i)[0].split('=')[1]);
     } else {
-      data['position'] = '';
+      data.position = '';
     }
   } else {
-    data['name'] = '';
-    data['department'] = '';
-    data['position'] = '';
+    data.name = '';
+    data.department = '';
+    data.position = '';
   }
   return data;
 }
 
 function populateSearchParameters(data) {
-  document.getElementById('employees').value = data['name'];
-  document.getElementById('departments').value = data['department'];
-  document.getElementById('positions').value = data['position'];
+  document.getElementById('employees').value = data.name;
+  document.getElementById('departments').value = data.department;
+  document.getElementById('positions').value = data.position;
 }
 
 function getData() {
   $.ajax({
-    type: "GET",
-    url: "https://s3-us-west-2.amazonaws.com/salaries.thelensnola.org/neworleans/data/export/data.csv",
-    dataType: "text",
+    type: 'GET',
+    url: 'https://s3-us-west-2.amazonaws.com/salaries.thelensnola.org/neworleans/data/export/data.csv',
+    dataType: 'text',
     success: function(data) {
       console.log(Date());
       process(data);
@@ -65,28 +65,34 @@ function getData() {
   });
 }
 
+function doSearch() {
+  loadTable();
+  var data = gatherData();
+  updateUrl(data);
+}
+
 function showAllResults() {
   var oSettings = dt.fnSettings();
   oSettings._iDisplayLength = -1;
   dt.fnDraw();
-  $(".show-all").css({'display': 'none'});
+  $('.show-all').css({'display': 'none'});
   showHideResultsInfo();
 }
 
 $(document).ready(function () {
   // getData();
 
-  $(document).on("click", ".show-all", function() {
+  $(document).on('click', '.show-all', function() {
     showAllResults();
   });
 
-  $(".next").on("click", function() {
+  $('.next').on('click', function () {
     loadTable();
     var data = gatherData();
     updateUrl(data);
   });
 
-  $(".previous").on("click", function() {
+  $('.previous').on('click', function () {
     loadTable();
     var data = gatherData();
     updateUrl(data);
@@ -94,23 +100,17 @@ $(document).ready(function () {
 
   $(document).keypress(function (e) {
     if (e.which === 13) {
-      loadTable();
-      var data = gatherData();
-      updateUrl(data);
+      doSearch();
     }
   });
 
-  $(".search-button").on("click", function () {
-    loadTable();
-    var data = gatherData();
-    updateUrl(data);
+  $('.search-button').on('click', function () {
+    doSearch();
   });
 
-  $(".show-everything").on("click", function () {
+  $('.show-everything').on('click', function () {
     clearAllParameters();
-    loadTable();
-    var data = gatherData();
-    updateUrl(data);
+    doSearch();
     showAllResults();
   });
 });

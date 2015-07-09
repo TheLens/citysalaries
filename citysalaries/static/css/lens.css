@@ -72,14 +72,16 @@ button.button:hover {
     background-color: #922A21;
 }
 
-/* Autocomplete dropdown */
-.ui-autocomplete-category {
+/*
+ * Autocomplete dropdown
+ */
+/*.ui-autocomplete-category {
     font-weight: bold;
     font-size: 16px;
     line-height: 16px;
     padding: 3px 4px 2px;
     font-family: "news-gothic-std", Helvetica, Arial, sans-serif;
-}
+}*/
 .ui-menu .ui-menu-item {
     font-size: 16px;
     line-height: 18px;
@@ -98,45 +100,14 @@ button.button:hover {
     padding-left: 0;
 }
 
-/***********
- Tablesorter
- ***********/
-
-.tablesorter {
-  font-family: arial;
+.ui-menu .ui-state-focus {
   margin: 0;
-  width: 100%;
-  text-align: left;
 }
-.tablesorter thead {
-  background-color: #D8D8D8;
-}
-.tablesorter tbody tr td,
-.tablesorter thead tr th {
-  font-size: 1.1em;
-}
-.tablesorter thead tr .header {
-  background-image: url(bg.gif);
-  background-repeat: no-repeat;
-  background-position: center;
-  cursor: pointer;
-}
-.tablesorter tbody td {
-  color: #3D3D3D;
-  padding: 4px;
-  background-color: #FFF;
-  vertical-align: top;
-}
+
+/*
+ * Tablesorter
+ */
+/* TODO: Make part of DataTables declaration */
 .tablesorter tbody .odd td {
   background-color: #F3F3F3;
-}
-.tablesorter thead tr .headerSortUp {
-  background-image: url(asc.gif);
-}
-.tablesorter thead tr .headerSortDown {
-  background-image: url(desc.gif);
-}
-.tablesorter thead tr .headerSortDown,
-.tablesorter thead tr .headerSortUp {
-  background-color: #8DBDD8;
 }
