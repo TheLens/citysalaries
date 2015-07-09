@@ -1,4 +1,3 @@
-office_description
 Canal Street Development Corporation
 Chief Administrative Office - 311 Call Center Operations
 Chief Administrative Office - Budget and Planning
@@ -57,7 +56,7 @@ Fire Department - City Suppression
 Fire Department - Fire Academy Training
 Fire Department - Fire Administration
 Fire Department - Fire Communications
-"Fire Department - General Fund - Prevention, Inspection and Education"
+Fire Department - General Fund - Prevention, Inspection and Education
 Fire Department - Hazardous Materials
 Fire Department - NASA Suppression
 Fire Department - Public Affairs
@@ -75,8 +74,8 @@ Health Department - Ryan White Administrative
 Health Department - Ryan White Program Support
 Health Department - Ryan White Quality Management
 Health Department - Special Health Project 2
-"Health Department - Women, Infants and Children Food Program"
-Historic District Landmark Commission
+Health Department - Women, Infants and Children Food Program
+Historic District Landmarks Commission
 Housing and Urban Development - CD Home 10% Administration
 Housing and Urban Development - Code Enforce Revolving Fund
 Housing and Urban Development - Disaster Community Development Block Grant Administration/Program Delivery
@@ -128,7 +127,7 @@ Mayor's Office - Program Delivery/Administration
 Mayor's Office - Program Support Budget
 Mayor's Office - State and Federal Programs
 Mayor's Office - Supplier and Diversity
-"Mayor's Office - Tourism, Arts and Entertainment"
+Mayor's Office - Tourism, Arts and Entertainment
 Mayor's Office - Urban Development
 Mayor's Office - Violence Against Women Act
 Miscellaneous - Miscellaneous Office of Administration
@@ -142,7 +141,7 @@ Miscellaneous - Office of Performance and Accountability
 Miscellaneous - Office of Service and Innovation
 Miscellaneous - Public Works Project Delivery Unit
 Miscellaneous Risk Management
-"Mosquito, Termite and Rodent Control Board - Mosquito Control Unit"
+Mosquito, Termite and Rodent Control Board - Mosquito Control Unit
 Municipal Court - Judicial E P Revenue Fund
 Municipal Court - Municipal Court
 Municipal Yacht Harbor Corporation
@@ -216,7 +215,7 @@ Public Works - Towing and Impoundment
 Public Works - Traffic Management
 Public Works - Traffic Sign Shop
 Safety and Permits - Building Inspection
-Safety and Permits - Directors Office
+Safety and Permits - Director'sOffice
 Safety and Permits - Electrical Inspector
 Safety and Permits - Inspectors Section
 Safety and Permits - Mechanical Inspector

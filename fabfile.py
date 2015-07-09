@@ -81,7 +81,6 @@ def data():
 
     local('git add data/export/data.csv')
     local('git add data/export/departments.txt')
-    local('git add data/export/employees.txt')
     local('git add data/export/highest-paid.csv')
     local('git add data/export/positions.txt')
 

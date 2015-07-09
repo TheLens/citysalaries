@@ -1,4 +1,3 @@
-job_title
 311 Telecommunications Operator
 311 Telecommunications Operator Manager
 311 Telecommunications Operator Senior
@@ -8,7 +7,7 @@ Accountant I
 Accountant II
 Accountant III
 Accounts Payable Supervisor
-"Admin, Environmental Planning"
+Admin, Environmental Planning
 Administrative & Program Support (FEMA/Community Development Block Grant)
 Administrative Assistant
 Administrative Support Manager I
@@ -17,7 +16,7 @@ Administrative Support Specialist I
 Administrative Support Specialist II
 Administrative Support Specialist III
 Adolescent Home Superintendent
-"Adolescent Home Superintendent, Assistant"
+Adolescent Home Superintendent, Assistant
 Airport Administrative Intern
 Airport Administrative Specialist I
 Airport Administrative Specialist II
@@ -51,7 +50,7 @@ Assistant City Librarian
 Assistant Council Fiscal Officer
 Assistant Council Research Officer
 Assistant Judicial Administrator
-"Assistant Manager, Fiscal Administration"
+Assistant Manager, Fiscal Administration
 Assistant Payroll Supervisor
 Assistant Police Communications Supervisor
 Assistant Superintendent of Fire
@@ -92,7 +91,7 @@ Chief Criminal Investigations (Inspector General)
 Chief Deputy City Attorney
 Chief Deputy Clerk Criminal District Court
 Chief Operations Manager
-"Chief Operations Manager, Assistant"
+Chief Operations Manager, Assistant
 Chief Physician Pathologist
 Chief of Audit and Review (Inspector General)
 Chief of Fire Prevention
@@ -141,7 +140,7 @@ Criminal Investigator II (Inspector General)
 Criminalist 2
 Criminalist 3
 Custodian 2
-"DWI Clerk, Traffic Court"
+DWI Clerk, Traffic Court
 Dental Assistant I
 Dental Assistant II
 Dentist
@@ -193,7 +192,7 @@ Documentation Manager
 Documentation Support Specialist I
 Documentation Support Specialist II
 Duplicating Room Supervisor
-"EMS, Deputy Director"
+EMS, Deputy Director
 Economic Development Program Manager
 Electrical Inspector
 Electrical Inspector 2
@@ -203,7 +202,7 @@ Electronics Technician Supervisor
 Emergency Management Services Coordinator
 Emergency Medical Coordinator
 Emergency Medical Coordinator Assistant
-"Emergency Medical Services, Director"
+Emergency Medical Services, Director
 Emergency Medical Technician Basic
 Emergency Medical Technician Intermediate
 Emergency Medical Technician Paramedic
@@ -321,8 +320,8 @@ Management Services Administrator
 Management Services Specialist
 Management Services Supervisor
 Manager Retirement System
-"Manager, Consolidated Planning"
-"Manager, Job 1"
+Manager, Consolidated Planning
+Manager, Job 1
 Marketing Development Coordinator
 Mayor
 Mechanical Equipment Inspector
@@ -345,7 +344,7 @@ Office Assistant I
 Office Assistant II
 Office Assistant III
 Office Assistant IV
-"Office Assistant, Trainee"
+Office Assistant, Trainee
 Office Support Specialist
 Orleans Criminal Justice Coordination Group Violence Reduction Director
 Orleans Criminal Justice Coordination Policy Advisor
@@ -366,7 +365,7 @@ Parkways Maintenance Supervisor 3
 Parkways Maintenance Supervisor 4
 Payroll Supervisor
 Personnel Administrator
-"Personnel Administrator, Assistant."
+Personnel Administrator, Assistant.
 Personnel Director
 Personnel Division Chief
 Pest Control Inspector I
@@ -380,7 +379,7 @@ Physician (Coroner's Pathologist)
 Physician (Program Director)
 Planner & Estimator 1
 Planning Administrator
-"Planning Administrator, Assistant"
+Planning Administrator, Assistant
 Plant Attendant
 Plant Engineer
 Plumber
@@ -391,7 +390,7 @@ Police Communications Supervisor
 Police Community Services Specialist
 Police Complaint Operator
 Police Dispatcher
-"Police Dispatcher, Recruit"
+Police Dispatcher, Recruit
 Police Lieutenant
 Police Major
 Police Officer 1
@@ -409,7 +408,7 @@ Police Technician 1
 Police Technician 2
 Police Technician III
 Police Technician Specialist III
-"Police Technician, Trainee"
+Police Technician, Trainee
 Preservation Architect
 Principal Accountant
 Principal Auditor
@@ -433,7 +432,7 @@ Public Works Maintenance Worker II
 Public Works Supervisor 1
 Public Works Supervisor 2
 Public Works Supervisor 3
-"Purchasing Administrator, Assistant"
+Purchasing Administrator, Assistant
 Purchasing Agent Assistant
 Real Estate Administrator
 Real Estate Manager
