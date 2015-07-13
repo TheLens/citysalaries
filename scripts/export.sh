@@ -23,7 +23,7 @@ psql citysalaries -c "COPY (
          concat_ws(' ', e.first_name::text, e.middle_name::text) AS first_name,
          e.salary,
          e.job_title AS position,
-         o.office_description
+         o.office_description AS office
   FROM employees AS e
   LEFT OUTER JOIN (
     SELECT DISTINCT ON (department_office_id)
@@ -39,7 +39,7 @@ psql citysalaries -c "COPY (
          concat_ws(' ', e.first_name::text, e.middle_name::text) AS first_name,
          e.salary,
          e.job_title AS position,
-         o.office_description
+         o.office_description AS office
   FROM employees AS e
   LEFT OUTER JOIN (
     SELECT DISTINCT ON (department_office_id)
