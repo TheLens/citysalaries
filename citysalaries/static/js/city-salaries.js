@@ -1,4 +1,4 @@
-var departments_url = 'https://s3-us-west-2.amazonaws.com/salaries.thelensnola.org/neworleans/data/export/departments.txt';
+var offices_url = 'https://s3-us-west-2.amazonaws.com/salaries.thelensnola.org/neworleans/data/export/offices.txt';
 var positions_url = 'https://s3-us-west-2.amazonaws.com/salaries.thelensnola.org/neworleans/data/export/positions.txt';
 var results;
 var page_length = 50;
@@ -23,8 +23,8 @@ function formatThousands(number) {
   return return_value;
 }
 
-function renderDepartmentsHandlebarsHtml(data) {
-  var select_source = $('#departments-template').html();
+function renderOfficesHandlebarsHtml(data) {
+  var select_source = $('#offices-template').html();
   var select_template = Handlebars.compile(select_source);
   var select_html = select_template(data);
 
@@ -39,10 +39,10 @@ function renderPositionsHandlebarsHtml(data) {
   return select_html;
 }
 
-function addDepartments(data) {
-  var departments = data.split('\n');
-  var html = renderDepartmentsHandlebarsHtml(departments);
-  $('#departments').html(html);
+function addOffices(data) {
+  var offices = data.split('\n');
+  var html = renderOfficesHandlebarsHtml(offices);
+  $('#offices').html(html);
 }
 
 function addPositions(data) {
@@ -97,10 +97,10 @@ function processRequest(data) {
     });
   }
 
-  // Filter by department
-  if (data.department !== '') {
+  // Filter by office
+  if (data.office !== '') {
     output = _.filter(output, function (item) {
-      return item.department === data.department;
+      return item.office === data.office;
     });
   }
 
@@ -120,7 +120,7 @@ function getRow(item) {
   output.push(item.first_name + ' ' + item.last_name);
   output.push(item.last_name);
   output.push(item.position);
-  output.push(item.department);
+  output.push(item.office);
 
   var salary = item.salary;
   salary = formatCurrency(salary);
@@ -150,11 +150,11 @@ function buildQueryString(data) {
     map_query_string = map_query_string + 'q=' + encodeURIComponent(data.name);
   }
 
-  if (data.department !== '') {
+  if (data.office !== '') {
     if (map_query_string !== '') {
       map_query_string = map_query_string + '&';
     }
-    map_query_string = map_query_string + 'dept=' + encodeURIComponent(data.department);
+    map_query_string = map_query_string + 'dept=' + encodeURIComponent(data.office);
   }
 
   if (data.position !== '') {
@@ -204,7 +204,7 @@ function dataTables() {
         bVisible: false
       },
       {sClass: 'position'},
-      {sClass: 'department'},
+      {sClass: 'office'},
       {sClass: 'salary'},
     ],
     oLanguage: {
@@ -224,14 +224,14 @@ function dataTables() {
 
 function clearAllParameters () {
   $('#employees').val('');
-  $('#departments').val('');
+  $('#offices').val('');
   $('#positions').val('');
 }
 
 function gatherData() {
   var data = {};
   data.name = $('#employees').val();
-  data.department = $('#departments').val();
+  data.office = $('#offices').val();
   data.position = $('#positions').val();
 
   // Replace any extraneous spaces in search input with a single space
@@ -282,8 +282,8 @@ function process(data) {
 }
 
 $(document).ready(function () {
-  $.get(departments_url, function (data) {
-    addDepartments(data);
+  $.get(offices_url, function (data) {
+    addOffices(data);
   }, 'text').then(function () {
     $.get(positions_url, function (data) {
       addPositions(data);

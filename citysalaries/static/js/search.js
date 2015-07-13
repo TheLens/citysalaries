@@ -13,9 +13,9 @@ function parseURL() {
     }
 
     if (window.location.href.match(/dept\=[^&]*/i) !== null) {
-      data.department = decodeURI(window.location.href.match(/dept\=[^&]*/i)[0].split('=')[1]);
+      data.office = decodeURI(window.location.href.match(/dept\=[^&]*/i)[0].split('=')[1]);
     } else {
-      data.department = '';
+      data.office = '';
     }
 
     if (window.location.href.match(/pos\=[^&]*/i) !== null) {
@@ -25,7 +25,7 @@ function parseURL() {
     }
   } else {
     data.name = '';
-    data.department = '';
+    data.office = '';
     data.position = '';
   }
   return data;
@@ -33,7 +33,7 @@ function parseURL() {
 
 function populateSearchParameters(data) {
   document.getElementById('employees').value = data.name;
-  document.getElementById('departments').value = data.department;
+  document.getElementById('offices').value = data.office;
   document.getElementById('positions').value = data.position;
 }
 
@@ -43,7 +43,6 @@ function getData() {
     url: 'https://s3-us-west-2.amazonaws.com/salaries.thelensnola.org/neworleans/data/export/data.csv',
     dataType: 'text',
     success: function(data) {
-      console.log(Date());
       process(data);
       dataTables();
       // loadHighestSalaries();
@@ -56,7 +55,7 @@ function getData() {
 
     // var condition = (
     //   data['name'] !== '' ||
-    //   data['department'] !== '' ||
+    //   data['office'] !== '' ||
     //   data['position'] !== ''
     // );
     // if (condition) {

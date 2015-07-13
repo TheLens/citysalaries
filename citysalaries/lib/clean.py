@@ -94,8 +94,8 @@ class Clean(object):
             [r'Admin$', 'Administration'],
             [r'Admin/', 'Administration/'],
             ['Gf', 'General Fund'],
-            ['Ta ', 'TA '],  # TODO: Treasury administration? Can't find
-            # ['E P Rev ', '???'],  # TODO: ???
+            ['Ta ', 'Tax '],  # According to Brian Firstley
+            ['E P ', 'Judicial Expense '],  # Brian Firstley
             ['Rev Fund', 'Revenue Fund'],
             ['Nasa ', 'NASA '],
             ['Esse ', 'Essential '],
@@ -128,13 +128,13 @@ class Clean(object):
             [r'Accountab$', 'Accountability'],
             ['Ofc ', 'Office '],
             ['Pdu', 'Project Delivery Unit'],
-            [r'Demo$', 'Demolition'],
-            [r'Ad$', 'Administration'],
+            [r'Demo$', 'Demolition'],            [r'Ad$', 'Administration'],
             [r'Div$', 'Division'],
             [r'Adm$', 'Administration'],
             ['Sprt Bureau', 'Support Bureau'],
             ['Off ', 'Office '],
             [r'Off$', 'Office'],
+            [' - Office - ', ' '],
             ['Mnt', 'Maintenance'],
             [r'Inspect$', 'Inspector'],
             [r'Inspct$', 'Inspector'],
