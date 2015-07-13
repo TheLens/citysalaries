@@ -1,4 +1,4 @@
-last_name,first_name,salary,position,department
+last_name,first_name,salary,position,office_description
 Ahmad,Iftikhar,302196.05,Director of Aviation,N.O. Aviation Board
 Huber,Samantha A,221519.99,Chief Physician Pathologist,Coroner's Office - Coroner Administration
 Quatrevaux,Edouard R,198087.77,Inspector General,Office of Inspector General - Inspector General Office Administration
@@ -10,17 +10,17 @@ Kanter,Joseph M,156441.54,Physician (Program Director),Health Department - Healt
 Landrieu,Mitchell J,154533.80,Mayor,Mayor's Office - Office of the Mayor
 Morse,Judy R,154510.16,Executive Assistant to the Mayor,Mayor's Office - Office of the Mayor
 Rogers,Ava L,154510.16,Executive Assistant to the Mayor,Miscellaneous - Miscellaneous Office of Administration
-Harrison,Michael S,150718.64,Superintendent of Police,Police Department - Office of the Superintendent
 Pugh,Evelyn F,150718.64,Chief of Staff,City Council - Councilmembers' Office
+Harrison,Michael S,150718.64,Superintendent of Police,Police Department - Office of the Superintendent
 Krygowski,Walter J,148857.92,Deputy Director of Aviation,N.O. Aviation Board
 O'Sullivan,Erin J,147020.17,Physician (Coroner's Pathologist),Coroner's Office - Coroner Administration
-Sneed,Jerry W,147020.16,Urban Policy Specialist 5,Mayor's Office - Office - Homeland Security
+Sneed,Jerry W,147020.16,Urban Policy Specialist 5,Mayor's Office Homeland Security
 Mc Connell,Timothy A,144699.48,Superintendent of Fire,Fire Department - Fire Administration
 Arata,Emily S,143412.45,Executive Assistant to the Mayor,Mayor's Office - Office of the Mayor
-Gardner,Cynthia D,143412.45,Physician (Coroner's Pathologist),Coroner's Office - Coroner Administration
 Brown,Charles M,143412.45,City Librarian,Library - Library Administration
-Lee,Ellen M,141641.92,Deputy Director of Recovery,Housing and Urban Development - Operations and Administration
+Gardner,Cynthia D,143412.45,Physician (Coroner's Pathologist),Coroner's Office - Coroner Administration
 Riegel,Claudia,141641.92,Mosquito Control Director,"Mosquito, Termite and Rodent Control Board - Mosquito Control Unit"
+Lee,Ellen M,141641.92,Deputy Director of Recovery,Housing and Urban Development - Operations and Administration
 Wilcut,Michelle C,141641.91,Deputy Director Aviation,N.O. Aviation Board
 Smith,Brooke E,139893.26,Executive Assistant to the Mayor,Mayor's Office - Office of the Mayor
 Simms,Cherrell R,138166.19,Senior Chief Deputy City Attorney,Law Department - Law Administration

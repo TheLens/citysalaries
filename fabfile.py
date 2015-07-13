@@ -80,17 +80,19 @@ def data():
     '''/data/export/'''
 
     local('git add data/export/data.csv')
-    local('git add data/export/departments.txt')
     local('git add data/export/highest-paid.csv')
+    local('git add data/export/offices.txt')
     local('git add data/export/positions.txt')
 
 
 def scripts():
     '''/scripts/'''
 
+    local('git add scripts/check.sh')
     local('git add scripts/export.sh')
     local('git add scripts/import.sh')
     local('git add scripts/main.sh')
+    local('git add scripts/process.sh')
 
 
 def addthemall():
